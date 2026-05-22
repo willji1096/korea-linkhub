@@ -51,7 +51,7 @@ export function FullWidthPromo() {
         <img
           src="/hero-banner.png"
           alt=""
-          className="block h-auto w-full sm:max-h-[280px] sm:object-cover sm:object-center lg:max-h-[340px]"
+          className="block h-auto max-h-[140px] w-full object-cover object-center sm:max-h-[280px] lg:max-h-[340px]"
           loading="eager"
         />
       </div>
