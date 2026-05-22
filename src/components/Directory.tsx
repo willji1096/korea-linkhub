@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { BookmarkToggle } from './BookmarkToggle';
 
 const PAGE_SIZE = 24;
-import { BookmarkToggle } from './BookmarkToggle';
 
 type Localized = { en: string; [key: string]: string | undefined };
 
@@ -44,6 +44,7 @@ export function Directory({
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState<string>('all');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [filterOpen, setFilterOpen] = useState(false);
 
   const allCategories = useMemo(() => {
     const set = new Set<string>();
@@ -78,14 +79,29 @@ export function Directory({
     setVisibleCount(PAGE_SIZE);
   }, [query, category]);
 
+  useEffect(() => {
+    if (!filterOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setFilterOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [filterOpen]);
+
   const visible = filtered.slice(0, visibleCount);
   const remaining = filtered.length - visibleCount;
   const nextBatch = Math.min(PAGE_SIZE, remaining);
+  const activeLabel = category === 'all' ? t('category.all') : catLabel(category);
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pt-8 pb-16 sm:px-8 sm:pt-10 sm:pb-24">
       {/* Sticky controls */}
-      <div className="sticky top-[57px] z-30 -mx-5 mb-8 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:-mx-8 sm:px-8">
+      <div className="sticky top-12 z-30 -mx-5 mb-8 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:top-[57px] sm:-mx-8 sm:px-8">
         <div className="flex flex-col gap-3">
           <div className="relative">
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--ink-subtle)]">
@@ -111,7 +127,33 @@ export function Directory({
               </button>
             )}
           </div>
-          <div className="flex items-start justify-between gap-3">
+
+          {/* Mobile: filter trigger + count */}
+          <div className="flex items-center justify-between gap-3 sm:hidden">
+            <button
+              type="button"
+              onClick={() => setFilterOpen(true)}
+              aria-haspopup="dialog"
+              aria-expanded={filterOpen}
+              className="flex flex-1 items-center justify-between gap-2 rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] px-4 py-2.5 text-sm font-medium text-[var(--ink)] transition-colors active:bg-[var(--bg-sunken)]"
+            >
+              <span className="flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden className="text-[var(--ink-muted)]">
+                  <path d="M2 3h10M3 7h8M5 11h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                </svg>
+                <span className="truncate">{activeLabel}</span>
+              </span>
+              <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden className="shrink-0 text-[var(--ink-subtle)]">
+                <path d="M3 4.5l3 3 3-3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <span className="num caps shrink-0 text-[var(--ink-subtle)]" aria-live="polite">
+              {filtered.length} / {links.length}
+            </span>
+          </div>
+
+          {/* Desktop: chip wrap + count */}
+          <div className="hidden items-start justify-between gap-3 sm:flex">
             <ul className="flex flex-wrap gap-1.5">
               <li>
                 <Chip active={category === 'all'} onClick={() => setCategory('all')}>
@@ -132,6 +174,62 @@ export function Directory({
           </div>
         </div>
       </div>
+
+      {/* Mobile filter bottom sheet */}
+      {filterOpen && (
+        <div className="fixed inset-0 z-50 sm:hidden" role="dialog" aria-modal="true" aria-label="Filter by category">
+          <button
+            type="button"
+            aria-label="Close filter"
+            onClick={() => setFilterOpen(false)}
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          />
+          <div className="absolute inset-x-0 bottom-0 max-h-[80vh] overflow-y-auto rounded-t-2xl bg-[var(--bg-elevated)] pb-[max(env(safe-area-inset-bottom),16px)] shadow-2xl">
+            <div className="sticky top-0 bg-[var(--bg-elevated)]">
+              <div className="flex justify-center pt-3 pb-1">
+                <div className="h-1 w-10 rounded-full bg-[var(--line-strong)]" />
+              </div>
+              <div className="hairline-b flex items-center justify-between px-5 pb-3 pt-2">
+                <h3 className="text-base font-semibold text-[var(--ink)]">Category</h3>
+                <button
+                  type="button"
+                  onClick={() => setFilterOpen(false)}
+                  aria-label="Close"
+                  className="flex size-9 items-center justify-center rounded-full text-[var(--ink-muted)] active:bg-[var(--bg-sunken)]"
+                >
+                  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
+                    <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <ul className="px-2 py-2">
+              <li>
+                <SheetItem
+                  label={t('category.all')}
+                  active={category === 'all'}
+                  onSelect={() => {
+                    setCategory('all');
+                    setFilterOpen(false);
+                  }}
+                />
+              </li>
+              {allCategories.map((c) => (
+                <li key={c}>
+                  <SheetItem
+                    label={catLabel(c)}
+                    active={category === c}
+                    onSelect={() => {
+                      setCategory(c);
+                      setFilterOpen(false);
+                    }}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
 
       {filtered.length === 0 ? (
         <div className="surface mt-12 flex flex-col items-center gap-4 rounded-2xl p-10 text-center">
@@ -166,8 +264,10 @@ export function Directory({
                 className="w-full rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] px-6 py-3 text-sm font-medium text-[var(--ink)] transition-colors hover:border-[var(--ink)] sm:w-auto sm:px-10"
               >
                 Show {nextBatch} more
-                <span className="ml-2 text-[var(--ink-subtle)]">·</span>
-                <span className="num ml-2 text-[var(--ink-muted)]">{remaining} left</span>
+                <span className="hidden sm:inline">
+                  <span className="ml-2 text-[var(--ink-subtle)]">·</span>
+                  <span className="num ml-2 text-[var(--ink-muted)]">{remaining} left</span>
+                </span>
               </button>
             </div>
           )}
@@ -194,6 +294,36 @@ function Favicon({ host, featured = false }: { host: string; featured?: boolean 
         className={featured ? 'size-6 object-contain' : 'size-5 object-contain'}
       />
     </span>
+  );
+}
+
+function SheetItem({
+  label,
+  active,
+  onSelect,
+}: {
+  label: string;
+  active: boolean;
+  onSelect: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      className={
+        'flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-medium transition-colors ' +
+        (active
+          ? 'bg-[var(--bg-sunken)] text-[var(--ink)]'
+          : 'text-[var(--ink-muted)] active:bg-[var(--bg-sunken)]')
+      }
+    >
+      <span>{label}</span>
+      {active && (
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden className="text-[var(--accent)]">
+          <path d="M3 8l3 3 7-7" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )}
+    </button>
   );
 }
 
