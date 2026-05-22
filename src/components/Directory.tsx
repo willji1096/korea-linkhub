@@ -148,6 +148,21 @@ export function Directory({
   );
 }
 
+function Favicon({ host }: { host: string }) {
+  return (
+    <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--bg-elevated)]">
+      <img
+        src={`https://www.google.com/s2/favicons?domain=${host}&sz=64`}
+        alt=""
+        width={20}
+        height={20}
+        loading="lazy"
+        className="size-5 object-contain"
+      />
+    </span>
+  );
+}
+
 function Chip({
   active,
   onClick,
@@ -193,7 +208,8 @@ function LinkCard({
     >
       <BookmarkToggle id={link.id} />
       <div>
-        <div className="flex flex-wrap items-center gap-1.5">
+        <div className="flex items-center gap-3">
+          <Favicon host={hostOf(link.url)} />
           <span className="caps text-[var(--ink-subtle)]">{catLabel(link.category)}</span>
         </div>
         <h3 className="mt-3 pr-8 text-base font-semibold tracking-tight text-[var(--ink)] sm:text-lg">

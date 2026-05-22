@@ -7,6 +7,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { TopBanner, FullWidthPromo, SponsorshipStrip } from '@/components/AdSlots';
 import { EventsRow } from '@/components/EventsRow';
+import { TodayBar } from '@/components/TodayBar';
 
 export default async function HomePage({ params }: PageProps<'/[lang]'>) {
   const { lang } = await params;
@@ -17,6 +18,7 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
 
   return (
     <>
+      <TodayBar />
       <TopBanner ads={adsData as never} />
       <Header locale={lang} brand={m['site.name']} status={`${links.length} sites`} />
       <FullWidthPromo />
