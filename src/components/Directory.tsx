@@ -1,6 +1,8 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
+const PAGE_SIZE = 24;
 import { BookmarkToggle } from './BookmarkToggle';
 
 type Localized = { en: string; [key: string]: string | undefined };
@@ -41,6 +43,7 @@ export function Directory({
 }) {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState<string>('all');
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const allCategories = useMemo(() => {
     const set = new Set<string>();
@@ -70,6 +73,14 @@ export function Directory({
 
   const t = (key: string) => messages[key] ?? key;
   const catLabel = (c: string) => messages[`category.${c}`] ?? c;
+
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [query, category]);
+
+  const visible = filtered.slice(0, visibleCount);
+  const remaining = filtered.length - visibleCount;
+  const nextBatch = Math.min(PAGE_SIZE, remaining);
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pt-8 pb-16 sm:px-8 sm:pt-10 sm:pb-24">
@@ -139,13 +150,28 @@ export function Directory({
           </a>
         </div>
       ) : (
-        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((l) => (
-            <li key={l.id}>
-              <LinkCard link={l} locale={locale} messages={messages} catLabel={catLabel} />
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {visible.map((l) => (
+              <li key={l.id}>
+                <LinkCard link={l} locale={locale} messages={messages} catLabel={catLabel} />
+              </li>
+            ))}
+          </ul>
+          {remaining > 0 && (
+            <div className="mt-8 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+                className="w-full rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] px-6 py-3 text-sm font-medium text-[var(--ink)] transition-colors hover:border-[var(--ink)] sm:w-auto sm:px-10"
+              >
+                Show {nextBatch} more
+                <span className="ml-2 text-[var(--ink-subtle)]">·</span>
+                <span className="num ml-2 text-[var(--ink-muted)]">{remaining} left</span>
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
@@ -185,7 +211,7 @@ function Chip({
       type="button"
       onClick={onClick}
       className={
-        'shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ' +
+        'shrink-0 rounded-full border px-3.5 py-2 text-xs font-medium transition-colors ' +
         (active
           ? 'border-[var(--ink)] bg-[var(--ink)] text-[var(--ink-inverse)]'
           : 'border-[var(--line)] bg-[var(--bg-elevated)] text-[var(--ink-muted)] hover:border-[var(--line-strong)] hover:text-[var(--ink)]')
