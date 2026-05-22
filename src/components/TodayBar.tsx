@@ -78,41 +78,38 @@ export async function TodayBar() {
 
   return (
     <div className="hairline-b bg-[var(--bg)]">
-      <div className="no-scrollbar mx-auto w-full max-w-6xl overflow-x-auto px-5 sm:px-8">
-        <div className="flex min-w-max items-center gap-4 py-2 text-xs text-[var(--ink-muted)]">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 py-2 text-xs text-[var(--ink-muted)] sm:gap-x-4">
           <span className="caps text-[var(--ink-subtle)]">Today</span>
           <span className="num text-[var(--ink)]">{dateStr}</span>
 
           {weather && (
-            <>
+            <span className="flex items-center gap-1.5">
               <Dot />
-              <span>
-                Seoul <span className="num text-[var(--ink)]">{weather.tempC}°C</span> · {weather.desc}
-              </span>
-            </>
+              Seoul <span className="num text-[var(--ink)]">{weather.tempC}°C</span>
+              <span className="hidden sm:inline">· {weather.desc}</span>
+            </span>
           )}
 
           {rate && (
-            <>
+            <span className="flex items-center gap-1.5">
               <Dot />
-              <span>
-                1 USD = <span className="num text-[var(--ink)]">{Math.round(rate).toLocaleString()}</span> KRW
-              </span>
-            </>
+              <span className="hidden sm:inline">1 USD = </span>
+              <span className="num text-[var(--ink)]">{Math.round(rate).toLocaleString()}</span>
+              <span>KRW/USD</span>
+            </span>
           )}
 
           {todayHoliday ? (
-            <>
+            <span className="flex items-center gap-1.5 text-[var(--accent)]">
               <Dot />
-              <span className="text-[var(--accent)]">Public holiday · {todayHoliday.name}</span>
-            </>
+              Public holiday · {todayHoliday.name}
+            </span>
           ) : upcoming ? (
-            <>
+            <span className="hidden items-center gap-1.5 sm:flex">
               <Dot />
-              <span>
-                Next holiday <span className="num text-[var(--ink)]">{upcoming.date}</span> · {upcoming.name}
-              </span>
-            </>
+              Next holiday <span className="num text-[var(--ink)]">{upcoming.date}</span> · {upcoming.name}
+            </span>
           ) : null}
         </div>
       </div>

@@ -174,9 +174,9 @@ export function Directory({
             type="button"
             aria-label="Close filter"
             onClick={() => setFilterOpen(false)}
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="backdrop-enter absolute inset-0 bg-black/50 backdrop-blur-sm"
           />
-          <div className="absolute inset-x-0 bottom-0 max-h-[80vh] overflow-y-auto rounded-t-2xl bg-[var(--bg-elevated)] pb-[max(env(safe-area-inset-bottom),16px)] shadow-2xl">
+          <div className="sheet-enter absolute inset-x-0 bottom-0 max-h-[80vh] overflow-y-auto rounded-t-2xl bg-[var(--bg-elevated)] pb-[max(env(safe-area-inset-bottom),16px)] shadow-2xl">
             <div className="sticky top-0 bg-[var(--bg-elevated)]">
               <div className="flex justify-center pt-3 pb-1">
                 <div className="h-1 w-10 rounded-full bg-[var(--line-strong)]" />
@@ -391,8 +391,14 @@ function LinkCard({
           <div className="num truncate text-sm text-[var(--ink-muted)]">{hostOf(link.url)}</div>
           {link.languages && link.languages.length > 0 && (
             <div className="caps mt-3 text-[var(--ink-subtle)]">
-              {link.languages.slice(0, 5).join(' · ')}
-              {link.languages.length > 5 && ` +${link.languages.length - 5}`}
+              <span className="sm:hidden">
+                {link.languages.slice(0, 3).join(' · ')}
+                {link.languages.length > 3 && ` +${link.languages.length - 3}`}
+              </span>
+              <span className="hidden sm:inline">
+                {link.languages.slice(0, 5).join(' · ')}
+                {link.languages.length > 5 && ` +${link.languages.length - 5}`}
+              </span>
             </div>
           )}
         </div>

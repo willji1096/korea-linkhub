@@ -142,56 +142,19 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  .prose {
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--ink);
-  }
-  .prose h2 {
-    font-size: 22px;
-    line-height: 1.3;
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    margin-top: 2.2em;
-    margin-bottom: 0.6em;
-    color: var(--ink);
-  }
-  .prose h3 {
-    font-size: 18px;
-    line-height: 1.4;
-    font-weight: 600;
-    margin-top: 1.6em;
-    margin-bottom: 0.4em;
-    color: var(--ink);
-  }
-  .prose p {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    color: var(--ink-muted);
-  }
-  .prose ul, .prose ol {
-    padding-left: 1.4em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    color: var(--ink-muted);
-  }
-  .prose ul { list-style: disc; }
-  .prose ol { list-style: decimal; }
-  .prose li { margin-top: 0.4em; }
-  .prose li > strong { color: var(--ink); }
-  .prose a {
-    color: var(--accent);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1px;
-  }
-  .prose a:hover { color: var(--accent-hover); }
-  .prose strong { color: var(--ink); font-weight: 600; }
-  .prose code {
-    background: var(--bg-sunken);
-    padding: 0.1em 0.35em;
-    border-radius: 4px;
-    font-size: 0.92em;
-    font-family: var(--font-mono);
-  }
+}
+
+@keyframes sheet-slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes sheet-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.sheet-enter {
+  animation: sheet-slide-up 220ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.backdrop-enter {
+  animation: sheet-fade-in 200ms ease-out;
 }

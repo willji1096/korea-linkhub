@@ -6,6 +6,9 @@ import linksData from '@/data/links.json';
 import { AdminPanel, type RequestItem } from './AdminPanel';
 
 export const dynamic = 'force-dynamic';
+export const metadata = {
+  robots: { index: false, follow: false },
+};
 
 async function readRequests(): Promise<RequestItem[]> {
   try {
