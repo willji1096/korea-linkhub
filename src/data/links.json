@@ -1,6 +1,6 @@
 {
   "$schema": "./links.schema.json",
-  "updatedAt": "2026-05-22",
+  "updatedAt": "2026-05-23",
   "items": [
     {
       "id": "visitkorea",
@@ -12,6 +12,97 @@
       "languages": ["en", "ja", "zh-CN", "zh-TW", "ru", "vi", "th", "ar", "fr", "de", "es"],
       "verifiedAt": "2026-05-22"
     },
+    {
+      "id": "kto-eng",
+      "category": "tourism",
+      "priority": 88,
+      "url": "https://kto.visitkorea.or.kr/eng.kto",
+      "name": { "en": "KTO Corporate (English)" },
+      "description": { "en": "Korea Tourism Organization institutional site in English. Background on national tourism programs, press releases, official statistics." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "korea-travel-portal",
+      "category": "tourism",
+      "priority": 80,
+      "url": "https://www.korea.travel/",
+      "name": { "en": "Korea.Travel" },
+      "description": { "en": "KTO's destination marketing hub. Themed itineraries, regional highlights, official travel news in English." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "visitkorea-contents",
+      "category": "tourism",
+      "priority": 72,
+      "url": "https://english.visitkorea.or.kr/svc/contents/contentsList.do?menuSn=109",
+      "name": { "en": "Visit Korea Travel Tips" },
+      "description": { "en": "Practical pre-trip info from KTO. Currency, weather, transport, etiquette, emergency contacts laid out for first-time visitors." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "knto-corporate",
+      "category": "tourism",
+      "priority": 68,
+      "url": "https://www.knto.or.kr/",
+      "name": { "en": "KNTO Headquarters" },
+      "description": { "en": "Korea National Tourism Organization headquarters site. Useful for confirming official events, partner businesses, certified tour operators." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "touristshield",
+      "category": "tourism",
+      "priority": 62,
+      "url": "https://www.touristshield.com/",
+      "name": { "en": "Tourist Shield" },
+      "description": { "en": "KTO-affiliated traveller protection portal. Complaint filing, refund mediation, multilingual help for tourists scammed or overcharged." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kpop-portal",
+      "category": "tourism",
+      "priority": 58,
+      "url": "https://www.k-pop.or.kr/",
+      "name": { "en": "K-Pop Portal" },
+      "description": { "en": "KOFICE-run hub for K-pop, K-drama, K-content tourism. Concert calendars, filming locations, artist news for fans visiting Korea." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "10mag",
+      "category": "tourism",
+      "priority": 50,
+      "url": "https://www.10mag.com/",
+      "name": { "en": "10 Magazine" },
+      "description": { "en": "Long-running English magazine for travellers and expats in Korea. Practical city guides, restaurant reviews, weekend trip suggestions." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "trazy-korea",
+      "category": "tourism",
+      "priority": 48,
+      "url": "https://www.trazy.com/",
+      "name": { "en": "Trazy" },
+      "description": { "en": "Korea-focused activity marketplace run from Seoul. Day tours, theme park combos, hanbok rentals booked in English." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "timeout-seoul",
+      "category": "tourism",
+      "priority": 44,
+      "url": "https://www.timeout.com/seoul",
+      "name": { "en": "Time Out Seoul" },
+      "description": { "en": "Editorially curated city guide. Restaurants, bars, things-to-do — useful for trips beyond the usual tourist circuit." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+
     {
       "id": "k-eta",
       "category": "visa",
@@ -33,6 +124,87 @@
       "verifiedAt": "2026-05-22"
     },
     {
+      "id": "studyinkorea",
+      "category": "visa",
+      "priority": 80,
+      "url": "https://www.studyinkorea.go.kr/en/main.do",
+      "name": { "en": "Study in Korea (NIIED)" },
+      "description": { "en": "Ministry of Education official portal for international students. D-2/D-4 visa flow, GKS scholarship applications, university directory." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "snu-oia",
+      "category": "visa",
+      "priority": 64,
+      "url": "https://oia.snu.ac.kr/",
+      "name": { "en": "Seoul National University OIA" },
+      "description": { "en": "Office of International Affairs. Useful template for D-2 student visa documents, immigration walk-through checklists referenced by many other universities." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "korea-univ-oia",
+      "category": "visa",
+      "priority": 58,
+      "url": "https://oia.korea.ac.kr/",
+      "name": { "en": "Korea University OIA" },
+      "description": { "en": "Korea University international office. English visa, ARC, dorm guides commonly used as reference by other school officers." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "yonsei-oia",
+      "category": "visa",
+      "priority": 56,
+      "url": "https://oia.yonsei.ac.kr/",
+      "name": { "en": "Yonsei University OIA" },
+      "description": { "en": "Yonsei University international affairs. Step-by-step D-2 visa and Alien Registration Card guidance for exchange and degree students." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kaist-intl",
+      "category": "visa",
+      "priority": 52,
+      "url": "https://www.kaist.ac.kr/en/",
+      "name": { "en": "KAIST International" },
+      "description": { "en": "Korea Advanced Institute of Science and Technology. English admissions and visa support for STEM graduate applicants." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "eps-hrdkorea",
+      "category": "visa",
+      "priority": 76,
+      "url": "https://eps.go.kr/eo/Main.eo",
+      "name": { "en": "Employment Permit System (EPS)" },
+      "description": { "en": "Government portal for non-professional E-9 work visa from 16 partner countries. Korean language test, employer matching, contract rules." },
+      "languages": ["en", "ko", "vi", "th", "id", "uz", "mn", "km"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "hrdkorea",
+      "category": "visa",
+      "priority": 60,
+      "url": "https://www.hrdkorea.or.kr/",
+      "name": { "en": "Human Resources Development Korea" },
+      "description": { "en": "HRDK runs the EPS-TOPIK test and verifies foreign worker qualifications. Schedule, fees, exam-center directory in multiple languages." },
+      "languages": ["ko", "en", "vi", "th"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "sogang-oia",
+      "category": "visa",
+      "priority": 50,
+      "url": "https://english.sogang.ac.kr/",
+      "name": { "en": "Sogang University (English)" },
+      "description": { "en": "Sogang University international site. Korean Language Education Center is one of the best-known D-4 visa sponsors for language study." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+
+    {
       "id": "e-gen",
       "category": "health",
       "priority": 95,
@@ -40,26 +212,6 @@
       "name": { "en": "Emergency Medical Portal (E-Gen)" },
       "description": { "en": "Find nearby emergency rooms, pharmacies, and English-capable hospitals. Includes 1339 medical hotline info." },
       "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-22"
-    },
-    {
-      "id": "0404",
-      "category": "official",
-      "priority": 90,
-      "url": "https://www.0404.go.kr/main/mainPage",
-      "name": { "en": "Korea MOFA Consular (0404)" },
-      "description": { "en": "Ministry of Foreign Affairs portal. Embassy contacts, consular notices, emergency line for foreign nationals." },
-      "languages": ["ko", "en"],
-      "verifiedAt": "2026-05-22"
-    },
-    {
-      "id": "global-seoul",
-      "category": "living",
-      "priority": 90,
-      "url": "https://global.seoul.go.kr/",
-      "name": { "en": "Global Seoul (Foreigner Portal)" },
-      "description": { "en": "Seoul Metropolitan Government portal for foreign residents. Living, jobs, classes, support centers. Includes 120 Dasan Call info (5 languages)." },
-      "languages": ["en", "zh", "ja", "vi", "mn"],
       "verifiedAt": "2026-05-22"
     },
     {
@@ -72,6 +224,188 @@
       "languages": ["en", "zh", "ru", "ar", "ja"],
       "verifiedAt": "2026-05-22"
     },
+    {
+      "id": "asan-international",
+      "category": "health",
+      "priority": 80,
+      "url": "https://eng.amc.seoul.kr/",
+      "name": { "en": "Asan Medical Center (International)" },
+      "description": { "en": "Top-ranked Korean general hospital with a dedicated International Health Center. English-language appointments, interpretation, billing." },
+      "languages": ["en", "ja", "zh", "ru", "ar", "mn"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "samsung-medical-intl",
+      "category": "health",
+      "priority": 78,
+      "url": "https://www.samsunghospital.com/english/",
+      "name": { "en": "Samsung Medical Center (Intl.)" },
+      "description": { "en": "Major Seoul tertiary hospital with international health services. English appointment desk, second-opinion service, dedicated patient coordinator." },
+      "languages": ["en", "ja", "zh", "ar", "ru"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "snuh",
+      "category": "health",
+      "priority": 76,
+      "url": "https://www.snuh.org/global/en/main.do",
+      "name": { "en": "Seoul National University Hospital (Intl.)" },
+      "description": { "en": "Public flagship hospital. International Healthcare Center handles English-speaking patients, visa-medical exams, second opinions." },
+      "languages": ["en", "ja", "zh", "ar", "ru", "mn"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "cmc-catholic",
+      "category": "health",
+      "priority": 64,
+      "url": "https://www.cmcseoul.or.kr/",
+      "name": { "en": "Seoul St. Mary's (Catholic Medical)" },
+      "description": { "en": "Catholic Medical Center main hospital. Large foreign-patient department, interpretation, transplant and oncology specialties." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "hira",
+      "category": "health",
+      "priority": 70,
+      "url": "https://www.hira.or.kr/",
+      "name": { "en": "HIRA (Health Insurance Review)" },
+      "description": { "en": "Drug-and-fee lookup database. Use to check whether a prescription is covered or to find certified medical institutions nationwide." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "bumin-hospital",
+      "category": "health",
+      "priority": 50,
+      "url": "https://www.bumin.co.kr/",
+      "name": { "en": "Bumin Hospital" },
+      "description": { "en": "Specialty hospital network for orthopedics, joints, spine. Internationally accredited, English-speaking staff for joint-replacement tourism." },
+      "languages": ["ko", "en", "ru", "ar"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "veterans-hospital",
+      "category": "health",
+      "priority": 44,
+      "url": "https://www.bohun.or.kr/",
+      "name": { "en": "Korea Veterans Hospital (KVHMC)" },
+      "description": { "en": "Public veterans medical center. Useful resource for retirees and long-stay foreign nationals seeking subsidized geriatric care." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kma-doctors",
+      "category": "health",
+      "priority": 42,
+      "url": "https://www.snuh.org/",
+      "name": { "en": "SNUH Main Portal" },
+      "description": { "en": "Seoul National University Hospital Korean portal. Departments, doctor directory, appointment phone numbers when English site lacks detail." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+
+    {
+      "id": "0404",
+      "category": "official",
+      "priority": 90,
+      "url": "https://www.0404.go.kr/main/mainPage",
+      "name": { "en": "Korea MOFA Consular (0404)" },
+      "description": { "en": "Ministry of Foreign Affairs portal. Embassy contacts, consular notices, emergency line for foreign nationals." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "gov-kr-en",
+      "category": "official",
+      "priority": 85,
+      "url": "https://www.gov.kr/portal/main/en?Mcode=2",
+      "name": { "en": "Government 24 (English)" },
+      "description": { "en": "Single sign-on portal for Korean government services. ARC reissue, certificate requests, civil complaints in English." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "korea-net",
+      "category": "official",
+      "priority": 82,
+      "url": "https://www.korea.net/",
+      "name": { "en": "Korea.net" },
+      "description": { "en": "Korean Culture and Information Service official portal. English news on policy, K-culture, daily life — written for non-Koreans." },
+      "languages": ["en", "ja", "zh-CN", "es", "fr", "ar", "ru", "de"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "mofa-eng",
+      "category": "official",
+      "priority": 80,
+      "url": "https://www.mofa.go.kr/",
+      "name": { "en": "Ministry of Foreign Affairs" },
+      "description": { "en": "MOFA official site. Consular notices, treaty info, contact lists for Korean missions abroad." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "moef-eng",
+      "category": "official",
+      "priority": 70,
+      "url": "https://english.moef.go.kr/",
+      "name": { "en": "Ministry of Economy and Finance" },
+      "description": { "en": "Official MOEF English site. Tax policy, budget, foreign investment — relevant for long-term residents and business visitors." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "epeople",
+      "category": "official",
+      "priority": 68,
+      "url": "https://www.epeople.go.kr/index.jsp",
+      "name": { "en": "e-People (Civil Complaints)" },
+      "description": { "en": "Government petition and complaint portal. File grievances against agencies, propose policy. Foreign-language complaint channel available." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "ncrc-adoption",
+      "category": "official",
+      "priority": 75,
+      "url": "https://www.ncrc.or.kr/eng/",
+      "name": { "en": "Korea Adoption Services (NCRC)" },
+      "description": { "en": "National Center for the Rights of the Child. Birth record requests, adoption file disclosure, post-adoption services for overseas adoptees." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "kosis",
+      "category": "official",
+      "priority": 58,
+      "url": "https://www.kosis.kr/eng/",
+      "name": { "en": "KOSIS (National Statistics)" },
+      "description": { "en": "Korean Statistical Information Service in English. Population, economy, prices — handy for research or relocation decisions." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "nhis-claims",
+      "category": "official",
+      "priority": 72,
+      "url": "https://www.nhis.or.kr/english/wbheaa02300m01.do",
+      "name": { "en": "NHIS Claims & Premiums" },
+      "description": { "en": "NHIS English claims and premium page. Premium calculation rules, reimbursement steps, how to dispute incorrect medical bills." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "supreme-court-eng",
+      "category": "official",
+      "priority": 50,
+      "url": "https://www.scourt.go.kr/eng/",
+      "name": { "en": "Supreme Court of Korea" },
+      "description": { "en": "Judicial system explained in English. Court hierarchy, case search, legal aid contacts for foreign litigants." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+
     {
       "id": "korail",
       "category": "transport",
@@ -113,6 +447,198 @@
       "verifiedAt": "2026-05-22"
     },
     {
+      "id": "tmoney",
+      "category": "transport",
+      "priority": 75,
+      "url": "https://www.t-money.co.kr/",
+      "name": { "en": "T-money (Transit Card)" },
+      "description": { "en": "Top-up and balance check for T-money transit cards. Subway / bus across Korea." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "srt-english",
+      "category": "transport",
+      "priority": 76,
+      "url": "https://etk.srail.kr/main.do",
+      "name": { "en": "SRT High-Speed Rail" },
+      "description": { "en": "Second high-speed train operator from Suseo Station. Books faster routes to Busan, Gwangju, with English booking interface." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kobus-express",
+      "category": "transport",
+      "priority": 72,
+      "url": "https://www.kobus.co.kr/main.do",
+      "name": { "en": "KOBUS (Express Bus)" },
+      "description": { "en": "Nationwide express bus ticketing. Cheaper than KTX for cities without rail, English booking and seat map." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "txbus-intercity",
+      "category": "transport",
+      "priority": 64,
+      "url": "https://www.txbus.com/",
+      "name": { "en": "TX Bus (Intercity)" },
+      "description": { "en": "Intercity bus booking platform covering many secondary terminals not on KOBUS. Useful when destination is a smaller town." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "humetro-busan",
+      "category": "transport",
+      "priority": 66,
+      "url": "https://www.humetro.busan.kr/english/main.do",
+      "name": { "en": "Busan Metro (Humetro)" },
+      "description": { "en": "Busan subway operator. Route map, fares, lost-and-found, accessibility info in English for Korea's second-largest city." },
+      "languages": ["en", "ja", "zh", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "dtro-daegu",
+      "category": "transport",
+      "priority": 58,
+      "url": "https://www.dtro.or.kr/eng/main.do",
+      "name": { "en": "Daegu Metro (DTRO)" },
+      "description": { "en": "Daegu Metropolitan Transit Corporation. Subway lines 1-3 schedules, fares, transfer info in English." },
+      "languages": ["en", "ja", "zh", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kakao-t",
+      "category": "transport",
+      "priority": 70,
+      "url": "https://www.kakaocorp.com/page/service/service/KakaoT",
+      "name": { "en": "Kakao T (Taxi App)" },
+      "description": { "en": "Korea's dominant taxi-hailing app. Service overview in English, app download links. Required reading before relying on street taxis." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "its-eng",
+      "category": "transport",
+      "priority": 50,
+      "url": "https://its.go.kr/eng",
+      "name": { "en": "National Traffic Info (ITS)" },
+      "description": { "en": "Real-time expressway and highway congestion, road closures, weather impact. Helpful before long road trips or rentals." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "gimpo-airport",
+      "category": "transport",
+      "priority": 56,
+      "url": "https://www.gimpoairport.com/",
+      "name": { "en": "Gimpo International Airport" },
+      "description": { "en": "Seoul's second airport. Most domestic flights plus shuttle routes to Tokyo, Osaka, Shanghai. Terminal maps and transit info." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+
+    {
+      "id": "global-seoul",
+      "category": "living",
+      "priority": 90,
+      "url": "https://global.seoul.go.kr/",
+      "name": { "en": "Global Seoul (Foreigner Portal)" },
+      "description": { "en": "Seoul Metropolitan Government portal for foreign residents. Living, jobs, classes, support centers. Includes 120 Dasan Call info (5 languages)." },
+      "languages": ["en", "zh", "ja", "vi", "mn"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "nhis-foreigner",
+      "category": "living",
+      "priority": 85,
+      "url": "https://www.nhis.or.kr/english/wbheaa01200m01.do",
+      "name": { "en": "NHIS (Health Insurance for Foreigners)" },
+      "description": { "en": "National Health Insurance Service English guide. Mandatory enrollment for foreigners staying 6 months or longer." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "liveinkorea",
+      "category": "living",
+      "priority": 85,
+      "url": "https://www.liveinkorea.kr/",
+      "name": { "en": "Live in Korea" },
+      "description": { "en": "Multicultural family and foreign resident portal run by the Korea Immigration Service. Counselling, life classes, multilingual helpline directory." },
+      "languages": ["en", "ko", "zh", "vi", "tl", "th", "km", "ru", "mn", "ja", "uz", "ne"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "korea-muslim",
+      "category": "living",
+      "priority": 75,
+      "url": "https://www.koreanmuslim.com/",
+      "name": { "en": "Korea Muslim Federation" },
+      "description": { "en": "Official body running the Seoul Central Mosque. Prayer times, mosque locations across Korea, halal certification lookup." },
+      "languages": ["en", "ko", "ar"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "goal-adoption",
+      "category": "living",
+      "priority": 70,
+      "url": "https://goal.or.kr/",
+      "name": { "en": "G.O.A.'L (Global Overseas Adoptees' Link)" },
+      "description": { "en": "Non-profit supporting Korean overseas adoptees visiting or returning to Korea. F-4 visa help, birth-family search, peer community." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "naver-land",
+      "category": "living",
+      "priority": 72,
+      "url": "https://new.land.naver.com/",
+      "name": { "en": "Naver Real Estate" },
+      "description": { "en": "Most-used Korean real estate listings. Apartments (jeonse, wolse), one-rooms, officetels with English assistance via translator browser plug-ins." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "gjf-gwangju",
+      "category": "living",
+      "priority": 62,
+      "url": "https://www.gjf.or.kr/",
+      "name": { "en": "Gwangju International Center" },
+      "description": { "en": "NGO supporting foreigners in Gwangju. Hotline, Korean classes, legal counselling, monthly multilingual newsletter." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "angloinfo-kr",
+      "category": "living",
+      "priority": 50,
+      "url": "https://www.angloinfo.com/south-korea",
+      "name": { "en": "AngloINFO Korea" },
+      "description": { "en": "Expat community resource covering school enrollment, taxes, housing, healthcare. Editorially curated for English speakers in Korea." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kice-korea",
+      "category": "living",
+      "priority": 46,
+      "url": "https://www.kice.re.kr/",
+      "name": { "en": "KICE (Education Curriculum & Eval)" },
+      "description": { "en": "Korea Institute for Curriculum and Evaluation. Important for parents enrolling children in Korean K-12 — testing standards, school year info." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "koisra",
+      "category": "living",
+      "priority": 42,
+      "url": "https://www.koisra.co.kr/",
+      "name": { "en": "KOISRA (Israel-Korea Business)" },
+      "description": { "en": "Example of foreigner-run business consultancy. Useful template for company setup, work visa sponsorship, accounting basics in Korea." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+
+    {
       "id": "papago",
       "category": "tools",
       "priority": 75,
@@ -143,25 +669,76 @@
       "verifiedAt": "2026-05-22"
     },
     {
-      "id": "interpark",
-      "category": "events",
+      "id": "kakao-map",
+      "category": "tools",
       "priority": 70,
-      "url": "https://nol.interpark.com/",
-      "name": { "en": "Interpark Tickets" },
-      "description": { "en": "Concerts, K-pop, musicals, festivals. Largest Korean ticket platform with English booking." },
-      "languages": ["en", "ko", "ja", "zh"],
-      "verifiedAt": "2026-05-22"
+      "url": "https://map.kakao.com/",
+      "name": { "en": "Kakao Map" },
+      "description": { "en": "Korea's other major map app. Sometimes shows better business hours and reviews than Naver Map. Useful as a second opinion." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
     },
     {
-      "id": "tmoney",
-      "category": "transport",
-      "priority": 75,
-      "url": "https://www.t-money.co.kr/",
-      "name": { "en": "T-money (Transit Card)" },
-      "description": { "en": "Top-up and balance check for T-money transit cards. Subway / bus across Korea." },
+      "id": "naver-dict",
+      "category": "tools",
+      "priority": 68,
+      "url": "https://en.dict.naver.com/",
+      "name": { "en": "Naver Dictionary (English)" },
+      "description": { "en": "Most comprehensive Korean-English dictionary online. Phrases, hanja, example sentences. Often clearer than generic translators for nuance." },
       "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-22"
+      "verifiedAt": "2026-05-23"
     },
+    {
+      "id": "branah-keyboard",
+      "category": "tools",
+      "priority": 56,
+      "url": "https://branah.com/korean",
+      "name": { "en": "Branah Korean Keyboard" },
+      "description": { "en": "Web-based Hangul keyboard with visible key map. Type Korean without installing an IME — convenient for searching on shared devices." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "romanize-korean",
+      "category": "tools",
+      "priority": 52,
+      "url": "https://romanize.com/",
+      "name": { "en": "Romanize.com" },
+      "description": { "en": "Convert Korean Hangul to Romanization (Revised Romanization or McCune-Reischauer) for addresses, names, and pronunciation help." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "juso-address",
+      "category": "tools",
+      "priority": 60,
+      "url": "https://www.juso.go.kr/",
+      "name": { "en": "Juso (Address Search)" },
+      "description": { "en": "Government road-name address lookup. Convert old Jibun addresses to new road-name format, find postal codes." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "wifimap",
+      "category": "tools",
+      "priority": 48,
+      "url": "https://www.wifimap.io/",
+      "name": { "en": "WiFi Map" },
+      "description": { "en": "Crowdsourced free Wi-Fi locations. Useful in Korea's transit stations and cafes when your eSIM data is low or absent." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "smart-city-go",
+      "category": "tools",
+      "priority": 44,
+      "url": "https://www.smartcity.go.kr/eng/",
+      "name": { "en": "Korea Smart City" },
+      "description": { "en": "MOLIT smart-city portal. Public Wi-Fi rollout maps, IoT services, urban transit dashboards relevant to long-term residents." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+
     {
       "id": "wise",
       "category": "money",
@@ -173,6 +750,97 @@
       "verifiedAt": "2026-05-22"
     },
     {
+      "id": "wirebarley",
+      "category": "money",
+      "priority": 75,
+      "url": "https://www.wirebarley.com/",
+      "name": { "en": "WireBarley (Remittance)" },
+      "description": { "en": "Cheap international remittance from Korea — popular with long-term foreign residents. Often beats banks on fees and rate." },
+      "languages": ["en", "ko", "zh", "vi", "th", "ja"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "xe",
+      "category": "money",
+      "priority": 65,
+      "url": "https://www.xe.com/",
+      "name": { "en": "XE Currency" },
+      "description": { "en": "Real-time exchange rates with KRW conversions. Handy before exchanging cash at airport or bank." },
+      "languages": ["en", "ja", "zh", "es", "fr", "de", "pt", "it"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "kebhana-global",
+      "category": "money",
+      "priority": 80,
+      "url": "https://www.kebhana.com/cont/global/index.jsp?_REDIRECT=Y",
+      "name": { "en": "KEB Hana Bank (Global)" },
+      "description": { "en": "Foreigner-focused bank in Korea. English account opening, ARC required, remittance and currency exchange services." },
+      "languages": ["en", "ko", "zh", "ja"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "woori-bank",
+      "category": "money",
+      "priority": 70,
+      "url": "https://www.wooribank.com/",
+      "name": { "en": "Woori Bank" },
+      "description": { "en": "Major Korean retail bank with foreign-employee desks at HQ and major branches. Internet banking and forex services." },
+      "languages": ["ko", "en", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "shinhan-bank",
+      "category": "money",
+      "priority": 70,
+      "url": "https://www.shinhan.com/",
+      "name": { "en": "Shinhan Bank" },
+      "description": { "en": "One of Korea's largest banks. Shinhan SOL Global app supports English, foreign-resident accounts, salary transfer for E-class visa holders." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "toss",
+      "category": "money",
+      "priority": 64,
+      "url": "https://www.toss.im/",
+      "name": { "en": "Toss" },
+      "description": { "en": "Top Korean fintech app. P2P transfers, bill split, simplified bank account opening once you hold an ARC." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "bok-eng",
+      "category": "money",
+      "priority": 60,
+      "url": "https://www.bok.or.kr/eng/main/main.do",
+      "name": { "en": "Bank of Korea (English)" },
+      "description": { "en": "Central bank official site. Daily exchange rates, monetary policy releases — useful before large currency conversions." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "fss-eng",
+      "category": "money",
+      "priority": 54,
+      "url": "https://www.fss.or.kr/eng/main/main.do",
+      "name": { "en": "Financial Supervisory Service" },
+      "description": { "en": "FSS English portal. File complaints against banks, brokerages, insurance providers operating in Korea. Foreigner mediation desk." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "krx",
+      "category": "money",
+      "priority": 48,
+      "url": "https://www.krx.co.kr/",
+      "name": { "en": "Korea Exchange (KRX)" },
+      "description": { "en": "Official Korean stock exchange. Listed company info, market hours — relevant for long-stay residents managing KRW investments." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+
+    {
       "id": "airalo",
       "category": "esim",
       "priority": 65,
@@ -182,6 +850,97 @@
       "languages": ["en", "ja", "zh", "ko"],
       "verifiedAt": "2026-05-22"
     },
+    {
+      "id": "korea-esim-com",
+      "category": "esim",
+      "priority": 55,
+      "url": "https://www.korea-esim.com/",
+      "name": { "en": "Korea-eSIM.com" },
+      "description": { "en": "Korea-specific eSIM reseller. Multi-day data plans, instant QR delivery by email. English checkout." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "maaltalk",
+      "category": "esim",
+      "priority": 58,
+      "url": "https://www.maaltalk.com/",
+      "name": { "en": "Maaltalk (Korea SIM)" },
+      "description": { "en": "Korean prepaid SIM and eSIM provider for foreigners. Airport pickup, English support, voice calls included on some plans." },
+      "languages": ["en", "ko", "zh", "ja", "vi"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "skroaming",
+      "category": "esim",
+      "priority": 60,
+      "url": "https://www.skroaming.com/en/",
+      "name": { "en": "SK Roaming (English)" },
+      "description": { "en": "SK Telecom official inbound traveller eSIM / prepaid SIM. Direct from Korea's largest carrier, English plan picker." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "lguplus",
+      "category": "esim",
+      "priority": 52,
+      "url": "https://www.lguplus.com/",
+      "name": { "en": "LG U+" },
+      "description": { "en": "One of Korea's three telecom carriers. Mobile plan info and prepaid SIM lookup — pair with a Korean translator browser." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "sktelecom",
+      "category": "esim",
+      "priority": 50,
+      "url": "https://www.sktelecom.com/",
+      "name": { "en": "SK Telecom" },
+      "description": { "en": "SK Telecom corporate site. Coverage info, store locator. Useful before signing a long-term postpaid contract once on ARC." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "sktelink",
+      "category": "esim",
+      "priority": 46,
+      "url": "https://www.sktelink.com/",
+      "name": { "en": "SK Telink" },
+      "description": { "en": "SK subsidiary running 7mobile foreigner-friendly prepaid plans. ARC-only, longer-term residents." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "simoptions-korea",
+      "category": "esim",
+      "priority": 44,
+      "url": "https://www.simoptions.com/buy-sim-card-online/south-korea/",
+      "name": { "en": "SimOptions Korea" },
+      "description": { "en": "Aggregator selling Korean prepaid SIM and eSIM bundles for tourists. International shipping or in-airport pickup options." },
+      "languages": ["en", "es", "fr", "de", "it"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "gigago-korea",
+      "category": "esim",
+      "priority": 42,
+      "url": "https://www.gigago.com/buy-sim/korea",
+      "name": { "en": "Gigago Korea eSIM" },
+      "description": { "en": "Tourist eSIM with 1-30 day Korea data bundles. Instant QR delivery. English checkout, supports Apple Pay and major cards." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "simforyou",
+      "category": "esim",
+      "priority": 40,
+      "url": "https://www.simforyou.com/",
+      "name": { "en": "SimForYou" },
+      "description": { "en": "Reseller covering multiple Korean carriers. Pre-trip purchase with delivery to home address or Incheon pickup counter." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+
     {
       "id": "yanolja-global",
       "category": "stay",
@@ -193,15 +952,96 @@
       "verifiedAt": "2026-05-22"
     },
     {
-      "id": "nhis-foreigner",
-      "category": "living",
-      "priority": 85,
-      "url": "https://www.nhis.or.kr/english/wbheaa01200m01.do",
-      "name": { "en": "NHIS (Health Insurance for Foreigners)" },
-      "description": { "en": "National Health Insurance Service English guide. Mandatory enrollment for foreigners staying 6 months or longer." },
+      "id": "goodchoice",
+      "category": "stay",
+      "priority": 75,
+      "url": "https://goodchoice.kr/",
+      "name": { "en": "Goodchoice (Yeogi-eottae)" },
+      "description": { "en": "Major Korean hotel and motel booking platform. English UI, last-minute deals, motels priced cheaper than chain hotels." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "stayfolio",
+      "category": "stay",
+      "priority": 65,
+      "url": "https://stayfolio.com/",
+      "name": { "en": "Stayfolio (Boutique Stays)" },
+      "description": { "en": "Curated Korean boutique stays — hanok, design hotels, countryside retreats. English-friendly host info." },
       "languages": ["en", "ko"],
       "verifiedAt": "2026-05-22"
     },
+    {
+      "id": "lotte-hotel-global",
+      "category": "stay",
+      "priority": 68,
+      "url": "https://www.lottehotel.com/global/en.html",
+      "name": { "en": "Lotte Hotel & Resorts" },
+      "description": { "en": "Korea's biggest five-star chain. Seoul, Busan, Jeju, Sokcho, Pyeongchang. English booking, Signiel ultra-luxury sub-brand." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "shilla-hotel",
+      "category": "stay",
+      "priority": 64,
+      "url": "https://www.shillahotels.com/",
+      "name": { "en": "The Shilla Hotels & Resorts" },
+      "description": { "en": "Samsung-affiliated luxury chain. Seoul, Jeju, Busan. English reservation desk, traditional Korean hospitality benchmark." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "shilla-stay",
+      "category": "stay",
+      "priority": 56,
+      "url": "https://www.shilla.net/",
+      "name": { "en": "Shilla Stay" },
+      "description": { "en": "Shilla's mid-tier business-hotel brand. 20+ locations nationwide with English booking, more affordable than the flagship Shilla." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "benikea",
+      "category": "stay",
+      "priority": 60,
+      "url": "https://www.benikea.com/",
+      "name": { "en": "Benikea Hotels" },
+      "description": { "en": "Korea Tourism Organization-certified mid-range hotel chain. Quality-vetted small hotels across the country, English booking." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "glad-hotels",
+      "category": "stay",
+      "priority": 52,
+      "url": "https://www.glad-hotels.com/",
+      "name": { "en": "GLAD Hotels" },
+      "description": { "en": "Daelim mid-luxury hotel brand in Seoul (Yeouido, Gangnam, Mapo). English booking, modern business-traveller positioning." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "templestay-foundation",
+      "category": "stay",
+      "priority": 70,
+      "url": "https://www.templestay.com/",
+      "name": { "en": "Templestay (Official)" },
+      "description": { "en": "Cultural Corps of Korean Buddhism official portal. Book a stay at 130+ certified temples — meditation, monastic meals, English programs." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "visit-seoul-stays",
+      "category": "stay",
+      "priority": 50,
+      "url": "https://english.visitseoul.net/accommodations",
+      "name": { "en": "Visit Seoul — Accommodations" },
+      "description": { "en": "Seoul Tourism Organization curated stay list. Government-vetted hotels, guesthouses, hanok stays with English contact info." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW"],
+      "verifiedAt": "2026-05-23"
+    },
+
     {
       "id": "safe-korea",
       "category": "safety",
@@ -213,6 +1053,97 @@
       "verifiedAt": "2026-05-22"
     },
     {
+      "id": "lost112",
+      "category": "safety",
+      "priority": 70,
+      "url": "https://www.lost112.go.kr/",
+      "name": { "en": "Lost 112 (Lost & Found)" },
+      "description": { "en": "Korean National Police lost-and-found database. Report or search for items lost on transit, in taxis, public spaces." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "kma-main",
+      "category": "safety",
+      "priority": 85,
+      "url": "https://www.kma.go.kr/eng/",
+      "name": { "en": "KMA (English)" },
+      "description": { "en": "Korea Meteorological Administration English landing. Storm tracks, heat alerts, fine dust advisories. Set as your travel-day morning bookmark." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "weather-eqk",
+      "category": "safety",
+      "priority": 68,
+      "url": "https://www.weather.go.kr/w/eqk-vol/recent-eqk.do",
+      "name": { "en": "Recent Earthquakes (KMA)" },
+      "description": { "en": "Official KMA earthquake log. Magnitude, location, time. Reference after feeling a tremor — Korea's main historical activity is on the east coast." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kdca-portal",
+      "category": "safety",
+      "priority": 78,
+      "url": "https://kdca.go.kr/",
+      "name": { "en": "KDCA (Disease Control)" },
+      "description": { "en": "Korea Disease Control and Prevention Agency portal. Outbreak alerts (flu, RSV, mpox), travel-medicine guidance, vaccination schedules." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "privacy-go-kr",
+      "category": "safety",
+      "priority": 56,
+      "url": "https://www.privacy.go.kr/",
+      "name": { "en": "Privacy Portal (PIPC)" },
+      "description": { "en": "Personal Information Protection Commission. Report a leaked passport or ID, file complaints if a Korean service mishandles your data." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kigam-earthquake",
+      "category": "safety",
+      "priority": 50,
+      "url": "https://www.kigam.re.kr/",
+      "name": { "en": "KIGAM (Geological Research)" },
+      "description": { "en": "Korea Institute of Geoscience and Mineral Resources. Earthquake research data, fault maps, science behind tremor reports." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kfn-firesafety",
+      "category": "safety",
+      "priority": 46,
+      "url": "https://www.kfn.or.kr/",
+      "name": { "en": "Korea Fire Safety Network" },
+      "description": { "en": "Public-private body promoting fire safety. Building-code basics for foreigners renting older apartments, fire-extinguisher purchase guidance." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "boannews",
+      "category": "safety",
+      "priority": 40,
+      "url": "https://www.boannews.com/",
+      "name": { "en": "Boan News (Security)" },
+      "description": { "en": "Korean security news outlet. Track scam alerts, phishing campaigns targeting Koreans and foreigners — early warning for new fraud patterns." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kosha-safety",
+      "category": "safety",
+      "priority": 38,
+      "url": "https://www.kosha.or.kr/",
+      "name": { "en": "KOSHA (Occupational Safety)" },
+      "description": { "en": "Korea Occupational Safety and Health Agency. Workplace safety standards, accident reporting — critical for foreign workers on construction or factory contracts." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+
+    {
       "id": "visit-seoul",
       "category": "region",
       "priority": 85,
@@ -220,16 +1151,6 @@
       "name": { "en": "Visit Seoul" },
       "description": { "en": "Seoul Metropolitan Government tourism portal. Itineraries, neighbourhoods, events, official Seoul Tourist Information Centers map." },
       "languages": ["en", "ja", "zh-CN", "zh-TW"],
-      "verifiedAt": "2026-05-22"
-    },
-    {
-      "id": "asan-international",
-      "category": "health",
-      "priority": 80,
-      "url": "https://eng.amc.seoul.kr/",
-      "name": { "en": "Asan Medical Center (International)" },
-      "description": { "en": "Top-ranked Korean general hospital with a dedicated International Health Center. English-language appointments, interpretation, billing." },
-      "languages": ["en", "ja", "zh", "ru", "ar", "mn"],
       "verifiedAt": "2026-05-22"
     },
     {
@@ -253,15 +1174,76 @@
       "verifiedAt": "2026-05-22"
     },
     {
-      "id": "lost112",
-      "category": "safety",
-      "priority": 70,
-      "url": "https://www.lost112.go.kr/",
-      "name": { "en": "Lost 112 (Lost & Found)" },
-      "description": { "en": "Korean National Police lost-and-found database. Report or search for items lost on transit, in taxis, public spaces." },
-      "languages": ["ko", "en"],
-      "verifiedAt": "2026-05-22"
+      "id": "english-seoul-gov",
+      "category": "region",
+      "priority": 72,
+      "url": "https://english.seoul.go.kr/",
+      "name": { "en": "Seoul Metropolitan Government" },
+      "description": { "en": "Seoul city government English portal. Policy, transit, foreigner help-desk directory. Broader than Visit Seoul for residents." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW"],
+      "verifiedAt": "2026-05-23"
     },
+    {
+      "id": "english-gg-go-kr",
+      "category": "region",
+      "priority": 60,
+      "url": "https://english.gg.go.kr/",
+      "name": { "en": "Gyeonggi Province (English)" },
+      "description": { "en": "Province surrounding Seoul. Suwon, Gwangmyeong, Paju — English info on attractions, business support, foreigner help centers." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "tour-jeonju",
+      "category": "region",
+      "priority": 56,
+      "url": "https://tour.jeonju.go.kr/eng/",
+      "name": { "en": "Visit Jeonju" },
+      "description": { "en": "Jeonju city official tourism site. Hanok Village, Korean food origins, bibimbap heritage. English itineraries and bus directions." },
+      "languages": ["en", "ja", "zh"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "english-knu",
+      "category": "region",
+      "priority": 44,
+      "url": "https://english.knu.ac.kr/",
+      "name": { "en": "Kyungpook National Univ. (Daegu)" },
+      "description": { "en": "Major university in Daegu with strong international office. Useful regional anchor for foreigners visiting or moving to Korea's southeast." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "koreatraveleasy",
+      "category": "region",
+      "priority": 48,
+      "url": "https://www.koreatraveleasy.com/",
+      "name": { "en": "Korea Travel Easy" },
+      "description": { "en": "Independent regional travel blog with vetted English itineraries by city — Andong, Sokcho, Gangneung, Tongyeong, Gyeongju." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "creatrip-en",
+      "category": "region",
+      "priority": 46,
+      "url": "https://www.creatrip.com/en",
+      "name": { "en": "Creatrip" },
+      "description": { "en": "Foreigner-run Korea travel platform. Day-trip bookings to outer Seoul (Suwon, Yongin, Pocheon) and small group experiences in English." },
+      "languages": ["en", "zh", "ja"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "english-kongju",
+      "category": "region",
+      "priority": 42,
+      "url": "https://english.kongju.ac.kr/",
+      "name": { "en": "Kongju National Univ. (Chungnam)" },
+      "description": { "en": "Anchor university in Gongju, Chungnam Province. Useful regional reference for foreigners visiting Korea's central Baekje heritage cities." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+
     {
       "id": "gyeongbokgung",
       "category": "attractions",
@@ -286,11 +1268,11 @@
       "id": "everland",
       "category": "attractions",
       "priority": 85,
-      "url": "https://www.everland.com/web/everland/etc/ev_english_main.html",
+      "url": "https://www.everland.com/web/cb/en/main.html",
       "name": { "en": "Everland Resort" },
       "description": { "en": "Korea's largest theme park, in Yongin. Seasonal festivals, zoo safari, Caribbean Bay water park, English ticketing." },
       "languages": ["en", "ja", "zh-CN", "zh-TW"],
-      "verifiedAt": "2026-05-22"
+      "verifiedAt": "2026-05-23"
     },
     {
       "id": "n-seoul-tower",
@@ -313,15 +1295,177 @@
       "verifiedAt": "2026-05-22"
     },
     {
-      "id": "liveinkorea",
-      "category": "living",
-      "priority": 85,
-      "url": "https://www.liveinkorea.kr/",
-      "name": { "en": "Live in Korea" },
-      "description": { "en": "Multicultural family and foreign resident portal run by the Korea Immigration Service. Counselling, life classes, multilingual helpline directory." },
-      "languages": ["en", "ko", "zh", "vi", "tl", "th", "km", "ru", "mn", "ja", "uz", "ne"],
+      "id": "national-museum",
+      "category": "attractions",
+      "priority": 78,
+      "url": "https://www.museum.go.kr/site/eng/home",
+      "name": { "en": "National Museum of Korea" },
+      "description": { "en": "Free flagship museum in Yongsan. English exhibits cover Korean history from prehistoric era through modern. Audio guide available." },
+      "languages": ["en", "ja", "zh", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "coex-aquarium",
+      "category": "attractions",
+      "priority": 64,
+      "url": "https://www.coexaqua.com/en/",
+      "name": { "en": "COEX Aquarium" },
+      "description": { "en": "Large indoor aquarium under COEX mall in Gangnam. Tropical, polar, river exhibits. English ticket booking, family-friendly." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "busan-aquarium",
+      "category": "attractions",
+      "priority": 56,
+      "url": "https://www.busanaquarium.com/eng/",
+      "name": { "en": "SEA LIFE Busan Aquarium" },
+      "description": { "en": "Major aquarium on Haeundae Beach. Shark tunnel, penguin habitat, English ticketing — anchor activity for a Busan day trip." },
+      "languages": ["en", "ja", "zh", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "namisum",
+      "category": "attractions",
+      "priority": 70,
+      "url": "https://www.namisum.com/en/",
+      "name": { "en": "Nami Island" },
+      "description": { "en": "Half-day trip from Seoul. Famous filming location, autumn foliage, English ferry and ticket booking — accessible by ITX-Chuncheon train." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "seoulland",
+      "category": "attractions",
+      "priority": 48,
+      "url": "https://www.seoulland.co.kr/",
+      "name": { "en": "Seoul Land" },
+      "description": { "en": "Theme park inside Seoul Grand Park, Gwacheon. Family-friendly with Seoul Zoo and contemporary art museum within walking distance." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "63-realty",
+      "category": "attractions",
+      "priority": 50,
+      "url": "https://www.63realty.co.kr/en/about/63square/",
+      "name": { "en": "63 Building (Sky Art)" },
+      "description": { "en": "Yeouido's golden tower. Observation deck and art gallery on top floor, Han River views. English ticket info, less crowded than N Seoul Tower." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "leeum-museum",
+      "category": "attractions",
+      "priority": 52,
+      "url": "https://www.leeum.org/en/",
+      "name": { "en": "Leeum Museum of Art" },
+      "description": { "en": "Samsung-founded contemporary and traditional art museum in Itaewon. Free admission to permanent collection, English signage throughout." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+
+    {
+      "id": "interpark",
+      "category": "events",
+      "priority": 70,
+      "url": "https://nol.interpark.com/",
+      "name": { "en": "Interpark Tickets" },
+      "description": { "en": "Concerts, K-pop, musicals, festivals. Largest Korean ticket platform with English booking." },
+      "languages": ["en", "ko", "ja", "zh"],
       "verifiedAt": "2026-05-22"
     },
+    {
+      "id": "melon-ticket",
+      "category": "events",
+      "priority": 70,
+      "url": "https://ticket.melon.com/",
+      "name": { "en": "Melon Ticket" },
+      "description": { "en": "Korean concert / musical ticketing alongside Interpark. K-pop fan-meeting and sports passes often appear here first." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "biff",
+      "category": "events",
+      "priority": 72,
+      "url": "https://www.biff.kr/eng/",
+      "name": { "en": "Busan International Film Festival" },
+      "description": { "en": "Asia's largest film festival each October. Official schedule, screening tickets, accreditation info for press and industry." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "visit-seoul-events",
+      "category": "events",
+      "priority": 68,
+      "url": "https://www.visitseoul.net/en/whats-on/events",
+      "name": { "en": "Visit Seoul — Events" },
+      "description": { "en": "Curated event calendar for Seoul. Lantern festivals, K-pop concerts, art weeks. English filters for date and category." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "yes24-tickets",
+      "category": "events",
+      "priority": 58,
+      "url": "https://www.yes24.com/",
+      "name": { "en": "Yes24" },
+      "description": { "en": "Books, music, and ticketing site. Niche K-pop fan events and indie concerts sometimes appear here first. Korean-only — translator browser useful." },
+      "languages": ["ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "yes24-global",
+      "category": "events",
+      "priority": 56,
+      "url": "https://global.yes24.com/",
+      "name": { "en": "Yes24 Global" },
+      "description": { "en": "Yes24 international storefront. K-pop CD pre-orders, fan club merchandise, English checkout shipping worldwide and to Korean hotels." },
+      "languages": ["en", "ja"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "korea-festival-net",
+      "category": "events",
+      "priority": 50,
+      "url": "https://www.koreafestival.com/",
+      "name": { "en": "Korea Festival Network" },
+      "description": { "en": "Index of certified Korean festivals nationwide. Filter by region and month — Boryeong Mud, Andong Mask, Jinju Lantern and more." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "korea-grand-sale",
+      "category": "events",
+      "priority": 48,
+      "url": "https://www.koreagrandsale.co.kr/",
+      "name": { "en": "Korea Grand Sale" },
+      "description": { "en": "Annual Korea-wide foreigner shopping festival (Jan-Feb). Hotel discount codes, tax-refund tutorials, transit promotions." },
+      "languages": ["en", "ja", "zh-CN"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kbs-world-events",
+      "category": "events",
+      "priority": 56,
+      "url": "https://world.kbs.co.kr/service/contents_list.htm?lang=e&menu_cate=event",
+      "name": { "en": "KBS World — Events" },
+      "description": { "en": "Public broadcaster KBS World event listings. K-pop concerts, music bank tapings, fan-meet schedules announced in English." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "namisum-events",
+      "category": "events",
+      "priority": 44,
+      "url": "https://www.namisum.com/en/events/",
+      "name": { "en": "Nami Island Events" },
+      "description": { "en": "Nami Island event calendar. Children's book festival, illustration biennale, light festivals — English schedule and ferry timing." },
+      "languages": ["en", "ja", "zh", "ko"],
+      "verifiedAt": "2026-05-23"
+    },
+
     {
       "id": "korea-herald",
       "category": "news",
@@ -343,84 +1487,94 @@
       "verifiedAt": "2026-05-22"
     },
     {
-      "id": "wirebarley",
-      "category": "money",
-      "priority": 75,
-      "url": "https://www.wirebarley.com/",
-      "name": { "en": "WireBarley (Remittance)" },
-      "description": { "en": "Cheap international remittance from Korea — popular with long-term foreign residents. Often beats banks on fees and rate." },
-      "languages": ["en", "ko", "zh", "vi", "th", "ja"],
-      "verifiedAt": "2026-05-22"
+      "id": "korea-times",
+      "category": "news",
+      "priority": 78,
+      "url": "https://www.koreatimes.co.kr/",
+      "name": { "en": "The Korea Times" },
+      "description": { "en": "One of Korea's oldest English daily newspapers. Broad coverage with strong opinion section and expat community columns." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
     },
     {
-      "id": "xe",
-      "category": "money",
-      "priority": 65,
-      "url": "https://www.xe.com/",
-      "name": { "en": "XE Currency" },
-      "description": { "en": "Real-time exchange rates with KRW conversions. Handy before exchanging cash at airport or bank." },
-      "languages": ["en", "ja", "zh", "es", "fr", "de", "pt", "it"],
-      "verifiedAt": "2026-05-22"
+      "id": "korea-joongang-daily",
+      "category": "news",
+      "priority": 76,
+      "url": "https://koreajoongangdaily.joins.com/",
+      "name": { "en": "Korea JoongAng Daily" },
+      "description": { "en": "JoongAng Group English daily, partnered with NYT. Business-leaning coverage, in-depth culture and tech reporting." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
     },
     {
-      "id": "goodchoice",
-      "category": "stay",
-      "priority": 75,
-      "url": "https://goodchoice.kr/",
-      "name": { "en": "Goodchoice (Yeogi-eottae)" },
-      "description": { "en": "Major Korean hotel and motel booking platform. English UI, last-minute deals, motels priced cheaper than chain hotels." },
-      "languages": ["en", "ko", "ja", "zh"],
-      "verifiedAt": "2026-05-22"
+      "id": "hankyoreh-en",
+      "category": "news",
+      "priority": 64,
+      "url": "https://english.hani.co.kr/",
+      "name": { "en": "Hankyoreh English" },
+      "description": { "en": "Progressive English edition. Better foil to mainstream Korean media — labor, environment, North Korea perspectives." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
     },
     {
-      "id": "stayfolio",
-      "category": "stay",
-      "priority": 65,
-      "url": "https://stayfolio.com/",
-      "name": { "en": "Stayfolio (Boutique Stays)" },
-      "description": { "en": "Curated Korean boutique stays — hanok, design hotels, countryside retreats. English-friendly host info." },
-      "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-22"
+      "id": "chosun-english",
+      "category": "news",
+      "priority": 62,
+      "url": "https://english.chosun.com/",
+      "name": { "en": "Chosun English" },
+      "description": { "en": "Conservative-leaning English daily edition. Strong politics and security coverage." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
     },
     {
-      "id": "melon-ticket",
-      "category": "events",
+      "id": "donga-english",
+      "category": "news",
+      "priority": 56,
+      "url": "https://www.donga.com/en/",
+      "name": { "en": "The Dong-A Ilbo (English)" },
+      "description": { "en": "Centrist Korean daily in English. Politics, economy, K-culture, plus extensive sports coverage including KBO baseball." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
+    },
+    {
+      "id": "kbs-world",
+      "category": "news",
       "priority": 70,
-      "url": "https://ticket.melon.com/",
-      "name": { "en": "Melon Ticket" },
-      "description": { "en": "Korean concert / musical ticketing alongside Interpark. K-pop fan-meeting and sports passes often appear here first." },
-      "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-22"
+      "url": "https://world.kbs.co.kr/service/index.htm?lang=e",
+      "name": { "en": "KBS World" },
+      "description": { "en": "Public broadcaster's English service. TV news plus podcasts, K-drama recaps, language-learning programs." },
+      "languages": ["en", "zh", "ja", "ru", "es", "fr", "ar", "id", "vi"],
+      "verifiedAt": "2026-05-23"
     },
     {
-      "id": "korea-muslim",
-      "category": "living",
-      "priority": 75,
-      "url": "https://www.koreanmuslim.com/",
-      "name": { "en": "Korea Muslim Federation" },
-      "description": { "en": "Official body running the Seoul Central Mosque. Prayer times, mosque locations across Korea, halal certification lookup." },
-      "languages": ["en", "ko", "ar"],
-      "verifiedAt": "2026-05-22"
+      "id": "arirang-news",
+      "category": "news",
+      "priority": 68,
+      "url": "https://www.arirang.com/",
+      "name": { "en": "Arirang News" },
+      "description": { "en": "Public English-language broadcaster. Live news stream, daily K-culture programming, and a strong YouTube presence." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
     },
     {
-      "id": "ncrc-adoption",
-      "category": "official",
-      "priority": 75,
-      "url": "https://www.ncrc.or.kr/eng/",
-      "name": { "en": "Korea Adoption Services (NCRC)" },
-      "description": { "en": "National Center for the Rights of the Child. Birth record requests, adoption file disclosure, post-adoption services for overseas adoptees." },
-      "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-22"
+      "id": "korea-pro",
+      "category": "news",
+      "priority": 48,
+      "url": "https://www.koreapro.org/",
+      "name": { "en": "Korea Pro" },
+      "description": { "en": "Niche analysis service covering South Korean politics, economy, security. Heavier subscription model but free overview articles." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
     },
     {
-      "id": "goal-adoption",
-      "category": "living",
-      "priority": 70,
-      "url": "https://goal.or.kr/",
-      "name": { "en": "G.O.A.'L (Global Overseas Adoptees' Link)" },
-      "description": { "en": "Non-profit supporting Korean overseas adoptees visiting or returning to Korea. F-4 visa help, birth-family search, peer community." },
-      "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-22"
+      "id": "pulse-mk",
+      "category": "news",
+      "priority": 44,
+      "url": "https://pulse.mk.co.kr/",
+      "name": { "en": "Pulse by MK" },
+      "description": { "en": "Maeil Business Newspaper's English service. Strong on financial markets, Korean conglomerates, semiconductor and EV industries." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-23"
     }
   ]
 }
