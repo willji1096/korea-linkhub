@@ -15,8 +15,11 @@ export function Header({ locale, brand, status }: { locale: Locale; brand: strin
             </svg>
             <span className="text-sm font-semibold tracking-tight text-[var(--ink)]">{brand}</span>
           </a>
-          <nav className="hidden items-center gap-4 sm:flex">
-            <a href={`/${locale}/blog`} className="text-xs font-medium text-[var(--ink-muted)] hover:text-[var(--ink)]">
+          <nav className="flex items-center gap-4">
+            <a
+              href={`/${locale}/blog`}
+              className="text-xs font-medium text-[var(--ink-muted)] hover:text-[var(--ink)] sm:text-sm"
+            >
               Journal
             </a>
           </nav>
