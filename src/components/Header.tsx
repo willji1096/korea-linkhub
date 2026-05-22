@@ -1,5 +1,6 @@
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { UserMenu } from './UserMenu';
+import { SosMenu } from './SosMenu';
 import type { Locale } from '@/i18n/locales';
 
 export function Header({ locale, brand, status }: { locale: Locale; brand: string; status: string }) {
@@ -29,6 +30,7 @@ export function Header({ locale, brand, status }: { locale: Locale; brand: strin
             <span className="live-dot" aria-hidden />
             <span className="caps text-[var(--ink-muted)]">{status}</span>
           </span>
+          <SosMenu />
           <LanguageSwitcher current={locale} />
           <UserMenu />
         </div>

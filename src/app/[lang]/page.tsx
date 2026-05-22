@@ -27,7 +27,7 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
       <FullWidthPromo />
       <main className="flex-1">
         <EventsRow events={adsData.slots.events as never} inhouse={adsData.inhouse.events as never} />
-        <Directory links={links} messages={m} locale={lang} />
+        <Directory links={links} posts={allPosts()} messages={m} locale={lang} />
         <LatestStrip posts={latestPosts} locale={lang} />
         <SponsorshipStrip ads={adsData as never} />
       </main>

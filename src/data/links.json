@@ -391,6 +391,36 @@
       "description": { "en": "Korean concert / musical ticketing alongside Interpark. K-pop fan-meeting and sports passes often appear here first." },
       "languages": ["en", "ko"],
       "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "korea-muslim",
+      "category": "living",
+      "priority": 75,
+      "url": "https://www.koreanmuslim.com/",
+      "name": { "en": "Korea Muslim Federation" },
+      "description": { "en": "Official body running the Seoul Central Mosque. Prayer times, mosque locations across Korea, halal certification lookup." },
+      "languages": ["en", "ko", "ar"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "ncrc-adoption",
+      "category": "official",
+      "priority": 75,
+      "url": "https://www.ncrc.or.kr/eng/",
+      "name": { "en": "Korea Adoption Services (NCRC)" },
+      "description": { "en": "National Center for the Rights of the Child. Birth record requests, adoption file disclosure, post-adoption services for overseas adoptees." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "goal-adoption",
+      "category": "living",
+      "priority": 70,
+      "url": "https://goal.or.kr/",
+      "name": { "en": "G.O.A.'L (Global Overseas Adoptees' Link)" },
+      "description": { "en": "Non-profit supporting Korean overseas adoptees visiting or returning to Korea. F-4 visa help, birth-family search, peer community." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
     }
   ]
 }

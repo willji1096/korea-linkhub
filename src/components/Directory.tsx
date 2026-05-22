@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from 'react';
 import { BookmarkToggle } from './BookmarkToggle';
+import { RelatedPosts } from './blog/RelatedPosts';
+import type { Post } from '@/lib/posts';
 
 type Localized = { en: string; [key: string]: string | undefined };
 
@@ -32,10 +34,12 @@ function hostOf(url: string) {
 
 export function Directory({
   links,
+  posts,
   messages,
   locale,
 }: {
   links: Link[];
+  posts: Post[];
   messages: Messages;
   locale: string;
 }) {
@@ -122,6 +126,8 @@ export function Directory({
         </div>
       </div>
 
+      <RelatedPosts posts={posts} locale={locale} query={query} category={category} />
+
       {filtered.length === 0 ? (
         <div className="surface mt-12 flex flex-col items-center gap-4 rounded-2xl p-10 text-center">
           <p className="text-base text-[var(--ink)]">{t('search.empty')}</p>
@@ -151,16 +157,21 @@ export function Directory({
   );
 }
 
-function Favicon({ host }: { host: string }) {
+function Favicon({ host, featured = false }: { host: string; featured?: boolean }) {
   return (
-    <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--bg-elevated)]">
+    <span
+      className={
+        'flex shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--bg-elevated)] ' +
+        (featured ? 'size-10' : 'size-9')
+      }
+    >
       <img
         src={`https://www.google.com/s2/favicons?domain=${host}&sz=64`}
         alt=""
-        width={20}
-        height={20}
+        width={featured ? 24 : 20}
+        height={featured ? 24 : 20}
         loading="lazy"
-        className="size-5 object-contain"
+        className={featured ? 'size-6 object-contain' : 'size-5 object-contain'}
       />
     </span>
   );
@@ -216,10 +227,15 @@ function LinkCard({
       <BookmarkToggle id={link.id} />
       <div>
         <div className="flex items-center gap-3">
-          <Favicon host={hostOf(link.url)} />
+          <Favicon host={hostOf(link.url)} featured={featured} />
           <span className="caps text-[var(--ink-subtle)]">{catLabel(link.category)}</span>
         </div>
-        <h3 className="mt-3 pr-8 text-base font-semibold tracking-tight text-[var(--ink)] sm:text-lg">
+        <h3
+          className={
+            'mt-3 pr-8 font-semibold tracking-tight text-[var(--ink)] ' +
+            (featured ? 'text-lg sm:text-xl' : 'text-base sm:text-lg')
+          }
+        >
           {pick(link.name, locale)}
         </h3>
         {link.description && (
