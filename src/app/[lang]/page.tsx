@@ -8,7 +8,7 @@ import { Footer } from '@/components/Footer';
 import { TopBanner, FullWidthPromo, SponsorshipStrip } from '@/components/AdSlots';
 import { EventsRow } from '@/components/EventsRow';
 import { TodayBar } from '@/components/TodayBar';
-import { PostList } from '@/components/blog/PostList';
+import { LatestStrip } from '@/components/blog/LatestStrip';
 import { allPosts } from '@/lib/posts';
 
 export default async function HomePage({ params }: PageProps<'/[lang]'>) {
@@ -33,12 +33,8 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
           </h1>
         </section>
         <EventsRow events={adsData.slots.events as never} inhouse={adsData.inhouse.events as never} />
-        {latestPosts.length > 0 && (
-          <section className="mx-auto w-full max-w-6xl px-5 pt-10 sm:px-8">
-            <PostList posts={latestPosts} locale={lang} heading="Latest from the journal" />
-          </section>
-        )}
         <Directory links={links} messages={m} locale={lang} />
+        <LatestStrip posts={latestPosts} locale={lang} />
         <SponsorshipStrip ads={adsData as never} />
       </main>
       <Footer
