@@ -3,7 +3,13 @@
 import { useState, useTransition } from 'react';
 import { submitRequest } from './actions';
 
-const CATS = ['tourism', 'region', 'attractions', 'visa', 'transport', 'health', 'safety', 'official', 'living', 'tools', 'money', 'esim', 'events', 'stay', 'news', 'other'];
+const CAT_GROUPS = [
+  { label: 'Trip', items: ['tourism', 'region', 'attractions', 'events', 'stay'] },
+  { label: 'Move around', items: ['transport', 'esim'] },
+  { label: 'Pay & docs', items: ['visa', 'money', 'official'] },
+  { label: 'Help', items: ['health', 'safety', 'tools', 'living'] },
+  { label: 'Read', items: ['news'] },
+] as const;
 
 export function RequestForm() {
   const [role, setRole] = useState<'user' | 'owner'>('user');
@@ -53,12 +59,12 @@ export function RequestForm() {
   }
 
   return (
-    <form action={onSubmit} className="surface flex flex-col gap-5 rounded-2xl p-6 sm:p-8">
+    <form action={onSubmit} className="surface flex flex-col gap-4 rounded-2xl p-5 sm:p-6">
       <input type="text" name="hp_field" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
       <fieldset className="flex flex-col gap-2">
         <legend className="caps text-[var(--ink-muted)]">Who are you</legend>
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <label className={'cursor-pointer rounded-xl border p-3 transition-colors ' + (role === 'user' ? 'border-[var(--ink)] bg-[var(--bg-sunken)]' : 'border-[var(--line)] hover:border-[var(--line-strong)]')}>
             <input
               type="radio"
@@ -80,8 +86,8 @@ export function RequestForm() {
               onChange={() => setRole('owner')}
               className="sr-only"
             />
-            <div className="text-sm font-semibold text-[var(--ink)]">I represent this site</div>
-            <div className="mt-1 text-xs text-[var(--ink-muted)]">Open to a Sponsored placement conversation.</div>
+            <div className="text-sm font-semibold text-[var(--ink)]">I run this site</div>
+            <div className="mt-1 text-xs text-[var(--ink-muted)]">We may follow up about placement.</div>
           </label>
         </div>
       </fieldset>
@@ -102,14 +108,22 @@ export function RequestForm() {
         <select
           name="category"
           required
-          defaultValue="other"
+          defaultValue=""
           className="rounded-lg border border-[var(--line)] bg-[var(--bg-elevated)] px-3 py-2.5 text-sm outline-none focus:border-[var(--accent)]"
         >
-          {CATS.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
+          <option value="" disabled>
+            Choose closest fit
+          </option>
+          {CAT_GROUPS.map((group) => (
+            <optgroup key={group.label} label={group.label}>
+              {group.items.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </optgroup>
           ))}
+          <option value="other">other</option>
         </select>
       </label>
 
@@ -142,10 +156,7 @@ export function RequestForm() {
         <div className="rounded-lg bg-[var(--danger-soft)] px-3 py-2 text-sm text-[var(--danger)]">{error}</div>
       )}
 
-      <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-[var(--ink-subtle)]">
-          Reviewed by hand. No spam, no automatic publish.
-        </p>
+      <div className="flex justify-end">
         <button
           type="submit"
           disabled={pending}
