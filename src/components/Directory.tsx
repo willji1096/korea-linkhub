@@ -76,7 +76,7 @@ export function Directory({
   const catLabel = (c: string) => messages[`category.${c}`] ?? c;
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+    <div className="mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10">
       {/* Sticky controls */}
       <div className="sticky top-[57px] z-30 -mx-5 mb-8 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:-mx-8 sm:px-8">
         <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center">
@@ -239,7 +239,7 @@ function LinkCard({
           {pick(link.name, locale)}
         </h3>
         {link.description && (
-          <p className="mt-2 line-clamp-1 text-sm leading-relaxed text-[var(--ink-muted)] group-hover:line-clamp-2">
+          <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--ink-muted)]">
             {pick(link.description, locale)}
           </p>
         )}

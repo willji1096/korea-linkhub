@@ -61,40 +61,27 @@ export function FullWidthPromo() {
 
 export function SponsorshipStrip({ ads }: { ads: AdsData }) {
   const sponsors = ads.slots.sponsorship;
-  const hasReal = sponsors.length > 0;
+  if (sponsors.length === 0) return null;
   return (
-    <section className="mt-16 bg-[var(--bg-sunken)]">
+    <section className="bg-[var(--bg-sunken)]">
       <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
         <div className="flex items-baseline justify-between gap-4">
           <h2 className="caps text-[var(--ink-muted)]">{ads.inhouse.sponsorship.label}</h2>
-          {!hasReal && <span className="caps text-[var(--ink-subtle)]">{ads.inhouse.sponsorship.note}</span>}
         </div>
-        {hasReal ? (
-          <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
-            {sponsors.map((s) => (
-              <li key={s.id}>
-                <a
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer sponsored"
-                  className="surface surface-hover flex h-20 items-center justify-center rounded-xl px-4 text-center text-sm font-medium text-[var(--ink-muted)] hover:text-[var(--ink)]"
-                >
-                  {s.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <li key={i}>
-                <div className="flex h-20 items-center justify-center rounded-xl border border-dashed border-[var(--line)] bg-transparent text-center">
-                  <span className="caps text-[var(--ink-faint)]">SLOT {String(i + 1).padStart(2, '0')}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+          {sponsors.map((s) => (
+            <li key={s.id}>
+              <a
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="surface surface-hover flex h-20 items-center justify-center rounded-xl px-4 text-center text-sm font-medium text-[var(--ink-muted)] hover:text-[var(--ink)]"
+              >
+                {s.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
