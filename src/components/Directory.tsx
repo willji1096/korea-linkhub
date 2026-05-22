@@ -4,6 +4,15 @@ import { useEffect, useMemo, useState } from 'react';
 import { BookmarkToggle } from './BookmarkToggle';
 
 const PAGE_SIZE = 24;
+const SECTION_TOP = 5;
+const SECTION_ORDER = [
+  'visa', 'transport', 'health', 'money', 'esim', 'tools',
+  'safety', 'official', 'living',
+  'tourism', 'region', 'attractions', 'events', 'stay',
+  'news',
+];
+
+type Tab = 'top' | 'explore';
 
 type Localized = { en: string; [key: string]: string | undefined };
 
@@ -46,15 +55,33 @@ export function Directory({
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [filterOpen, setFilterOpen] = useState(false);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [tab, setTab] = useState<Tab>('top');
 
   useEffect(() => {
-    const saved = localStorage.getItem('linkhub:view');
-    if (saved === 'grid' || saved === 'list') setViewMode(saved);
+    const v = localStorage.getItem('linkhub:view');
+    if (v === 'grid' || v === 'list') setViewMode(v);
+    const tb = localStorage.getItem('linkhub:tab');
+    if (tb === 'top' || tb === 'explore') setTab(tb);
   }, []);
 
   useEffect(() => {
     localStorage.setItem('linkhub:view', viewMode);
   }, [viewMode]);
+
+  useEffect(() => {
+    localStorage.setItem('linkhub:tab', tab);
+  }, [tab]);
+
+  const onSearchChange = (v: string) => {
+    setQuery(v);
+    if (v.trim() && tab !== 'explore') setTab('explore');
+  };
+
+  const onSeeAll = (cat: string) => {
+    setCategory(cat);
+    setTab('explore');
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const allCategories = useMemo(() => {
     const set = new Set<string>();
@@ -110,6 +137,18 @@ export function Directory({
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-16 sm:px-8 sm:pt-10 sm:pb-24">
+      {/* Tabs */}
+      <div className="hairline-b -mx-5 mb-4 sm:-mx-8 sm:mb-6">
+        <div className="flex gap-6 px-5 sm:px-8">
+          <TabButton active={tab === 'top'} onClick={() => setTab('top')}>
+            Top Picks
+          </TabButton>
+          <TabButton active={tab === 'explore'} onClick={() => setTab('explore')}>
+            Explore
+          </TabButton>
+        </div>
+      </div>
+
       {/* Sticky controls */}
       <div className="sticky top-12 z-30 -mx-5 mb-5 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:top-[57px] sm:-mx-8 sm:mb-8 sm:px-8">
         <div className="flex flex-col gap-3">
@@ -121,7 +160,7 @@ export function Directory({
             <input
               type="search"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => onSearchChange(e.target.value)}
               placeholder={t('search.placeholder')}
               className="w-full rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] py-2.5 pl-10 pr-12 text-sm text-[var(--ink)] outline-none transition-colors placeholder:text-[var(--ink-subtle)] focus:border-[var(--accent)]"
               aria-label={t('search.placeholder')}
@@ -138,46 +177,56 @@ export function Directory({
             )}
           </div>
 
-          {/* Mobile: filter trigger + view toggle */}
-          <div className="flex items-center gap-3 sm:hidden">
-            <button
-              type="button"
-              onClick={() => setFilterOpen(true)}
-              aria-haspopup="dialog"
-              aria-expanded={filterOpen}
-              className="flex flex-1 items-center justify-between gap-2 rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] px-4 py-2.5 text-sm font-medium text-[var(--ink)] transition-colors active:bg-[var(--bg-sunken)]"
-            >
-              <span className="flex items-center gap-2">
-                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden className="text-[var(--ink-muted)]">
-                  <path d="M2 3h10M3 7h8M5 11h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                </svg>
-                <span className="truncate">{activeLabel}</span>
-              </span>
-              <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden className="shrink-0 text-[var(--ink-subtle)]">
-                <path d="M3 4.5l3 3 3-3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <ViewToggle mode={viewMode} onChange={setViewMode} />
-          </div>
+          {tab === 'explore' && (
+            <>
+              {/* Mobile: filter trigger + view toggle */}
+              <div className="flex items-center gap-3 sm:hidden">
+                <button
+                  type="button"
+                  onClick={() => setFilterOpen(true)}
+                  aria-haspopup="dialog"
+                  aria-expanded={filterOpen}
+                  className="flex flex-1 items-center justify-between gap-2 rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] px-4 py-2.5 text-sm font-medium text-[var(--ink)] transition-colors active:bg-[var(--bg-sunken)]"
+                >
+                  <span className="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden className="text-[var(--ink-muted)]">
+                      <path d="M2 3h10M3 7h8M5 11h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                    </svg>
+                    <span className="truncate">{activeLabel}</span>
+                  </span>
+                  <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden className="shrink-0 text-[var(--ink-subtle)]">
+                    <path d="M3 4.5l3 3 3-3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                <ViewToggle mode={viewMode} onChange={setViewMode} />
+              </div>
 
-          {/* Desktop: chip wrap + view toggle */}
-          <div className="hidden items-start justify-between gap-4 sm:flex">
-            <ul className="flex flex-wrap gap-1.5">
-              <li>
-                <Chip active={category === 'all'} onClick={() => setCategory('all')}>
-                  {t('category.all')}
-                </Chip>
-              </li>
-              {allCategories.map((c) => (
-                <li key={c}>
-                  <Chip active={category === c} onClick={() => setCategory(c)}>
-                    {catLabel(c)}
-                  </Chip>
-                </li>
-              ))}
-            </ul>
-            <ViewToggle mode={viewMode} onChange={setViewMode} />
-          </div>
+              {/* Desktop: chip wrap + view toggle */}
+              <div className="hidden items-start justify-between gap-4 sm:flex">
+                <ul className="flex flex-wrap gap-1.5">
+                  <li>
+                    <Chip active={category === 'all'} onClick={() => setCategory('all')}>
+                      {t('category.all')}
+                    </Chip>
+                  </li>
+                  {allCategories.map((c) => (
+                    <li key={c}>
+                      <Chip active={category === c} onClick={() => setCategory(c)}>
+                        {catLabel(c)}
+                      </Chip>
+                    </li>
+                  ))}
+                </ul>
+                <ViewToggle mode={viewMode} onChange={setViewMode} />
+              </div>
+            </>
+          )}
+
+          {tab === 'top' && (
+            <div className="flex justify-end">
+              <ViewToggle mode={viewMode} onChange={setViewMode} />
+            </div>
+          )}
         </div>
       </div>
 
@@ -237,7 +286,16 @@ export function Directory({
         </div>
       )}
 
-      {filtered.length === 0 ? (
+      {tab === 'top' && !query.trim() ? (
+        <SectionedView
+          links={links}
+          locale={locale}
+          messages={messages}
+          catLabel={catLabel}
+          viewMode={viewMode}
+          onSeeAll={onSeeAll}
+        />
+      ) : filtered.length === 0 ? (
         <div className="surface mt-12 flex flex-col items-center gap-4 rounded-2xl p-10 text-center">
           <p className="text-base text-[var(--ink)]">{t('search.empty')}</p>
           <p className="max-w-md text-sm text-[var(--ink-muted)]">
@@ -289,6 +347,104 @@ export function Directory({
           )}
         </>
       )}
+    </div>
+  );
+}
+
+function TabButton({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={
+        'relative -mb-px py-3 text-sm font-medium transition-colors ' +
+        (active ? 'text-[var(--ink)]' : 'text-[var(--ink-muted)] hover:text-[var(--ink)]')
+      }
+    >
+      {children}
+      {active && <span className="absolute inset-x-0 bottom-0 h-[2px] bg-[var(--ink)]" />}
+    </button>
+  );
+}
+
+function SectionedView({
+  links,
+  locale,
+  messages,
+  catLabel,
+  viewMode,
+  onSeeAll,
+}: {
+  links: Link[];
+  locale: string;
+  messages: Messages;
+  catLabel: (c: string) => string;
+  viewMode: 'grid' | 'list';
+  onSeeAll: (cat: string) => void;
+}) {
+  const grouped = useMemo(() => {
+    const map = new Map<string, Link[]>();
+    links.forEach((l) => {
+      const arr = map.get(l.category) ?? [];
+      arr.push(l);
+      map.set(l.category, arr);
+    });
+    map.forEach((arr) => arr.sort((a, b) => b.priority - a.priority));
+    return map;
+  }, [links]);
+
+  const sections = SECTION_ORDER.filter((cat) => grouped.has(cat));
+  // any category not in SECTION_ORDER still appears at the end
+  const seen = new Set(SECTION_ORDER);
+  const extras = Array.from(grouped.keys()).filter((c) => !seen.has(c));
+  const order = [...sections, ...extras];
+
+  return (
+    <div className="space-y-10 sm:space-y-14">
+      {order.map((cat) => {
+        const items = grouped.get(cat) ?? [];
+        const top = items.slice(0, SECTION_TOP);
+        return (
+          <section key={cat}>
+            <div className="mb-4 flex items-baseline justify-between gap-3">
+              <h2 className="text-base font-semibold text-[var(--ink)] sm:text-lg">{catLabel(cat)}</h2>
+              <button
+                type="button"
+                onClick={() => onSeeAll(cat)}
+                className="shrink-0 text-sm font-medium text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
+              >
+                See all {items.length}
+                <span aria-hidden> →</span>
+              </button>
+            </div>
+            {viewMode === 'grid' ? (
+              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {top.map((l) => (
+                  <li key={l.id}>
+                    <LinkCard link={l} locale={locale} messages={messages} catLabel={catLabel} />
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <ul className="surface divide-y divide-[var(--line)] overflow-hidden rounded-2xl">
+                {top.map((l) => (
+                  <li key={l.id}>
+                    <LinkRow link={l} locale={locale} catLabel={catLabel} />
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        );
+      })}
     </div>
   );
 }
