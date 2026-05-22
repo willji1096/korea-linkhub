@@ -75,8 +75,8 @@ export function Directory({
     <div className="mx-auto w-full max-w-6xl px-5 pt-8 pb-16 sm:px-8 sm:pt-10 sm:pb-24">
       {/* Sticky controls */}
       <div className="sticky top-[57px] z-30 -mx-5 mb-8 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:-mx-8 sm:px-8">
-        <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center">
-          <div className="relative flex-1">
+        <div className="flex flex-col gap-3">
+          <div className="relative">
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--ink-subtle)]">
               <circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.5" fill="none" />
               <path d="m11 11 3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -100,8 +100,8 @@ export function Directory({
               </button>
             )}
           </div>
-          <div className="no-scrollbar -mx-5 flex items-center gap-3 overflow-x-auto px-5 sm:mx-0 sm:overflow-visible sm:px-0">
-            <ul className="flex gap-1.5">
+          <div className="flex items-start justify-between gap-3">
+            <ul className="flex flex-wrap gap-1.5">
               <li>
                 <Chip active={category === 'all'} onClick={() => setCategory('all')}>
                   {t('category.all')}
@@ -115,7 +115,7 @@ export function Directory({
                 </li>
               ))}
             </ul>
-            <span className="num caps ml-auto shrink-0 text-[var(--ink-subtle)]" aria-live="polite">
+            <span className="num caps shrink-0 pt-1.5 text-[var(--ink-subtle)]" aria-live="polite">
               {filtered.length} / {links.length}
             </span>
           </div>
