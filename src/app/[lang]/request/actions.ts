@@ -14,7 +14,7 @@ type RequestItem = {
   createdAt: string;
 };
 
-const LINK_CATS = ['tourism', 'region', 'attractions', 'visa', 'transport', 'health', 'safety', 'official', 'living', 'tools', 'money', 'esim', 'events', 'stay', 'other'];
+const LINK_CATS = ['tourism', 'region', 'attractions', 'visa', 'transport', 'health', 'safety', 'official', 'living', 'tools', 'money', 'esim', 'events', 'stay', 'news', 'other'];
 
 function file(name: 'requests' | 'links') {
   return path.join(process.cwd(), 'src', 'data', `${name}.json`);

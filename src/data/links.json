@@ -311,6 +311,86 @@
       "description": { "en": "Official directory of palaces, UNESCO sites, traditional villages. English maps, opening hours, free-entry days." },
       "languages": ["en", "ja", "zh-CN"],
       "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "liveinkorea",
+      "category": "living",
+      "priority": 85,
+      "url": "https://www.liveinkorea.kr/",
+      "name": { "en": "Live in Korea" },
+      "description": { "en": "Multicultural family and foreign resident portal run by the Korea Immigration Service. Counselling, life classes, multilingual helpline directory." },
+      "languages": ["en", "ko", "zh", "vi", "tl", "th", "km", "ru", "mn", "ja", "uz", "ne"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "korea-herald",
+      "category": "news",
+      "priority": 85,
+      "url": "https://www.koreaherald.com/",
+      "name": { "en": "The Korea Herald" },
+      "description": { "en": "Long-running English-language Korean newspaper. Politics, business, K-culture. Free RSS feeds." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "yonhap-en",
+      "category": "news",
+      "priority": 80,
+      "url": "https://en.yna.co.kr/",
+      "name": { "en": "Yonhap News English" },
+      "description": { "en": "Korea's national news agency in English. Fastest breaking-news source for foreigners — disasters, policy changes, sports." },
+      "languages": ["en"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "wirebarley",
+      "category": "money",
+      "priority": 75,
+      "url": "https://www.wirebarley.com/",
+      "name": { "en": "WireBarley (Remittance)" },
+      "description": { "en": "Cheap international remittance from Korea — popular with long-term foreign residents. Often beats banks on fees and rate." },
+      "languages": ["en", "ko", "zh", "vi", "th", "ja"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "xe",
+      "category": "money",
+      "priority": 65,
+      "url": "https://www.xe.com/",
+      "name": { "en": "XE Currency" },
+      "description": { "en": "Real-time exchange rates with KRW conversions. Handy before exchanging cash at airport or bank." },
+      "languages": ["en", "ja", "zh", "es", "fr", "de", "pt", "it"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "goodchoice",
+      "category": "stay",
+      "priority": 75,
+      "url": "https://goodchoice.kr/",
+      "name": { "en": "Goodchoice (Yeogi-eottae)" },
+      "description": { "en": "Major Korean hotel and motel booking platform. English UI, last-minute deals, motels priced cheaper than chain hotels." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "stayfolio",
+      "category": "stay",
+      "priority": 65,
+      "url": "https://stayfolio.com/",
+      "name": { "en": "Stayfolio (Boutique Stays)" },
+      "description": { "en": "Curated Korean boutique stays — hanok, design hotels, countryside retreats. English-friendly host info." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "melon-ticket",
+      "category": "events",
+      "priority": 70,
+      "url": "https://ticket.melon.com/",
+      "name": { "en": "Melon Ticket" },
+      "description": { "en": "Korean concert / musical ticketing alongside Interpark. K-pop fan-meeting and sports passes often appear here first." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
     }
   ]
 }

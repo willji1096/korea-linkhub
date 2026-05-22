@@ -32,7 +32,7 @@ type LinkItem = {
 type Catalog<T> = { $schema?: string; updatedAt: string; items: T[] };
 
 const PHONE_CATS = ['emergency', 'tourist_help', 'embassy', 'transport', 'visa', 'living', 'health'] as const;
-const LINK_CATS = ['tourism', 'region', 'attractions', 'visa', 'transport', 'health', 'safety', 'official', 'living', 'tools', 'money', 'esim', 'events', 'stay'] as const;
+const LINK_CATS = ['tourism', 'region', 'attractions', 'visa', 'transport', 'health', 'safety', 'official', 'living', 'tools', 'money', 'esim', 'events', 'stay', 'news'] as const;
 
 function dataPath(kind: 'phones' | 'links') {
   return path.join(process.cwd(), 'src', 'data', `${kind}.json`);
@@ -245,6 +245,103 @@ export async function rejectRequest(id: string): Promise<ActionResult> {
   reqCat.items = reqCat.items.filter((r) => r.id !== id);
   await writeRequests(reqCat);
   revalidatePath('/[lang]/admin', 'page');
+  return { ok: true };
+}
+
+type Post = {
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  body: string;
+  tags: string[];
+  relatedLinks?: string[];
+  publishedAt: string;
+  source?: { name: string; url: string };
+};
+
+function slugify(s: string) {
+  return s
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+async function readPosts() {
+  const p = path.join(process.cwd(), 'src', 'data', 'posts.json');
+  const raw = await fs.readFile(p, 'utf8').catch(() => null);
+  return raw ? (JSON.parse(raw) as { items: Post[]; updatedAt: string }) : { items: [], updatedAt: today() };
+}
+
+async function writePosts(cat: { items: Post[]; updatedAt: string }) {
+  const p = path.join(process.cwd(), 'src', 'data', 'posts.json');
+  cat.updatedAt = today();
+  cat.items.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
+  await fs.writeFile(p, JSON.stringify(cat, null, 2) + '\n', 'utf8');
+}
+
+export async function upsertPost(form: FormData): Promise<ActionResult> {
+  devOnly();
+  const title = str(form.get('title'));
+  const summary = str(form.get('summary'));
+  const body = str(form.get('body'));
+  const tagsRaw = str(form.get('tags'));
+  const relatedRaw = str(form.get('related'));
+  const sourceName = str(form.get('source_name'));
+  const sourceUrl = str(form.get('source_url'));
+  const editingId = str(form.get('editing_id'));
+  const publishedRaw = str(form.get('published_at'));
+
+  if (!title || !summary || !body) return { ok: false, error: 'Title, summary, and body are required.' };
+
+  const tags = tagsRaw.split(',').map((s) => s.trim()).filter(Boolean);
+  const related = relatedRaw.split(',').map((s) => s.trim()).filter(Boolean);
+
+  const cat = await readPosts();
+  const slug = editingId
+    ? cat.items.find((p) => p.id === editingId)?.slug ?? slugify(title)
+    : slugify(title);
+  const id = editingId || slug;
+
+  const item: Post = {
+    id,
+    slug,
+    title,
+    summary,
+    body,
+    tags,
+    relatedLinks: related.length ? related : undefined,
+    publishedAt: publishedRaw || new Date().toISOString(),
+    source: sourceName && sourceUrl ? { name: sourceName, url: sourceUrl } : undefined,
+  };
+
+  const idx = cat.items.findIndex((p) => p.id === id);
+  if (idx >= 0) {
+    cat.items[idx] = item;
+  } else {
+    if (cat.items.some((p) => p.slug === slug)) {
+      return { ok: false, error: `A post with slug "${slug}" already exists.` };
+    }
+    cat.items.unshift(item);
+  }
+  await writePosts(cat);
+  revalidatePath('/[lang]/admin', 'page');
+  revalidatePath('/[lang]', 'page');
+  revalidatePath('/[lang]/blog', 'page');
+  revalidatePath(`/[lang]/blog/${slug}`, 'page');
+  return { ok: true };
+}
+
+export async function deletePost(id: string): Promise<ActionResult> {
+  devOnly();
+  const cat = await readPosts();
+  cat.items = cat.items.filter((p) => p.id !== id);
+  await writePosts(cat);
+  revalidatePath('/[lang]/admin', 'page');
+  revalidatePath('/[lang]/blog', 'page');
   return { ok: true };
 }
 

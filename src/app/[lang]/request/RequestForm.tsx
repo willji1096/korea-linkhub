@@ -3,7 +3,7 @@
 import { useState, useTransition } from 'react';
 import { submitRequest } from './actions';
 
-const CATS = ['tourism', 'region', 'attractions', 'visa', 'transport', 'health', 'safety', 'official', 'living', 'tools', 'money', 'esim', 'events', 'stay', 'other'];
+const CATS = ['tourism', 'region', 'attractions', 'visa', 'transport', 'health', 'safety', 'official', 'living', 'tools', 'money', 'esim', 'events', 'stay', 'news', 'other'];
 
 export function RequestForm() {
   const [role, setRole] = useState<'user' | 'owner'>('user');

@@ -8,6 +8,8 @@ import { Footer } from '@/components/Footer';
 import { TopBanner, FullWidthPromo, SponsorshipStrip } from '@/components/AdSlots';
 import { EventsRow } from '@/components/EventsRow';
 import { TodayBar } from '@/components/TodayBar';
+import { PostList } from '@/components/blog/PostList';
+import { allPosts } from '@/lib/posts';
 
 export default async function HomePage({ params }: PageProps<'/[lang]'>) {
   const { lang } = await params;
@@ -15,6 +17,7 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
   const m = await getMessages(lang);
 
   const links = (linksData.items as Link[]).slice().sort((a, b) => b.priority - a.priority);
+  const latestPosts = allPosts().slice(0, 3);
 
   return (
     <>
@@ -30,6 +33,11 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
           </h1>
         </section>
         <EventsRow events={adsData.slots.events as never} inhouse={adsData.inhouse.events as never} />
+        {latestPosts.length > 0 && (
+          <section className="mx-auto w-full max-w-6xl px-5 pt-10 sm:px-8">
+            <PostList posts={latestPosts} locale={lang} heading="Latest from the journal" />
+          </section>
+        )}
         <Directory links={links} messages={m} locale={lang} />
         <SponsorshipStrip ads={adsData as never} />
       </main>

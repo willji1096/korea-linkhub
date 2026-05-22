@@ -1,0 +1,38 @@
+{
+  "$schema": "./posts.schema.json",
+  "updatedAt": "2026-05-22",
+  "items": [
+    {
+      "id": "k-eta-quick-guide",
+      "slug": "k-eta-quick-guide",
+      "title": "K-ETA: what visa-free visitors actually need to do before flying",
+      "summary": "If your passport gives you visa-free entry to Korea, K-ETA is the one form you cannot forget. A quick rundown of timing, cost, and the bits people miss.",
+      "body": "Most travellers who can enter Korea visa-free still need a K-ETA — the electronic travel authorisation — and it has to be approved before you board your flight.\n\n## The basics\n\n- **When to apply:** at least 72 hours before departure.\n- **Cost:** roughly KRW 10,000 per application.\n- **Validity:** 3 years (you can reuse it for multiple trips).\n- **Where:** the official portal only — see the link below.\n\n## What people miss\n\n1. **Photo rules.** Plain background, full face, no glasses. Most rejections are bad photos.\n2. **Passport scan quality.** The corners must be visible. Don't crop.\n3. **Email confirmation.** If it doesn't arrive within 24 hours, check spam. The QR code in the email is what airlines will scan.\n\n## If you get refused\n\nA K-ETA refusal does not mean you cannot enter Korea — it just means you need a regular visa instead. Apply through the nearest Korean consulate.\n\n## Where to apply\n\nThe only official portal is **k-eta.go.kr**. Avoid third-party 'application services' that charge extra.",
+      "tags": ["visa", "first-trip"],
+      "relatedLinks": ["k-eta", "hikorea", "0404"],
+      "publishedAt": "2026-05-22T09:00:00Z",
+      "source": { "name": "Korea Immigration Service", "url": "https://www.hikorea.go.kr/" }
+    },
+    {
+      "id": "tmoney-explained",
+      "slug": "tmoney-explained",
+      "title": "T-money: the one thing to buy in your first hour in Seoul",
+      "summary": "A small rechargeable card that runs every subway, bus and most taxis in Korea. Sold at any convenience store for KRW 4,000.",
+      "body": "Public transport in Korea runs on a single rechargeable card called **T-money**. You can technically pay in cash, but you'll get worse fares and slower boarding.\n\n## Where to get one\n\n- Any convenience store inside or near Incheon Airport (GS25, CU, 7-Eleven, eMart24).\n- Subway station vending machines, but the in-store option is faster on day one.\n- The plain card costs KRW 4,000. Designer 'Cashbee' or character cards work the same way.\n\n## How to use it\n\n1. **Top up** at any convenience store or subway machine. KRW 10,000 is enough for a half-day of riding.\n2. **Tap on** when entering the subway / bus.\n3. **Tap off** when exiting the subway, or when leaving the bus through the back door — this is important, you'll be charged extra if you forget.\n\n## Where it works\n\n- All subway lines nationwide.\n- All city and intercity buses (with the back-door tap rule).\n- Most taxis (a small ‘T-money’ sticker on the dashboard means yes).\n- Convenience stores accept it as a payment method too.\n\n## Refunds\n\nReturn the card at any larger subway station's customer service desk and they'll refund your remaining balance minus a small fee.",
+      "tags": ["transit", "first-trip"],
+      "relatedLinks": ["tmoney", "incheon-airport", "naver-map"],
+      "publishedAt": "2026-05-21T09:00:00Z"
+    },
+    {
+      "id": "visa-extension-d-4",
+      "slug": "visa-extension-d-4",
+      "title": "Extending a D-4 student visa: the steps, the paperwork, the calls",
+      "summary": "If you've been on a D-4 for a year or more, you've probably had to renew it. Here's the actual flow most students go through.",
+      "body": "Extending a D-4 visa is more paperwork than scary, but the order matters. The wrong order costs you a wasted trip to the immigration office.\n\n## Before you go\n\n- **Book a slot** on Hi Korea at least two weeks before your visa expires. Walk-ins are not allowed at most offices.\n- **Pull a tuition receipt** from your school's international office — they know which forms.\n- **Save a screenshot** of your bank account showing at least KRW 9 million (rough requirement, varies). A statement covering the last 3 months is safer.\n\n## What to bring on the day\n\n1. Passport + ARC.\n2. Application form (download from Hi Korea, fill in advance).\n3. Tuition receipt + admission certificate.\n4. Bank statement (printed).\n5. Proof of address (rental contract or dormitory letter).\n6. Color photo (the immigration office machine works too).\n\n## At the office\n\nTake a number, give your documents, pay the fee (KRW 60,000 for extension). They keep your ARC and post the new one to your address in 2–3 weeks. You can use your passport as ID in the meantime, but you can't leave the country.\n\n## When in doubt\n\nCall **1345** — the immigration call centre supports 20 languages. They will not file the application for you, but they will tell you exactly which document you are missing for your case.",
+      "tags": ["visa", "long-term"],
+      "relatedLinks": ["hikorea", "nhis-foreigner", "global-seoul"],
+      "publishedAt": "2026-05-20T09:00:00Z",
+      "source": { "name": "Hi Korea", "url": "https://www.hikorea.go.kr/" }
+    }
+  ]
+}
