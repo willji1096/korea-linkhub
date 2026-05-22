@@ -64,7 +64,7 @@ export function RequestForm() {
 
       <fieldset className="flex flex-col gap-2">
         <legend className="caps text-[var(--ink-muted)]">Who are you</legend>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <label className={'cursor-pointer rounded-xl border p-3 transition-colors ' + (role === 'user' ? 'border-[var(--ink)] bg-[var(--bg-sunken)]' : 'border-[var(--line)] hover:border-[var(--line-strong)]')}>
             <input
               type="radio"
