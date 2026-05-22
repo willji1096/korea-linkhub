@@ -261,6 +261,56 @@
       "description": { "en": "Korean National Police lost-and-found database. Report or search for items lost on transit, in taxis, public spaces." },
       "languages": ["ko", "en"],
       "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "gyeongbokgung",
+      "category": "attractions",
+      "priority": 90,
+      "url": "https://royal.cha.go.kr/ENG/main/index.do",
+      "name": { "en": "Gyeongbokgung Palace" },
+      "description": { "en": "Joseon-dynasty main palace in central Seoul. English site with opening hours, ticket info, changing-of-the-guard ceremony schedule." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "lotte-world",
+      "category": "attractions",
+      "priority": 85,
+      "url": "https://adventure.lotteworld.com/eng/main/index.do",
+      "name": { "en": "Lotte World Adventure" },
+      "description": { "en": "Indoor + outdoor theme park in Jamsil. Year-round operation. English booking, day-pass options, queue-skip pass." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "everland",
+      "category": "attractions",
+      "priority": 85,
+      "url": "https://www.everland.com/web/everland/etc/ev_english_main.html",
+      "name": { "en": "Everland Resort" },
+      "description": { "en": "Korea's largest theme park, in Yongin. Seasonal festivals, zoo safari, Caribbean Bay water park, English ticketing." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "n-seoul-tower",
+      "category": "attractions",
+      "priority": 80,
+      "url": "https://www.seoultower.co.kr/en/main/main.do",
+      "name": { "en": "N Seoul Tower" },
+      "description": { "en": "Iconic city-view tower on Namsan. Observation deck, restaurants, cable car. Best at sunset. English booking." },
+      "languages": ["en", "ja", "zh-CN"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "heritage-cha",
+      "category": "attractions",
+      "priority": 75,
+      "url": "https://english.cha.go.kr/",
+      "name": { "en": "Korea Heritage Service" },
+      "description": { "en": "Official directory of palaces, UNESCO sites, traditional villages. English maps, opening hours, free-entry days." },
+      "languages": ["en", "ja", "zh-CN"],
+      "verifiedAt": "2026-05-22"
     }
   ]
 }

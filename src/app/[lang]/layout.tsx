@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import { Analytics } from '@vercel/analytics/next';
 import { isLocale, getMessages } from '@/i18n/locales';
 import '../globals.css';
 
@@ -22,7 +23,10 @@ export default async function LangLayout({ children, params }: LayoutProps<'/[la
   if (!isLocale(lang)) notFound();
   return (
     <html lang={lang} className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

@@ -120,7 +120,21 @@ export function Directory({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="mt-16 text-center text-sm text-[var(--ink-subtle)]">{t('search.empty')}</p>
+        <div className="surface mt-12 flex flex-col items-center gap-4 rounded-2xl p-10 text-center">
+          <p className="text-base text-[var(--ink)]">{t('search.empty')}</p>
+          <p className="max-w-md text-sm text-[var(--ink-muted)]">
+            Know a Korean site foreigners should be able to find here? Suggest it — every request is reviewed by hand.
+          </p>
+          <a
+            href={`/${locale}/request`}
+            className="inline-flex items-center gap-1.5 rounded-full bg-[var(--ink)] px-5 py-2.5 text-sm font-medium text-[var(--ink-inverse)] transition-colors hover:bg-[var(--accent)]"
+          >
+            Suggest a site
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden>
+              <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </div>
       ) : (
         <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((l) => (
