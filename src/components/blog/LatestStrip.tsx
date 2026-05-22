@@ -1,4 +1,4 @@
-import type { Post } from '@/lib/posts';
+import { coverFor, type Post } from '@/lib/posts';
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
@@ -7,7 +7,7 @@ function formatDate(iso: string) {
 export function LatestStrip({ posts, locale }: { posts: Post[]; locale: string }) {
   if (posts.length === 0) return null;
   return (
-    <section className="mt-16 hairline-t bg-[var(--bg-sunken)]">
+    <section className="mt-16 hairline-t bg-[var(--bg-elevated)]">
       <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 sm:py-12">
         <div className="flex items-baseline justify-between gap-3">
           <h2 className="caps text-[var(--ink-muted)]">Latest from the journal</h2>
@@ -20,21 +20,31 @@ export function LatestStrip({ posts, locale }: { posts: Post[]; locale: string }
             <a
               key={p.id}
               href={`/${locale}/blog/${p.slug}`}
-              className="flex w-[260px] shrink-0 flex-col gap-2 rounded-xl border border-[var(--line)] bg-[var(--bg-elevated)] p-4 transition-colors hover:border-[var(--line-strong)] sm:w-[300px]"
+              className="flex w-[260px] shrink-0 flex-col overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--bg-elevated)] transition-colors hover:border-[var(--line-strong)] sm:w-[300px]"
             >
-              <div className="flex items-center gap-1.5">
-                {p.tags.slice(0, 2).map((t) => (
-                  <span key={t} className="caps text-[var(--ink-subtle)]">
-                    {t}
-                  </span>
-                ))}
+              <div className="aspect-[16/9] w-full overflow-hidden bg-[var(--bg-sunken)]">
+                <img
+                  src={coverFor(p)}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                />
               </div>
-              <div className="line-clamp-2 text-sm font-semibold leading-snug text-[var(--ink)]">
-                {p.title}
-              </div>
-              <div className="mt-auto flex items-center justify-between pt-1">
-                <span className="num text-xs text-[var(--ink-subtle)]">{formatDate(p.publishedAt)}</span>
-                <span className="caps text-[var(--ink-faint)]">Read →</span>
+              <div className="flex flex-1 flex-col gap-2 p-4">
+                <div className="flex items-center gap-1.5">
+                  {p.tags.slice(0, 2).map((t) => (
+                    <span key={t} className="caps text-[var(--ink-subtle)]">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="line-clamp-2 text-sm font-semibold leading-snug text-[var(--ink)]">
+                  {p.title}
+                </div>
+                <div className="mt-auto flex items-center justify-between pt-1">
+                  <span className="num text-xs text-[var(--ink-subtle)]">{formatDate(p.publishedAt)}</span>
+                  <span className="caps text-[var(--ink-faint)]">Read →</span>
+                </div>
               </div>
             </a>
           ))}

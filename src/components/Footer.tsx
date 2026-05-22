@@ -12,7 +12,7 @@ export function Footer({
   locale?: string;
 }) {
   return (
-    <footer className="hairline-t bg-[var(--bg-sunken)]">
+    <footer className="hairline-t bg-[var(--bg-sunken-deep)]">
       <div className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
         <div className="grid gap-10 sm:grid-cols-[1.6fr_1fr] sm:gap-16">
           <div>

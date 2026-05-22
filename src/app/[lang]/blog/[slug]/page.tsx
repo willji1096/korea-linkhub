@@ -6,7 +6,7 @@ import { isLocale, getMessages } from '@/i18n/locales';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { TodayBar } from '@/components/TodayBar';
-import { findPost, allPosts } from '@/lib/posts';
+import { findPost, allPosts, coverFor } from '@/lib/posts';
 import linksData from '@/data/links.json';
 
 type Link = { id: string; url: string; category: string; name: { en: string } };
@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: PageProps<'/[lang]/blog/[slug
       description: post.summary,
       type: 'article',
       publishedTime: post.publishedAt,
+      images: [coverFor(post)],
     },
   };
 }
@@ -76,6 +77,15 @@ export default async function BlogPost({ params }: PageProps<'/[lang]/blog/[slug
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--ink-muted)] sm:text-lg">
             {post.summary}
           </p>
+
+          <div className="mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-[var(--bg-sunken)]">
+            <img
+              src={coverFor(post)}
+              alt=""
+              className="h-full w-full object-cover"
+              loading="eager"
+            />
+          </div>
 
           <div className="prose mt-10 max-w-none text-[var(--ink)]">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.body}</ReactMarkdown>

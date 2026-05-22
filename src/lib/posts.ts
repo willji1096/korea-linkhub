@@ -10,7 +10,12 @@ export type Post = {
   relatedLinks?: string[];
   publishedAt: string;
   source?: { name: string; url: string };
+  coverImage?: string;
 };
+
+export function coverFor(post: Post): string {
+  return post.coverImage ?? `https://picsum.photos/seed/${post.slug}/1200/630`;
+}
 
 export function allPosts(): Post[] {
   const items = (postsData.items as Post[]).slice();

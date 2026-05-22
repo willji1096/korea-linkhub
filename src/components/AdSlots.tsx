@@ -17,10 +17,10 @@ type AdsData = {
 
 export function TopBanner({ ads }: { ads: AdsData }) {
   const [dismissed, setDismissed] = useState(false);
-  if (dismissed) return null;
   const live = ads.slots.top[0];
-  const showing = live ?? { id: 'inhouse', message: ads.inhouse.top.message, cta: ads.inhouse.top.cta, url: ads.inhouse.top.url };
-  const isSponsored = !!live;
+  if (dismissed || !live) return null;
+  const showing = live;
+  const isSponsored = true;
   return (
     <div className="hairline-b bg-[var(--bg-sunken)]">
       <div className="mx-auto flex w-full max-w-6xl items-center gap-3 px-5 py-2 text-sm sm:px-8">

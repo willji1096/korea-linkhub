@@ -21,17 +21,11 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
 
   return (
     <>
-      <TodayBar />
       <TopBanner ads={adsData as never} />
+      <TodayBar />
       <Header locale={lang} brand={m['site.name']} status={`${links.length} sites`} />
       <FullWidthPromo />
       <main className="flex-1">
-        <section className="mx-auto w-full max-w-6xl px-5 pt-10 pb-2 sm:px-8 sm:pt-12">
-          <p className="caps text-[var(--ink-subtle)]">{m['site.name']}</p>
-          <h1 className="mt-2 max-w-3xl text-[28px] font-semibold leading-[1.15] tracking-tight text-[var(--ink)] sm:text-[36px]">
-            {m['site.tagline']}
-          </h1>
-        </section>
         <EventsRow events={adsData.slots.events as never} inhouse={adsData.inhouse.events as never} />
         <Directory links={links} messages={m} locale={lang} />
         <LatestStrip posts={latestPosts} locale={lang} />

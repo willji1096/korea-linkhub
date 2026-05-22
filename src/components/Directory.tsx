@@ -100,7 +100,7 @@ export function Directory({
               </button>
             )}
           </div>
-          <div className="no-scrollbar -mx-5 overflow-x-auto px-5 sm:mx-0 sm:overflow-visible sm:px-0">
+          <div className="no-scrollbar -mx-5 flex items-center gap-3 overflow-x-auto px-5 sm:mx-0 sm:overflow-visible sm:px-0">
             <ul className="flex gap-1.5">
               <li>
                 <Chip active={category === 'all'} onClick={() => setCategory('all')}>
@@ -115,6 +115,9 @@ export function Directory({
                 </li>
               ))}
             </ul>
+            <span className="num caps ml-auto shrink-0 text-[var(--ink-subtle)]" aria-live="polite">
+              {filtered.length} / {links.length}
+            </span>
           </div>
         </div>
       </div>
@@ -199,12 +202,16 @@ function LinkCard({
   messages: Messages;
   catLabel: (c: string) => string;
 }) {
+  const featured = link.priority >= 95;
   return (
     <a
       href={link.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="surface surface-hover group relative flex h-full flex-col justify-between gap-4 rounded-2xl p-5"
+      className={
+        'surface surface-hover group relative flex h-full flex-col justify-between gap-4 rounded-2xl p-5 ' +
+        (featured ? 'hover:border-[var(--ink)]' : '')
+      }
     >
       <BookmarkToggle id={link.id} />
       <div>
@@ -216,7 +223,7 @@ function LinkCard({
           {pick(link.name, locale)}
         </h3>
         {link.description && (
-          <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--ink-muted)]">
+          <p className="mt-2 line-clamp-1 text-sm leading-relaxed text-[var(--ink-muted)] group-hover:line-clamp-2">
             {pick(link.description, locale)}
           </p>
         )}
