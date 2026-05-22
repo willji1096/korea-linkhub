@@ -3,6 +3,56 @@
   "updatedAt": "2026-05-22",
   "items": [
     {
+      "id": "nhis-foreigner-enrolment",
+      "slug": "nhis-foreigner-enrolment",
+      "title": "NHIS for foreigners: when it's automatic and when you have to enrol yourself",
+      "summary": "If you've been in Korea for six months you're already in the National Health Insurance Service, ready or not. The question is whether your employer or school is doing it for you.",
+      "body": "Korean health insurance (NHIS) is mandatory for almost every foreigner staying past the six-month mark. The detail people miss is that it's not opt-in — it just *starts*, and you owe the bill from that month.\n\n## Who enrols you\n\n- **Full-time employees** — your company handles it. Look at your payslip; the deduction shows up as 건강보험.\n- **University students (D-4 / D-2)** — your school usually arranges a group enrolment. Ask the international office. If they say nothing, *you* are responsible.\n- **Self-employed, freelancers, dependants of citizens** — you enrol at your local NHIS branch within 90 days of crossing the six-month line.\n\n## What it costs\n\nMonthly contribution is around KRW 70,000–150,000 for students paying solo, scaling with income for employees. It's cheaper than almost any private alternative and includes hospital visits, dental basics, and emergency care.\n\n## Where it falls short\n\nNHIS covers a lot but not everything. Cosmetic procedures, premium private rooms, and most non-Korean prescriptions are out-of-pocket. Foreign travel insurance is still worth keeping for the first six months when you aren't covered yet.\n\n## What to do tomorrow\n\nCall **1577-1000** (English available) or use the NHIS English portal in the related links below. Confirm whether you've already been auto-enrolled. If you're a student, ask your school whether the group enrolment includes you.",
+      "tags": ["visa", "long-term", "health"],
+      "relatedLinks": ["nhis-foreigner", "hikorea", "liveinkorea"],
+      "publishedAt": "2026-05-18T09:00:00Z"
+    },
+    {
+      "id": "english-doctor-seoul",
+      "slug": "english-doctor-seoul",
+      "title": "Finding an English-speaking doctor in Seoul: three places that actually work",
+      "summary": "Most large Korean hospitals have a foreign patient centre. Knowing which to use for what saves a lot of waiting.",
+      "body": "When something goes wrong with your body in Korea, the worst time to start Googling is the moment it hurts. Bookmark these in advance.\n\n## For real emergencies\n\n**E-Gen (e-gen.or.kr)** is the national emergency medical portal. The English map shows the nearest open emergency rooms and 24-hour pharmacies. If you can't open the site, dial **119** — the call centre connects you to an English interpreter within 30 seconds.\n\nFor anything less than 'I need an ambulance,' dial **1339** instead. It's the medical advice line and they can route you to a nearby clinic that handles your specific issue.\n\n## For scheduled appointments\n\nThe big three for English-speaking care in Seoul:\n\n- **Asan Medical Center International Health Service** — strongest for general medicine, oncology, cardiology.\n- **Severance Hospital International Health Care Center** — strong on women's health, paediatrics.\n- **Samsung Medical Center Global Health Care Center** — best workflow for fast check-ups, billing is the cleanest for insurance claims.\n\nAll three publish English booking forms; for first visits, calling is usually faster than the web form.\n\n## For everyday stuff in Itaewon / Hannam\n\nSeveral expat-oriented clinics around Itaewon take walk-ins — Yonsei Bom Hospital, International Clinic. They are not cheaper than a regular Korean clinic, but the English fluency is reliable.\n\n## The unsexy tip\n\nKeep a photo on your phone of your passport + ARC + the Korean name of any medication you take. Half the friction at the front desk evaporates.",
+      "tags": ["health", "first-trip"],
+      "relatedLinks": ["e-gen", "medical-korea", "asan-international"],
+      "publishedAt": "2026-05-16T09:00:00Z"
+    },
+    {
+      "id": "kpop-tickets-from-overseas",
+      "slug": "kpop-tickets-from-overseas",
+      "title": "Buying K-pop concert tickets from overseas: how it really works in 2026",
+      "summary": "Interpark and Melon are the two real options. Either way, the difficulty is not the queue — it's identity verification.",
+      "body": "Two platforms run almost every major Korean concert: **Interpark** and **Melon Ticket**. Both have English flows, both occasionally fail on foreign cards. Here's what reliably works.\n\n## Step 1 — Make the account before you need it\n\nDon't wait until ticket day. Both sites require an email-verified account and Interpark's global checkout sometimes asks for a passport number. Set this up days in advance and you skip the panic.\n\n## Step 2 — Use a card that knows you're abroad\n\nForeign cards work, but Korean 3-D Secure systems sometimes block them. The two that fail least often in my experience:\n\n- Visa / Mastercard issued by a major US or EU bank, with online purchases enabled.\n- A Wise multi-currency card pre-loaded with KRW.\n\nKakao Pay and Naver Pay are only available if you have a Korean phone number.\n\n## Step 3 — Know when fan-club pre-sale beats general\n\nMost large groups release tickets in tiers: official global fan club, then domestic fan club, then general public. The global tier is usually 20–40% of the inventory and it's released a few days before general. If you're flying in for one specific group, joining the global fan club ahead of time pays for itself in one show.\n\n## When it goes wrong\n\nIf payment fails after seat selection, you have about 5 minutes before the seat releases. Refresh, try a different card, or move to the next-best seat in the same section. Do not refresh the browser — open a new tab and reselect from your account page.",
+      "tags": ["events", "k-pop", "first-trip"],
+      "relatedLinks": ["interpark", "melon-ticket", "wise"],
+      "publishedAt": "2026-05-14T09:00:00Z"
+    },
+    {
+      "id": "incheon-18-hour-layover",
+      "slug": "incheon-18-hour-layover",
+      "title": "18 hours at Incheon: a layover plan that's actually worth doing",
+      "summary": "If your transit window is longer than 6 hours and your passport qualifies for visa-free entry, leaving the airport is usually the better call.",
+      "body": "Incheon is one of the few major airports where 'just stay at the airport' is a respectable option — the sleep zones, showers and food are all genuinely good. But once you cross 12 hours, the city beats the lounge.\n\n## Quick rules\n\n- Most Western and Northeast Asian passports get visa-free entry of 30–90 days. K-ETA still required for boarding the inbound flight.\n- Bags can sit in airport storage (Terminal 1 Level B1) for ~KRW 6,000 per piece per day.\n- AREX Express to Seoul Station: **43 minutes, KRW 11,000**. Cheapest fast way in.\n\n## A 18-hour plan that doesn't kill you\n\nAssume you land at 06:00 and fly out at 24:00.\n\n1. **06:30 – 07:30** — Land, immigration, breakfast at the food court (Korean Air's first-floor 김밥 is reliable).\n2. **07:30 – 08:15** — Bag drop at storage. Buy a T-money card at any convenience store, top up KRW 10,000.\n3. **08:30** — AREX Express to Seoul Station.\n4. **09:30 – 12:00** — Walk the **Gyeongbokgung → Bukchon → Insadong** loop. Tea house, a museum if you want, lunch in Insadong.\n5. **12:30 – 14:30** — Subway to Hongdae or Gangnam for cafés and people-watching.\n6. **15:00** — Subway back to Seoul Station, AREX back to ICN.\n7. **16:30** — Through security, dinner in the terminal (the basement food court beats the upper floors).\n8. **18:00 – 23:00** — Lounge, shower, sleep zone (look for the 'Rest & Relax' signs near gates 40 and 121).\n\n## The unromantic warning\n\nLeave at least **4 hours** between getting back to ICN and boarding. Immigration and security can be slow on heavy days. Do not cut this close.",
+      "tags": ["transit", "first-trip"],
+      "relatedLinks": ["incheon-airport", "arex", "k-eta"],
+      "publishedAt": "2026-05-12T09:00:00Z"
+    },
+    {
+      "id": "halal-food-seoul",
+      "slug": "halal-food-seoul",
+      "title": "Halal food in Seoul: a real list, not a 'top 10' list",
+      "summary": "Outside of Itaewon's Islamic Street, finding certified halal in Seoul takes more work than it should. Here's where it's reliable.",
+      "body": "Seoul is friendlier for Muslim travellers than it was even five years ago, but most restaurants still aren't certified. The good news: enough have been audited that you can plan multiple days without repeating yourself.\n\n## What 'halal' means here\n\nKorea Tourism Organization tags restaurants in four levels: **Self Certified, Muslim Friendly, Halal Certified, Pork Free**. Only the second two are reliably halal for strict observers. The KTO maintains an English directory with these labels.\n\n## Reliable in central Seoul\n\n- **Yongsan / Itaewon Islamic Street** — anchored by the **Seoul Central Mosque**. Eid, Salam, Kervan all have official certification. Walking distance from Itaewon station exit 3.\n- **Murree Pakistani Restaurant** (Itaewon) — Pakistan-style, halal certified, generous portions.\n- **Plant Cafe** (multiple locations) — entirely vegan, so de-facto safe.\n- **Sultan Kebab** (Hongdae) — Turkish, halal certified.\n\n## Outside Seoul\n\nBusan's Haeundae area has a small but solid set. Jeju's tourist zones increasingly carry KTO 'Muslim Friendly' tags. Outside major tourist cities it gets thin.\n\n## At the airport\n\nIncheon Airport Terminal 1 has a prayer room near gate 25 and Terminal 2 near gate 252. A few food stalls — Mr. Pizza Halal and a Turkish-style outlet — carry certifications visible on the menu.\n\n## When the menu is silent\n\nIf nothing is certified and you're hungry, vegetarian Korean temple food (사찰음식) is the safer fallback than 'just no pork'. Sanchon in Insadong is the best-known temple-food restaurant in Seoul.",
+      "tags": ["food", "family", "first-trip"],
+      "relatedLinks": ["visitkorea", "visit-seoul"],
+      "publishedAt": "2026-05-10T09:00:00Z"
+    },
+    {
       "id": "k-eta-quick-guide",
       "slug": "k-eta-quick-guide",
       "title": "K-ETA: what visa-free visitors actually need to do before flying",
