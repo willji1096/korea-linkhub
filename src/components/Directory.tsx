@@ -147,31 +147,23 @@ export function Directory({
                 <path d="M3 4.5l3 3 3-3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            <span className="num caps shrink-0 text-[var(--ink-subtle)]" aria-live="polite">
-              {filtered.length} / {links.length}
-            </span>
           </div>
 
-          {/* Desktop: chip wrap + count */}
-          <div className="hidden items-start justify-between gap-3 sm:flex">
-            <ul className="flex flex-wrap gap-1.5">
-              <li>
-                <Chip active={category === 'all'} onClick={() => setCategory('all')}>
-                  {t('category.all')}
+          {/* Desktop: chip wrap */}
+          <ul className="hidden flex-wrap gap-1.5 sm:flex">
+            <li>
+              <Chip active={category === 'all'} onClick={() => setCategory('all')}>
+                {t('category.all')}
+              </Chip>
+            </li>
+            {allCategories.map((c) => (
+              <li key={c}>
+                <Chip active={category === c} onClick={() => setCategory(c)}>
+                  {catLabel(c)}
                 </Chip>
               </li>
-              {allCategories.map((c) => (
-                <li key={c}>
-                  <Chip active={category === c} onClick={() => setCategory(c)}>
-                    {catLabel(c)}
-                  </Chip>
-                </li>
-              ))}
-            </ul>
-            <span className="num caps shrink-0 pt-1.5 text-[var(--ink-subtle)]" aria-live="polite">
-              {filtered.length} / {links.length}
-            </span>
-          </div>
+            ))}
+          </ul>
         </div>
       </div>
 
