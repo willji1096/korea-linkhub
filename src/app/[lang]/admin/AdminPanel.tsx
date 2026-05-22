@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { upsertPhone, upsertLink, deleteItem, verifyLink, approveRequest, rejectRequest, upsertPost, deletePost, type ActionResult } from './actions';
+import { upsertPhone, upsertLink, deleteItem, verifyLink, approveRequest, rejectRequest, type ActionResult } from './actions';
 
 export type RequestItem = {
   id: string;
@@ -11,18 +11,6 @@ export type RequestItem = {
   email?: string;
   role: 'user' | 'owner';
   createdAt: string;
-};
-
-export type PostItem = {
-  id: string;
-  slug: string;
-  title: string;
-  summary: string;
-  body: string;
-  tags: string[];
-  relatedLinks?: string[];
-  publishedAt: string;
-  source?: { name: string; url: string };
 };
 
 type Localized = { en: string; [key: string]: string | undefined };
@@ -57,16 +45,13 @@ export function AdminPanel({
   phones,
   links,
   requests,
-  posts,
 }: {
   phones: PhoneItem[];
   links: LinkItem[];
   requests: RequestItem[];
-  posts: PostItem[];
 }) {
-  const [tab, setTab] = useState<'phones' | 'links' | 'requests' | 'posts'>('links');
+  const [tab, setTab] = useState<'phones' | 'links' | 'requests'>('links');
   const [editing, setEditing] = useState<PhoneItem | LinkItem | null>(null);
-  const [editingPost, setEditingPost] = useState<PostItem | null>(null);
   const [message, setMessage] = useState<string>('');
   const [verifyResults, setVerifyResults] = useState<Record<string, { code: number; ok: boolean }>>({});
   const [, startTransition] = useTransition();
@@ -75,7 +60,6 @@ export function AdminPanel({
     if (result.ok) {
       setMessage(success);
       setEditing(null);
-      setEditingPost(null);
     } else {
       setMessage(`Error: ${result.error}`);
     }
@@ -122,9 +106,6 @@ export function AdminPanel({
         <TabBtn active={tab === 'requests'} onClick={() => { setTab('requests'); setEditing(null); }}>
           Requests · {requests.length}
         </TabBtn>
-        <TabBtn active={tab === 'posts'} onClick={() => { setTab('posts'); setEditing(null); setEditingPost(null); }}>
-          Posts · {posts.length}
-        </TabBtn>
         {tab === 'links' && (
           <button
             type="button"
@@ -142,7 +123,7 @@ export function AdminPanel({
         </div>
       )}
 
-      {tab !== 'requests' && tab !== 'posts' && (
+      {tab !== 'requests' && (
         <div className="mb-6 rounded-xl border border-zinc-200 bg-white p-4">
           <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
             {editing ? `Edit ${editing.id}` : `New ${tab === 'phones' ? 'phone' : 'link'}`}
@@ -165,67 +146,7 @@ export function AdminPanel({
         </div>
       )}
 
-      {tab === 'posts' && (
-        <div className="mb-6 rounded-xl border border-zinc-200 bg-white p-4">
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
-            {editingPost ? `Edit · ${editingPost.title}` : 'New post'}
-          </h2>
-          <PostForm
-            key={editingPost?.id ?? 'new'}
-            initial={editingPost}
-            onSubmit={async (fd) =>
-              handleResult(await upsertPost(fd), `Saved post "${fd.get('title')}"`)
-            }
-            onCancel={() => setEditingPost(null)}
-          />
-        </div>
-      )}
-
-      {tab === 'posts' ? (
-        <ul className="flex flex-col gap-3">
-          {posts.length === 0 && (
-            <li className="rounded-xl border border-dashed border-zinc-200 p-6 text-center text-sm text-zinc-500">
-              No posts yet. Use the form above to write the first one.
-            </li>
-          )}
-          {posts.map((p) => (
-            <li key={p.id} className="flex items-start justify-between gap-3 rounded-xl border border-zinc-200 bg-white p-4">
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="font-mono text-[11px] text-zinc-400">{p.slug}</span>
-                  {p.tags.map((t) => (
-                    <span key={t} className="rounded bg-zinc-100 px-1.5 py-0.5 text-[11px] text-zinc-600">
-                      {t}
-                    </span>
-                  ))}
-                  <span className="font-mono text-[11px] text-zinc-400">{new Date(p.publishedAt).toISOString().slice(0, 10)}</span>
-                </div>
-                <div className="mt-1 text-sm font-semibold text-zinc-900">{p.title}</div>
-                <p className="mt-1 line-clamp-2 text-xs text-zinc-600">{p.summary}</p>
-              </div>
-              <div className="flex shrink-0 flex-col gap-1">
-                <button
-                  type="button"
-                  onClick={() => setEditingPost(p)}
-                  className="rounded-md border border-zinc-200 px-2 py-1 text-xs hover:bg-zinc-50"
-                >
-                  Edit
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (!confirm(`Delete "${p.title}"?`)) return;
-                    startTransition(async () => handleResult(await deletePost(p.id), `Deleted ${p.title}`));
-                  }}
-                  className="rounded-md border border-red-200 px-2 py-1 text-xs text-red-700 hover:bg-red-50"
-                >
-                  Delete
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      ) : tab === 'requests' ? (
+      {tab === 'requests' ? (
         <ul className="flex flex-col gap-3">
           {requests.length === 0 && (
             <li className="rounded-xl border border-dashed border-zinc-200 p-6 text-center text-sm text-zinc-500">
@@ -356,110 +277,6 @@ function Field({ label, children, required }: { label: string; children: React.R
 }
 
 const inputClass = 'rounded-md border border-zinc-300 bg-white px-3 py-1.5 text-sm outline-none focus:border-zinc-500';
-
-function PostForm({
-  initial,
-  onSubmit,
-  onCancel,
-}: {
-  initial: PostItem | null;
-  onSubmit: (fd: FormData) => Promise<void>;
-  onCancel: () => void;
-}) {
-  return (
-    <form action={onSubmit} className="grid grid-cols-1 gap-3">
-      {initial && <input type="hidden" name="editing_id" value={initial.id} />}
-      <Field label="title" required>
-        <input
-          name="title"
-          required
-          defaultValue={initial?.title ?? ''}
-          className={inputClass}
-          placeholder="Visa extension explained for D-4 students"
-        />
-      </Field>
-      <Field label="summary (1-2 sentences, used on cards + meta)" required>
-        <textarea
-          name="summary"
-          required
-          rows={2}
-          defaultValue={initial?.summary ?? ''}
-          className={inputClass}
-        />
-      </Field>
-      <Field label="body (markdown)" required>
-        <textarea
-          name="body"
-          required
-          rows={14}
-          defaultValue={initial?.body ?? ''}
-          className={inputClass + ' font-mono text-[13px]'}
-          placeholder="## Heading&#10;&#10;Paragraph...&#10;&#10;- bullet"
-        />
-      </Field>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <Field label="tags (comma)">
-          <input
-            name="tags"
-            defaultValue={initial?.tags.join(', ') ?? ''}
-            className={inputClass}
-            placeholder="visa, long-term"
-          />
-        </Field>
-        <Field label="related link ids (comma)">
-          <input
-            name="related"
-            defaultValue={initial?.relatedLinks?.join(', ') ?? ''}
-            className={inputClass}
-            placeholder="hikorea, k-eta"
-          />
-        </Field>
-        <Field label="source name">
-          <input
-            name="source_name"
-            defaultValue={initial?.source?.name ?? ''}
-            className={inputClass}
-            placeholder="Korea Immigration Service"
-          />
-        </Field>
-        <Field label="source url">
-          <input
-            name="source_url"
-            type="url"
-            defaultValue={initial?.source?.url ?? ''}
-            className={inputClass}
-            placeholder="https://www.hikorea.go.kr/"
-          />
-        </Field>
-        <Field label="published_at (ISO, leave blank for now)">
-          <input
-            name="published_at"
-            defaultValue={initial?.publishedAt ?? ''}
-            className={inputClass}
-            placeholder="2026-05-22T09:00:00Z"
-          />
-        </Field>
-      </div>
-      <div className="flex gap-2">
-        <button
-          type="submit"
-          className="rounded-md bg-zinc-900 px-4 py-1.5 text-sm font-medium text-white hover:bg-zinc-800"
-        >
-          {initial ? 'Update post' : 'Publish'}
-        </button>
-        {initial && (
-          <button
-            type="button"
-            onClick={onCancel}
-            className="rounded-md border border-zinc-300 px-4 py-1.5 text-sm hover:bg-zinc-50"
-          >
-            Cancel edit
-          </button>
-        )}
-      </div>
-    </form>
-  );
-}
 
 function PhoneForm({
   initial,

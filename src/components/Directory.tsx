@@ -2,8 +2,6 @@
 
 import { useMemo, useState } from 'react';
 import { BookmarkToggle } from './BookmarkToggle';
-import { RelatedPosts } from './blog/RelatedPosts';
-import type { Post } from '@/lib/posts';
 
 type Localized = { en: string; [key: string]: string | undefined };
 
@@ -34,12 +32,10 @@ function hostOf(url: string) {
 
 export function Directory({
   links,
-  posts,
   messages,
   locale,
 }: {
   links: Link[];
-  posts: Post[];
   messages: Messages;
   locale: string;
 }) {
@@ -125,8 +121,6 @@ export function Directory({
           </div>
         </div>
       </div>
-
-      <RelatedPosts posts={posts} locale={locale} query={query} category={category} />
 
       {filtered.length === 0 ? (
         <div className="surface mt-12 flex flex-col items-center gap-4 rounded-2xl p-10 text-center">
