@@ -46,15 +46,13 @@ export function TopBanner({ ads }: { ads: AdsData }) {
 
 export function FullWidthPromo() {
   return (
-    <section aria-label="korea-linkhub" className="hairline-b">
-      <div className="relative w-full overflow-hidden bg-[var(--bg-sunken)]">
-        <img
-          src="/hero-banner.png"
-          alt=""
-          className="block h-auto max-h-[140px] w-full object-cover object-center sm:max-h-[280px] lg:max-h-[340px]"
-          loading="eager"
-        />
-      </div>
+    <section aria-label="korea-linkhub" className="overflow-hidden">
+      <img
+        src="/hero-banner.png"
+        alt=""
+        className="block h-[120px] w-full object-cover object-center sm:h-[260px] lg:h-[320px]"
+        loading="eager"
+      />
     </section>
   );
 }
