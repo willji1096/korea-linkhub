@@ -1,0 +1,122 @@
+{
+  "$schema": "./phones.schema.json",
+  "updatedAt": "2026-05-22",
+  "items": [
+    {
+      "id": "police-112",
+      "category": "emergency",
+      "priority": 100,
+      "number": "112",
+      "name": { "en": "Police", "ja": "警察", "zh-CN": "警察" },
+      "description": { "en": "24/7 emergency police line. English supported.", "ja": "24時間警察緊急通報。英語対応。", "zh-CN": "24小时警察紧急电话。支持英语。" },
+      "languages": ["ko", "en", "ja", "zh", "ru", "vi"],
+      "hours": "24/7",
+      "free": true,
+      "source": { "url": "https://www.police.go.kr/eng/", "verifiedAt": "2026-05-22" }
+    },
+    {
+      "id": "fire-119",
+      "category": "emergency",
+      "priority": 100,
+      "number": "119",
+      "name": { "en": "Fire & Ambulance" },
+      "description": { "en": "Fire department, ambulance and rescue. Multi-language interpretation available." },
+      "languages": ["ko", "en", "ja", "zh"],
+      "hours": "24/7",
+      "free": true
+    },
+    {
+      "id": "tourist-1330",
+      "category": "tourist_help",
+      "priority": 95,
+      "number": "1330",
+      "name": { "en": "Korea Tourism Hotline (KTO)" },
+      "description": { "en": "Korea Tourism Organization 24/7 hotline. Free interpretation in 20+ languages. Travel info, complaints, urgent assistance." },
+      "languages": ["en", "ja", "zh", "ru", "vi", "th", "id", "ms", "ar", "fr", "de", "es", "pt", "it", "tr", "pl"],
+      "hours": "24/7",
+      "free": true,
+      "source": { "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=87171", "verifiedAt": "2026-05-22" }
+    },
+    {
+      "id": "medical-1339",
+      "category": "health",
+      "priority": 80,
+      "number": "1339",
+      "name": { "en": "Emergency Medical Information" },
+      "description": { "en": "Non-emergency medical hotline. Connects you to nearby hospitals and on-call doctors." },
+      "languages": ["ko", "en"],
+      "hours": "24/7",
+      "free": true
+    },
+    {
+      "id": "immigration-1345",
+      "category": "visa",
+      "priority": 85,
+      "number": "1345",
+      "name": { "en": "Immigration Contact Center" },
+      "description": { "en": "Visa, residence registration, re-entry permit. 20 languages supported." },
+      "languages": ["ko", "en", "ja", "zh", "vi", "th", "id", "fr", "de", "es", "ru", "ar"],
+      "hours": "Mon-Fri 09:00-18:00",
+      "free": false,
+      "source": { "url": "https://www.hikorea.go.kr/", "verifiedAt": "2026-05-22" }
+    },
+    {
+      "id": "seoul-120",
+      "category": "living",
+      "priority": 70,
+      "number": "120",
+      "name": { "en": "Seoul Dasan Call Center" },
+      "description": { "en": "Seoul city services in English, Chinese, Japanese, Vietnamese, Mongolian. Public transport, trash, district office hours, complaints." },
+      "languages": ["en", "ja", "zh", "vi", "mn"],
+      "hours": "24/7 (Korean), 09-22 (foreign languages)",
+      "free": true,
+      "region": "seoul"
+    },
+    {
+      "id": "ktx-1599",
+      "category": "transport",
+      "priority": 60,
+      "number": "1599-7777",
+      "name": { "en": "KORAIL (KTX/Train) English" },
+      "description": { "en": "KTX and intercity train reservations. English line available." },
+      "languages": ["ko", "en"],
+      "hours": "07:00-22:00",
+      "free": false
+    },
+    {
+      "id": "airport-1577",
+      "category": "transport",
+      "priority": 65,
+      "number": "1577-2600",
+      "name": { "en": "Incheon Airport Call Center" },
+      "description": { "en": "Flight info, lost & found, airport facilities." },
+      "languages": ["ko", "en", "ja", "zh"],
+      "hours": "24/7",
+      "free": false
+    },
+    {
+      "id": "embassy-us",
+      "category": "embassy",
+      "priority": 50,
+      "number": "+82-2-397-4114",
+      "name": { "en": "US Embassy Seoul" },
+      "description": { "en": "Consular services for US citizens. After-hours emergency available." },
+      "languages": ["en"],
+      "hours": "Mon-Fri 08:30-17:30",
+      "free": false,
+      "country": "US"
+    },
+    {
+      "id": "embassy-jp",
+      "category": "embassy",
+      "priority": 50,
+      "number": "+82-2-2170-5200",
+      "name": { "en": "Japanese Embassy Seoul" },
+      "description": { "en": "Consular services for Japanese citizens." },
+      "languages": ["ja", "en"],
+      "hours": "Mon-Fri 09:00-17:30",
+      "free": false,
+      "country": "JP"
+    }
+  ]
+}

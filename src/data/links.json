@@ -1,0 +1,266 @@
+{
+  "$schema": "./links.schema.json",
+  "updatedAt": "2026-05-22",
+  "items": [
+    {
+      "id": "visitkorea",
+      "category": "tourism",
+      "priority": 100,
+      "url": "https://english.visitkorea.or.kr/",
+      "name": { "en": "Visit Korea (KTO)" },
+      "description": { "en": "Korea Tourism Organization official portal. Festivals, attractions, itineraries. Includes 1330 tourist hotline info (20 languages, 24/7)." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW", "ru", "vi", "th", "ar", "fr", "de", "es"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "k-eta",
+      "category": "visa",
+      "priority": 100,
+      "url": "https://www.k-eta.go.kr/portal/apply/index.do",
+      "name": { "en": "K-ETA (Electronic Travel Authorization)" },
+      "description": { "en": "Required for visa-free entry to Korea — apply at least 72 hours before flight. Most short-stay visitors need this." },
+      "languages": ["en", "ko", "ja", "zh-CN", "zh-TW", "vi", "th"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "hikorea",
+      "category": "visa",
+      "priority": 95,
+      "url": "https://www.hikorea.go.kr/Main.pt",
+      "name": { "en": "Hi Korea (Immigration)" },
+      "description": { "en": "Visa application, e-immigration, residence reporting. Includes 1345 immigration call center info." },
+      "languages": ["en", "ko", "zh", "vi"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "e-gen",
+      "category": "health",
+      "priority": 95,
+      "url": "https://www.e-gen.or.kr/",
+      "name": { "en": "Emergency Medical Portal (E-Gen)" },
+      "description": { "en": "Find nearby emergency rooms, pharmacies, and English-capable hospitals. Includes 1339 medical hotline info." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "0404",
+      "category": "official",
+      "priority": 90,
+      "url": "https://www.0404.go.kr/main/mainPage",
+      "name": { "en": "Korea MOFA Consular (0404)" },
+      "description": { "en": "Ministry of Foreign Affairs portal. Embassy contacts, consular notices, emergency line for foreign nationals." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "global-seoul",
+      "category": "living",
+      "priority": 90,
+      "url": "https://global.seoul.go.kr/",
+      "name": { "en": "Global Seoul (Foreigner Portal)" },
+      "description": { "en": "Seoul Metropolitan Government portal for foreign residents. Living, jobs, classes, support centers. Includes 120 Dasan Call info (5 languages)." },
+      "languages": ["en", "zh", "ja", "vi", "mn"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "medical-korea",
+      "category": "health",
+      "priority": 85,
+      "url": "https://www.medicalkorea.or.kr/en/index",
+      "name": { "en": "Medical Korea (KHIDI)" },
+      "description": { "en": "Official medical tourism portal. Hospital directory, procedure guides, interpreter services for foreign patients." },
+      "languages": ["en", "zh", "ru", "ar", "ja"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "korail",
+      "category": "transport",
+      "priority": 80,
+      "url": "https://www.korail.com/",
+      "name": { "en": "Korail (KTX / Train)" },
+      "description": { "en": "Korean railway booking. KTX, ITX, intercity. English toggle in top-right." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "incheon-airport",
+      "category": "transport",
+      "priority": 80,
+      "url": "https://www.airport.kr/ap_en/index.do",
+      "name": { "en": "Incheon Airport" },
+      "description": { "en": "Flight schedules, terminal maps, baggage, transit, currency exchange. Includes call center 1577-2600." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "arex",
+      "category": "transport",
+      "priority": 80,
+      "url": "https://www.arex.or.kr/",
+      "name": { "en": "AREX (Airport Express)" },
+      "description": { "en": "Incheon Airport to Seoul Station direct train. Cheapest fast option, runs through the night." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "naver-map",
+      "category": "transport",
+      "priority": 78,
+      "url": "https://map.naver.com/",
+      "name": { "en": "Naver Map" },
+      "description": { "en": "The most accurate Korea map. English UI available. Better than Google Maps for transit in Korea." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "papago",
+      "category": "tools",
+      "priority": 75,
+      "url": "https://papago.naver.com/",
+      "name": { "en": "Papago (Translation)" },
+      "description": { "en": "Naver translation. Strong for Korean-English, Korean-Japanese, Korean-Chinese. Includes camera and conversation modes." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "deepl",
+      "category": "tools",
+      "priority": 72,
+      "url": "https://www.deepl.com/translator",
+      "name": { "en": "DeepL Translator" },
+      "description": { "en": "Often more natural than Papago for long sentences and English ↔ European languages. Pair with Papago for tricky translations." },
+      "languages": ["en", "ja", "zh", "de", "fr", "es", "it", "pt", "ru"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "weather-kma",
+      "category": "tools",
+      "priority": 70,
+      "url": "https://www.weather.go.kr/w/index.do",
+      "name": { "en": "Korea Weather (KMA)" },
+      "description": { "en": "Official Korea Meteorological Administration. Typhoon, dust, heat alerts often delivered in Korean only on phones." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "interpark",
+      "category": "events",
+      "priority": 70,
+      "url": "https://nol.interpark.com/",
+      "name": { "en": "Interpark Tickets" },
+      "description": { "en": "Concerts, K-pop, musicals, festivals. Largest Korean ticket platform with English booking." },
+      "languages": ["en", "ko", "ja", "zh"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "tmoney",
+      "category": "transport",
+      "priority": 75,
+      "url": "https://www.t-money.co.kr/",
+      "name": { "en": "T-money (Transit Card)" },
+      "description": { "en": "Top-up and balance check for T-money transit cards. Subway / bus across Korea." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "wise",
+      "category": "money",
+      "priority": 65,
+      "url": "https://wise.com/",
+      "name": { "en": "Wise (Money Transfer)" },
+      "description": { "en": "Cheap international transfers. Holds KRW balance." },
+      "languages": ["en", "ja", "zh", "es", "fr"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "airalo",
+      "category": "esim",
+      "priority": 65,
+      "url": "https://www.airalo.com/",
+      "name": { "en": "Airalo eSIM" },
+      "description": { "en": "Buy a Korea data eSIM before arrival. Search 'Korea' on the home page. Works on iPhone XS+ and recent Android." },
+      "languages": ["en", "ja", "zh", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "yanolja-global",
+      "category": "stay",
+      "priority": 75,
+      "url": "https://global.yanolja.com/",
+      "name": { "en": "Yanolja Global (Hotels)" },
+      "description": { "en": "Korea's largest hotel booking platform with English UI. Hotels, pensions, hanok stays, motels — local inventory beyond what global sites carry." },
+      "languages": ["en", "ja", "zh", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "nhis-foreigner",
+      "category": "living",
+      "priority": 85,
+      "url": "https://www.nhis.or.kr/english/wbheaa01200m01.do",
+      "name": { "en": "NHIS (Health Insurance for Foreigners)" },
+      "description": { "en": "National Health Insurance Service English guide. Mandatory enrollment for foreigners staying 6 months or longer." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "safe-korea",
+      "category": "safety",
+      "priority": 90,
+      "url": "https://www.safekorea.go.kr/",
+      "name": { "en": "Safe Korea (National Disaster Portal)" },
+      "description": { "en": "National disaster and safety portal. Earthquake, typhoon, fine dust, fire alerts. Foreign-language emergency text guidance and the 119 fire/rescue line." },
+      "languages": ["en", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "visit-seoul",
+      "category": "region",
+      "priority": 85,
+      "url": "https://english.visitseoul.net/",
+      "name": { "en": "Visit Seoul" },
+      "description": { "en": "Seoul Metropolitan Government tourism portal. Itineraries, neighbourhoods, events, official Seoul Tourist Information Centers map." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "asan-international",
+      "category": "health",
+      "priority": 80,
+      "url": "https://eng.amc.seoul.kr/",
+      "name": { "en": "Asan Medical Center (International)" },
+      "description": { "en": "Top-ranked Korean general hospital with a dedicated International Health Center. English-language appointments, interpretation, billing." },
+      "languages": ["en", "ja", "zh", "ru", "ar", "mn"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "visit-busan",
+      "category": "region",
+      "priority": 75,
+      "url": "https://www.visitbusan.net/index.do?menuCd=DOM_000000204001001000",
+      "name": { "en": "Visit Busan" },
+      "description": { "en": "Busan Metropolitan City tourism portal. Beaches, film, harbour itineraries, multilingual support." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "visit-jeju",
+      "category": "region",
+      "priority": 75,
+      "url": "https://www.visitjeju.net/en",
+      "name": { "en": "Visit Jeju" },
+      "description": { "en": "Jeju Island official tourism site. Nature trails, food, no-visa entry rules for many nationalities." },
+      "languages": ["en", "ja", "zh-CN", "zh-TW", "ko"],
+      "verifiedAt": "2026-05-22"
+    },
+    {
+      "id": "lost112",
+      "category": "safety",
+      "priority": 70,
+      "url": "https://www.lost112.go.kr/",
+      "name": { "en": "Lost 112 (Lost & Found)" },
+      "description": { "en": "Korean National Police lost-and-found database. Report or search for items lost on transit, in taxis, public spaces." },
+      "languages": ["ko", "en"],
+      "verifiedAt": "2026-05-22"
+    }
+  ]
+}

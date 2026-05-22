@@ -1,0 +1,33 @@
+{
+  "$schema": "./ads.schema.json",
+  "updatedAt": "2026-05-22",
+  "slots": {
+    "top": [],
+    "hero": [],
+    "events": [],
+    "native": [],
+    "sponsorship": []
+  },
+  "inhouse": {
+    "top": {
+      "message": "korea-linkhub is reaching foreigners visiting and living in Korea.",
+      "cta": "Become a sponsor",
+      "url": "mailto:hello@korea-linkhub.example"
+    },
+    "hero": {
+      "eyebrow": "FEATURED · OPEN SLOT",
+      "title": "Put your Korea service in front of foreigners.",
+      "body": "korea-linkhub indexes the official Korean sites foreigners actually use. Reach them here.",
+      "cta": "Become a sponsor",
+      "url": "mailto:hello@korea-linkhub.example"
+    },
+    "events": {
+      "label": "Right now in Korea",
+      "note": "Promo slots open"
+    },
+    "sponsorship": {
+      "label": "Supporters",
+      "note": "Sponsorship slots open — get in touch."
+    }
+  }
+}
