@@ -72,7 +72,7 @@ export function Directory({
   const catLabel = (c: string) => messages[`category.${c}`] ?? c;
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-5 pt-8 sm:px-8 sm:pt-10">
+    <div className="mx-auto w-full max-w-6xl px-5 pt-8 pb-16 sm:px-8 sm:pt-10 sm:pb-24">
       {/* Sticky controls */}
       <div className="sticky top-[57px] z-30 -mx-5 mb-8 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:-mx-8 sm:px-8">
         <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center">
