@@ -45,6 +45,16 @@ export function Directory({
   const [category, setCategory] = useState<string>('all');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [filterOpen, setFilterOpen] = useState(false);
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
+  useEffect(() => {
+    const saved = localStorage.getItem('linkhub:view');
+    if (saved === 'grid' || saved === 'list') setViewMode(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('linkhub:view', viewMode);
+  }, [viewMode]);
 
   const allCategories = useMemo(() => {
     const set = new Set<string>();
@@ -128,8 +138,8 @@ export function Directory({
             )}
           </div>
 
-          {/* Mobile: filter trigger + count */}
-          <div className="flex items-center justify-between gap-3 sm:hidden">
+          {/* Mobile: filter trigger + view toggle */}
+          <div className="flex items-center gap-3 sm:hidden">
             <button
               type="button"
               onClick={() => setFilterOpen(true)}
@@ -147,23 +157,27 @@ export function Directory({
                 <path d="M3 4.5l3 3 3-3" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
+            <ViewToggle mode={viewMode} onChange={setViewMode} />
           </div>
 
-          {/* Desktop: chip wrap */}
-          <ul className="hidden flex-wrap gap-1.5 sm:flex">
-            <li>
-              <Chip active={category === 'all'} onClick={() => setCategory('all')}>
-                {t('category.all')}
-              </Chip>
-            </li>
-            {allCategories.map((c) => (
-              <li key={c}>
-                <Chip active={category === c} onClick={() => setCategory(c)}>
-                  {catLabel(c)}
+          {/* Desktop: chip wrap + view toggle */}
+          <div className="hidden items-start justify-between gap-4 sm:flex">
+            <ul className="flex flex-wrap gap-1.5">
+              <li>
+                <Chip active={category === 'all'} onClick={() => setCategory('all')}>
+                  {t('category.all')}
                 </Chip>
               </li>
-            ))}
-          </ul>
+              {allCategories.map((c) => (
+                <li key={c}>
+                  <Chip active={category === c} onClick={() => setCategory(c)}>
+                    {catLabel(c)}
+                  </Chip>
+                </li>
+              ))}
+            </ul>
+            <ViewToggle mode={viewMode} onChange={setViewMode} />
+          </div>
         </div>
       </div>
 
@@ -241,13 +255,23 @@ export function Directory({
         </div>
       ) : (
         <>
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {visible.map((l) => (
-              <li key={l.id}>
-                <LinkCard link={l} locale={locale} messages={messages} catLabel={catLabel} />
-              </li>
-            ))}
-          </ul>
+          {viewMode === 'grid' ? (
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {visible.map((l) => (
+                <li key={l.id}>
+                  <LinkCard link={l} locale={locale} messages={messages} catLabel={catLabel} />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <ul className="surface divide-y divide-[var(--line)] overflow-hidden rounded-2xl">
+              {visible.map((l) => (
+                <li key={l.id}>
+                  <LinkRow link={l} locale={locale} catLabel={catLabel} />
+                </li>
+              ))}
+            </ul>
+          )}
           {remaining > 0 && (
             <div className="mt-8 flex justify-center">
               <button
@@ -286,6 +310,102 @@ function Favicon({ host, featured = false }: { host: string; featured?: boolean 
         className={featured ? 'size-6 object-contain' : 'size-5 object-contain'}
       />
     </span>
+  );
+}
+
+function ViewToggle({ mode, onChange }: { mode: 'grid' | 'list'; onChange: (m: 'grid' | 'list') => void }) {
+  return (
+    <div
+      role="radiogroup"
+      aria-label="View mode"
+      className="flex shrink-0 rounded-full border border-[var(--line)] bg-[var(--bg-elevated)] p-0.5"
+    >
+      <ToggleButton active={mode === 'grid'} onClick={() => onChange('grid')} label="Grid view">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden>
+          <rect x="2" y="2" width="4" height="4" rx="1" fill="currentColor" />
+          <rect x="8" y="2" width="4" height="4" rx="1" fill="currentColor" />
+          <rect x="2" y="8" width="4" height="4" rx="1" fill="currentColor" />
+          <rect x="8" y="8" width="4" height="4" rx="1" fill="currentColor" />
+        </svg>
+      </ToggleButton>
+      <ToggleButton active={mode === 'list'} onClick={() => onChange('list')} label="List view">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden>
+          <rect x="2" y="3" width="10" height="1.6" rx="0.8" fill="currentColor" />
+          <rect x="2" y="6.2" width="10" height="1.6" rx="0.8" fill="currentColor" />
+          <rect x="2" y="9.4" width="10" height="1.6" rx="0.8" fill="currentColor" />
+        </svg>
+      </ToggleButton>
+    </div>
+  );
+}
+
+function ToggleButton({
+  active,
+  onClick,
+  label,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      role="radio"
+      aria-checked={active}
+      aria-label={label}
+      onClick={onClick}
+      className={
+        'flex size-8 items-center justify-center rounded-full transition-colors ' +
+        (active
+          ? 'bg-[var(--ink)] text-[var(--ink-inverse)]'
+          : 'text-[var(--ink-subtle)] hover:text-[var(--ink)]')
+      }
+    >
+      {children}
+    </button>
+  );
+}
+
+function LinkRow({
+  link,
+  locale,
+  catLabel,
+}: {
+  link: Link;
+  locale: string;
+  catLabel: (c: string) => string;
+}) {
+  return (
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center gap-3 px-4 py-3 transition-colors hover:bg-[var(--bg-sunken)] sm:gap-4 sm:px-5 sm:py-3.5"
+    >
+      <Favicon host={hostOf(link.url)} />
+      <div className="min-w-0 flex-1">
+        <h3 className="truncate text-sm font-semibold text-[var(--ink)] sm:text-[15px]">
+          {pick(link.name, locale)}
+        </h3>
+        <div className="num caps mt-1 flex items-center gap-1.5 truncate text-[var(--ink-subtle)]">
+          <span className="truncate">{hostOf(link.url)}</span>
+          <span className="text-[var(--ink-faint)]">·</span>
+          <span className="truncate">{catLabel(link.category)}</span>
+        </div>
+      </div>
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
+        aria-hidden
+        className="shrink-0 text-[var(--ink-subtle)] transition-colors group-hover:text-[var(--accent)]"
+      >
+        <path d="M3 11l8-8M5 3h6v6" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </a>
   );
 }
 
