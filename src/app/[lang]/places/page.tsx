@@ -5,6 +5,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { getPhoto, thumbSrc } from '@/lib/photos';
 import { TodayChip } from '@/components/TodayStatus';
+import { viewFor } from '@/lib/today-view';
 import { PLACES, CATEGORIES, formatDate } from '@/lib/places';
 import placesData from '@/data/places.json';
 
@@ -19,6 +20,9 @@ export async function generateMetadata({ params }: PageProps<'/[lang]/places'>):
     alternates: { canonical: `/${lang}/places` },
   };
 }
+
+// Rebuilt every 30 minutes so today's status in the HTML stays current.
+export const revalidate = 1800;
 
 export default async function PlacesPage({ params }: PageProps<'/[lang]/places'>) {
   const { lang } = await params;
@@ -63,7 +67,7 @@ export default async function PlacesPage({ params }: PageProps<'/[lang]/places'>
                             </span>
                             {p.schedule && (
                           <span className="mt-3">
-                            <TodayChip place={{ hours: p.hours, schedule: p.schedule }} />
+                            <TodayChip place={{ hours: p.hours, schedule: p.schedule }} initial={viewFor(p)} />
                           </span>
                         )}
                         <span className="mt-auto flex items-center gap-1.5 pt-3 text-xs text-[var(--ink-muted)]">

@@ -457,9 +457,14 @@
         "Chuseok holiday 24–27 Sep 2026: free entry at all 4 palaces and Jongmyo (Changdeokgung Secret Garden not included). During Chuseok the palace is open 09:00–18:00 (last entry 17:00).",
         "The raised stone terrace (woldae) of Geunjeongjeon Hall is closed to visitors from 2 Sep to 31 Oct 2026 to protect the stone railings.",
         "Night viewing 2 Sep–2 Oct 2026: 19:00–21:30 (last entry 20:30), closed Mondays and Tuesdays.",
-        "Unlike the new 'every Wednesday free' rule at other palaces, Gyeongbokgung is still free only on the last Wednesday of the month."
+        "Unlike the new 'every Wednesday free' rule at other palaces, Gyeongbokgung is still free only on the last Wednesday of the month.",
+        "Royal guard changing ceremony at Gwanghwamun Gate: 10:00 and 14:00 (about 20 min). Gate guard ceremony: 11:00 and 13:00 (about 10 min). Not held on Tuesdays or when the palace is closed. Free to watch."
       ],
       "sources": [
+        {
+          "field": "guard ceremony",
+          "url": "https://royal.khs.go.kr/ROYAL/contents/R201000000.do?act=view&ceIdx=202401240062"
+        },
         {
           "field": "hours, closed",
           "url": "https://royal.khs.go.kr/ROYAL/contents/R702000000.do"

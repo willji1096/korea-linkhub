@@ -1,6 +1,7 @@
-// Main menu — the order a visitor needs things: where to go, how to get there,
-// what to do when it goes wrong, how things work here, then everything official.
+// Main menu — what changed first (the reason to come back), then where to go, how to get
+// there, what to do when it goes wrong, how things work here, then everything official.
 export const NAV = [
+  { id: 'changes', label: 'This week', short: 'This week', href: '/changes' },
   { id: 'places', label: 'Places', short: 'Places', href: '/places' },
   { id: 'getting-around', label: 'Getting around', short: 'Transport', href: '/getting-around' },
   { id: 'help', label: 'What to do', short: 'Help', href: '/help' },

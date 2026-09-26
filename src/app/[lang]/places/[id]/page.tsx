@@ -5,9 +5,15 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { PhotoHero } from '@/components/PhotoHero';
 import { TodayPanel } from '@/components/TodayStatus';
+import { viewFor } from '@/lib/today-view';
 import { getPhoto } from '@/lib/photos';
 import { LEARN } from '@/lib/learn';
+import { changesFor } from '@/lib/changes';
+import { ChangeCard } from '@/components/ChangeCard';
 import { PLACES, getPlace, categoryLabel, formatDate, telHref, mapLinks, siteUrl, type Place } from '@/lib/places';
+
+// Rebuilt every 30 minutes so the "today" answer in the HTML stays current.
+export const revalidate = 1800;
 
 export function generateStaticParams() {
   return LOCALES.flatMap((lang) => PLACES.map((p) => ({ lang, id: p.id })));
@@ -50,14 +56,23 @@ export default async function PlacePage({ params }: PageProps<'/[lang]/places/[i
   // A "know before you go" story written for this place, if there is one.
   const story = LEARN.find((c) => c.kind === 'place-story' && c.related_places.includes(p.id));
 
+  const changes = changesFor(p.id);
+
+  // The page is about the place; dateModified says when we last checked it against the official site.
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': p.category === 'immigration' || p.category === 'police' ? 'GovernmentOffice' : p.type === 'service' ? 'Organization' : 'TouristAttraction',
-    name: p.name_en,
-    alternateName: p.name_ko,
-    url: p.official_url_en ?? p.official_url_ko ?? undefined,
-    telephone: p.phone ?? undefined,
-    address: p.address_ko ?? undefined,
+    '@type': 'WebPage',
+    url: `${siteUrl()}/${lang}/places/${p.id}`,
+    dateModified: p.last_verified,
+    about: {
+      '@type': p.category === 'immigration' || p.category === 'police' ? 'GovernmentOffice' : p.type === 'service' ? 'Organization' : 'TouristAttraction',
+      name: p.name_en,
+      alternateName: p.name_ko,
+      url: p.official_url_en ?? p.official_url_ko ?? undefined,
+      sameAs: [p.official_url_en, p.official_url_ko].filter(Boolean),
+      telephone: p.phone ?? undefined,
+      address: p.address_ko ?? undefined,
+    },
   };
 
   return (
@@ -83,7 +98,7 @@ export default async function PlacePage({ params }: PageProps<'/[lang]/places/[i
             </header>
 
             <aside className="grid content-start gap-4 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-              {p.schedule && <TodayPanel place={{ hours: p.hours, schedule: p.schedule }} />}
+              {p.schedule && <TodayPanel place={{ hours: p.hours, schedule: p.schedule }} initial={viewFor(p)} />}
               {p.hours && p.hours.length > 0 && (
                 <Card title="Hours">
                   <ul className="divide-y divide-[var(--line)]">
@@ -131,6 +146,14 @@ export default async function PlacePage({ params }: PageProps<'/[lang]/places/[i
             </aside>
 
             <div className="grid content-start gap-4 lg:col-start-1">
+              {changes.length > 0 && (
+                <section aria-label="Changes" className="grid gap-3 sm:grid-cols-2">
+                  {changes.map((c) => (
+                    <ChangeCard key={c.id} c={c} locale={lang} />
+                  ))}
+                </section>
+              )}
+
               {p.admission_en && (
                 <Card title="Tickets">
                   <p className="text-sm leading-relaxed text-[var(--ink)]">{p.admission_en}</p>
@@ -235,6 +258,15 @@ function Checked({ place }: { place: Place }) {
       <span>
         Checked <strong className="font-semibold">{formatDate(place.last_verified)}</strong> against the official Korean site.
         {partial && ' Some details could not be confirmed — call before you go.'}
+        {place.type === 'place' && (
+          <span className="mt-1 block text-[var(--ink-muted)]">
+            Not sure? Call{' '}
+            <a href="tel:1330" className="font-medium text-[var(--accent)] hover:underline">
+              1330
+            </a>{' '}
+            — Korea Travel Helpline, 24/7, English.
+          </span>
+        )}
       </span>
     </p>
   );

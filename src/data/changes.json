@@ -1,0 +1,123 @@
+{
+  "note": "Dated changes to places, each from an official notice. 'missed_by' lists other public sites that did not show the change when we checked (with the page we looked at). Add new items when the daily watcher (scripts/watch_places.py) flags a page.",
+  "items": [
+    {
+      "id": "folk-museum-hall1-2026",
+      "place_ids": ["national-folk-museum-of-korea"],
+      "kind": "part-closed",
+      "title_en": "Folk Museum: Permanent Exhibition Hall 1 closes for three months",
+      "detail_en": "The rest of the museum stays open. Planned dates — check the notice before you go.",
+      "from": "2026-09-30",
+      "to": "2026-12-21",
+      "checked": "2026-09-26",
+      "source": "https://www.nfm.go.kr/english/subIndex/475.do",
+      "missed_by": [
+        { "name": "VisitKorea", "url": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=110875" },
+        { "name": "VisitSeoul", "url": "https://english.visitseoul.net/attractions/National-Folk-Museum-of-Korea/ENP001644" }
+      ]
+    },
+    {
+      "id": "chuseok-free-2026",
+      "place_ids": ["gyeongbokgung-palace", "changdeokgung-palace", "deoksugung-palace", "changgyeonggung-palace", "jongmyo-shrine"],
+      "kind": "free",
+      "title_en": "Chuseok: free entry at the 4 palaces and Jongmyo",
+      "detail_en": "Changdeokgung Secret Garden is not included.",
+      "from": "2026-09-24",
+      "to": "2026-09-27",
+      "checked": "2026-09-26",
+      "source": "https://royal.khs.go.kr/ROYAL/contents/R403000000.do?schM=view&id=20260921093930602117&schBcid=notice01",
+      "missed_by": [
+        { "name": "VisitKorea", "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=87740" },
+        { "name": "VisitSeoul", "url": "https://english.visitseoul.net/attractions/Gyeongbokgung-Palace_/73" }
+      ]
+    },
+    {
+      "id": "free-wednesdays-2026",
+      "place_ids": ["changdeokgung-palace", "changgyeonggung-palace", "jongmyo-shrine"],
+      "kind": "free",
+      "title_en": "Free every Wednesday at Changdeokgung, Changgyeonggung and Jongmyo",
+      "detail_en": "Starts 7 Oct 2026 (Changdeokgung Secret Garden not included). Deoksugung has been free on Wednesdays since 5 Aug. Gyeongbokgung stays free only on the last Wednesday of the month.",
+      "from": "2026-10-07",
+      "to": null,
+      "checked": "2026-09-26",
+      "source": "https://royal.khs.go.kr/ROYAL/contents/R403000000.do?schM=view&id=20260528151556017843&schBcid=notice01"
+    },
+    {
+      "id": "gyeongbokgung-woldae-2026",
+      "place_ids": ["gyeongbokgung-palace"],
+      "kind": "part-closed",
+      "title_en": "Gyeongbokgung: the stone terrace of Geunjeongjeon Hall is closed",
+      "detail_en": "Closed to protect the stone railings. The rest of the palace is open.",
+      "from": "2026-09-02",
+      "to": "2026-10-31",
+      "checked": "2026-09-26",
+      "source": "https://royal.khs.go.kr/ROYAL/contents/R403000000.do?schM=view&id=20260830151817711582&schBcid=notice01"
+    },
+    {
+      "id": "gyeongbokgung-night-2026",
+      "place_ids": ["gyeongbokgung-palace"],
+      "kind": "event",
+      "title_en": "Gyeongbokgung night viewing",
+      "detail_en": "19:00–21:30 (last entry 20:30). No night viewing on Mondays and Tuesdays.",
+      "from": "2026-09-02",
+      "to": "2026-10-02",
+      "checked": "2026-09-26",
+      "source": "https://royal.khs.go.kr/ROYAL/contents/R402000000.do?schM=view&id=20260819134128809338&schBcid=normal1"
+    },
+    {
+      "id": "changgyeonggung-munjeongjeon-2026",
+      "place_ids": ["changgyeonggung-palace"],
+      "kind": "part-closed",
+      "title_en": "Changgyeonggung: limited access to Munjeongjeon Hall",
+      "detail_en": "Because of the 'Changgyeonggung Yayeon' event. No night viewing of this hall.",
+      "from": "2026-09-22",
+      "to": "2026-10-04",
+      "checked": "2026-09-26",
+      "source": "https://royal.khs.go.kr/ROYAL/contents/R403000000.do?schM=view&id=20260922174953028202&schBcid=notice01"
+    },
+    {
+      "id": "war-memorial-oct-2026",
+      "place_ids": ["war-memorial-of-korea"],
+      "kind": "closed",
+      "title_en": "War Memorial closed on Tue 6 Oct",
+      "detail_en": "The day after the substitute holiday. Open on Sat 3 Oct and Fri 9 Oct.",
+      "from": "2026-10-06",
+      "to": "2026-10-06",
+      "checked": "2026-09-26",
+      "source": "https://www.warmemo.or.kr:8443/Eng/E40000/E40100/boardView?board_key=5442"
+    },
+    {
+      "id": "mmca-dec-2026",
+      "place_ids": ["mmca-seoul"],
+      "kind": "closed",
+      "title_en": "MMCA Seoul closed on Tue 1 Dec",
+      "detail_en": "One-off closure.",
+      "from": "2026-12-01",
+      "to": "2026-12-01",
+      "checked": "2026-09-26",
+      "source": "https://www.mmca.go.kr/visitingInfo/seoulInfo.do"
+    },
+    {
+      "id": "museum-galleries-2026",
+      "place_ids": ["national-museum-of-korea"],
+      "kind": "part-closed",
+      "title_en": "National Museum: some galleries closed for renovation",
+      "detail_en": "Buddhist Paintings (Room 203), Wood and Lacquer Crafts (Room 204), Calligraphy and Painting. The rest of the museum is open.",
+      "from": "2026-07-06",
+      "to": "2027-01-28",
+      "checked": "2026-09-26",
+      "source": "https://www.museum.go.kr/ENG/contents/E0606010000.do?schM=view&catCustomType=united&arcId=23929"
+    },
+    {
+      "id": "history-museum-late-2026",
+      "place_ids": ["seoul-museum-of-history"],
+      "kind": "hours",
+      "title_en": "Seoul Museum of History open until 21:00",
+      "detail_en": "Most days except Thursday, until 30 Nov.",
+      "from": null,
+      "to": "2026-11-30",
+      "checked": "2026-09-26",
+      "source": "https://museum.seoul.go.kr/www/guide/vis/infomation.jsp"
+    }
+  ]
+}

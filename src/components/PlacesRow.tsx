@@ -1,6 +1,7 @@
 import { PLACES, categoryLabel } from '@/lib/places';
 import { getPhoto, thumbSrc } from '@/lib/photos';
 import { TodayChip } from './TodayStatus';
+import { viewFor } from '@/lib/today-view';
 import { SectionHeader, HOME_SECTION } from './SectionHeader';
 
 const SIGHTS = ['palace', 'shrine', 'museum'];
@@ -37,7 +38,7 @@ export function PlacesRow({ locale }: { locale: string }) {
                 </span>
                 {p.schedule ? (
                 <span className="mt-auto pt-3">
-                  <TodayChip place={{ hours: p.hours, schedule: p.schedule }} />
+                  <TodayChip place={{ hours: p.hours, schedule: p.schedule }} initial={viewFor(p)} />
                 </span>
               ) : (
                 p.closed_en[0] && (

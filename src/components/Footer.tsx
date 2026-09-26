@@ -37,10 +37,10 @@ export function Footer({
           <div>
             <p className="caps text-[var(--ink-subtle)]">{updatedLabel}</p>
             <p className="num mt-2 text-sm text-[var(--ink)]">{updatedAt}</p>
-            <p className="mt-4 flex items-center gap-2">
+            <a href={`/${locale}/how-we-check`} className="mt-3 -mb-3 inline-flex min-h-11 items-center gap-2 text-sm text-[var(--ink-muted)] hover:text-[var(--ink)]">
               <span className="live-dot" aria-hidden />
-              <span className="caps text-[var(--ink-muted)]">All systems live</span>
-            </p>
+              Checked every morning · How we check →
+            </a>
           </div>
         </div>
         <div className="hairline-t mt-10 flex items-center justify-between pt-6">

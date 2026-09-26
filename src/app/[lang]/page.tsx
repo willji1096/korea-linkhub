@@ -12,6 +12,10 @@ import { PlacesRow } from '@/components/PlacesRow';
 import { HelpRow } from '@/components/HelpRow';
 import { LearnRow } from '@/components/LearnRow';
 import { TodayBar } from '@/components/TodayBar';
+import { TodayHero } from '@/components/TodayHero';
+
+// Rebuilt every 30 minutes so today's status in the HTML stays current.
+export const revalidate = 1800;
 
 export default async function HomePage({ params }: PageProps<'/[lang]'>) {
   const { lang } = await params;
@@ -26,10 +30,13 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
       <TodayBar />
       <Header locale={lang} brand={m['site.name']} status={`${links.length} sites`} />
       <main className="flex-1 pb-16 sm:pb-24">
-        <Billboard
-          ads={adsData as never}
-          copy={{ title: m['banner.title'], accent: m['banner.titleAccent'], body: m['banner.body'] }}
-        />
+        <TodayHero locale={lang} copy={{ title: m['banner.title'], accent: m['banner.titleAccent'] }} />
+        {adsData.slots.hero.length > 0 && (
+          <Billboard
+            ads={adsData as never}
+            copy={{ title: m['banner.title'], accent: m['banner.titleAccent'], body: m['banner.body'] }}
+          />
+        )}
         <PlacesRow locale={lang} />
         <HelpRow locale={lang} />
         <LearnRow locale={lang} />
