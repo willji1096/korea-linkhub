@@ -38,17 +38,6 @@
       "source": { "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=87171", "verifiedAt": "2026-05-22" }
     },
     {
-      "id": "medical-1339",
-      "category": "health",
-      "priority": 80,
-      "number": "1339",
-      "name": { "en": "Emergency Medical Information" },
-      "description": { "en": "Non-emergency medical hotline. Connects you to nearby hospitals and on-call doctors." },
-      "languages": ["ko", "en"],
-      "hours": "24/7",
-      "free": true
-    },
-    {
       "id": "immigration-1345",
       "category": "visa",
       "priority": 85,
