@@ -43,3 +43,7 @@ next-env.d.ts
 # workspace + agent artefacts (local only)
 /_workspace
 /.aing
+
+# daily hours-page snapshots (kept in the Actions cache)
+.watch/
+__pycache__/

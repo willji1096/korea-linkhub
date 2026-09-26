@@ -1,0 +1,503 @@
+{
+  "updatedAt": "2026-09-26",
+  "items": [
+    {
+      "id": "emergency",
+      "title_en": "Emergency: police, fire, ambulance",
+      "title_ko": "긴급 상황 (경찰·소방·구급)",
+      "summary_en": "Police 112, fire and ambulance 119. Both are free and open 24 hours, and both can connect an interpreter.",
+      "steps": [
+        {
+          "title_en": "Police: call 112",
+          "body_en": "Free, 24 hours. Police can add an English or Chinese interpreter to your call (3-way call).",
+          "show_staff_ko": "영어 통역 연결해 주세요.",
+          "show_staff_en": "Please connect me with an English interpreter.",
+          "links": []
+        },
+        {
+          "title_en": "Fire, rescue or ambulance: call 119",
+          "body_en": "Free, 24 hours. The ambulance is free. 119 gives hospital information, first-aid help and interpretation in English, Chinese, Japanese, Mongolian and Vietnamese. If you can't talk, you can report by text, photo or video through the 119 app or website.",
+          "links": [
+            {
+              "label_en": "119 text / video reporting",
+              "href": "https://www.gov.kr/portal/service/serviceInfo/PTR000052060"
+            }
+          ]
+        },
+        {
+          "title_en": "Not an emergency? Call 1330",
+          "body_en": "Lost, need a quick interpreter, or have a travel question: call the Korea Travel Helpline 1330 (from a foreign phone: +82-2-1330).",
+          "links": [
+            {
+              "label_en": "1330 Travel Helpline",
+              "href": "/places/korea-travel-helpline-1330"
+            }
+          ]
+        },
+        {
+          "title_en": "Get disaster alerts in your language",
+          "body_en": "Install the government's 'Emergency Ready' app for safety alerts in English, Chinese, Vietnamese, Thai and Japanese.",
+          "links": []
+        }
+      ],
+      "help": [
+        {
+          "label_en": "Police 112",
+          "href": "tel:112"
+        },
+        {
+          "label_en": "Fire / Ambulance 119",
+          "href": "tel:119"
+        },
+        {
+          "label_en": "1330 Travel Helpline",
+          "href": "tel:1330"
+        }
+      ],
+      "sources": [
+        {
+          "field": "112 interpretation: English and Chinese, 3-way, 24 hours (announced March 2024)",
+          "url": "https://m.bokjiro.go.kr/ssis-tem/cms/mob/news/news/1306359_1122.html"
+        },
+        {
+          "field": "119 languages: EN, ZH, JA, MN, VI",
+          "url": "https://world.seoul.go.kr/service/living/medical-facilities/"
+        },
+        {
+          "field": "119 text/photo/video reporting",
+          "url": "https://www.gov.kr/portal/service/serviceInfo/PTR000052060"
+        },
+        {
+          "field": "1330 numbers",
+          "url": "https://english.visitkorea.or.kr/svc/contents/infoHtmlView.do?vcontsId=140632&menuSn=454"
+        },
+        {
+          "field": "Emergency Ready app languages",
+          "url": "https://www.mois.go.kr/frt/sub/a06/b11/safetyStep/screen.do"
+        }
+      ],
+      "last_verified": "2026-09-26",
+      "confidence": "partial",
+      "notes": "112 languages from a March 2024 announcement; no newer official update found."
+    },
+    {
+      "id": "lost-passport",
+      "title_en": "Lost your passport in Korea",
+      "title_ko": "여권 분실",
+      "summary_en": "Your new passport or emergency travel document comes from your own country's embassy, not from Korea. Most embassies ask for a Korean police report first, so start at a police station.",
+      "steps": [
+        {
+          "title_en": "Look again and call the last places you visited",
+          "body_en": "Hotel, restaurant, taxi company. The Korea Travel Helpline 1330 can interpret for you.",
+          "links": [
+            {
+              "label_en": "1330 Travel Helpline",
+              "href": "/places/korea-travel-helpline-1330"
+            }
+          ]
+        },
+        {
+          "title_en": "Report it at a police station",
+          "body_en": "Any police station (경찰서) or police box (파출소 / 지구대) takes lost-item reports. Ask for a written confirmation of your report — your embassy will likely ask for it. You can also report online, but it needs a Korean login.",
+          "show_staff_ko": "여권을 잃어버렸습니다. 분실 신고를 하고 확인서를 받고 싶습니다.",
+          "show_staff_en": "I lost my passport. I'd like to report it and get a confirmation.",
+          "links": [
+            {
+              "label_en": "Police Civil Service 24 (online)",
+              "href": "/places/police-civil-service-24"
+            }
+          ]
+        },
+        {
+          "title_en": "Contact your embassy",
+          "body_en": "Each country has its own rules. Some need the police report, some don't. Most can give you an emergency travel document within a working day or two — but it may only let you fly home, not to another country. Call before you go.",
+          "links": [
+            {
+              "label_en": "Embassies in Korea (official list)",
+              "href": "https://www.mofa.go.kr/eng/pgm/m_5789/uss/cnsrshp/inKoEmblgbdAdres.do"
+            }
+          ]
+        },
+        {
+          "title_en": "Living in Korea? Tell immigration about your new passport",
+          "body_en": "If you have a Residence Card, report the new passport within 15 days. It's free — online on HiKorea, or at your immigration office with a booking. Bring the form, your new passport and your Residence Card. Late reports can be fined.",
+          "links": [
+            {
+              "label_en": "HiKorea",
+              "href": "https://www.hikorea.go.kr/Main.pt?locale=en"
+            },
+            {
+              "label_en": "Immigration offices",
+              "href": "/places#immigration"
+            }
+          ]
+        }
+      ],
+      "help": [
+        {
+          "label_en": "1330 Travel Helpline",
+          "href": "/places/korea-travel-helpline-1330"
+        },
+        {
+          "label_en": "1345 Immigration Contact Center",
+          "href": "/places/immigration-contact-center-1345"
+        },
+        {
+          "label_en": "Emergency: police 112",
+          "href": "tel:112"
+        }
+      ],
+      "sources": [
+        {
+          "field": "report at any police station or police box",
+          "url": "https://minwon24.police.go.kr/"
+        },
+        {
+          "field": "embassy rules differ (example: police report optional, travel document ≥1 working day, home only)",
+          "url": "https://seoul.mfa.gov.sg/consular-services/loss-of-singapore-passport/"
+        },
+        {
+          "field": "embassies in Korea",
+          "url": "https://www.mofa.go.kr/eng/pgm/m_5789/uss/cnsrshp/inKoEmblgbdAdres.do"
+        },
+        {
+          "field": "passport change report: 15 days, free, online or visit, documents, fine",
+          "url": "https://www.gov.kr/portal/service/serviceInfo/PTR000050531"
+        }
+      ],
+      "last_verified": "2026-09-26",
+      "confidence": "verified"
+    },
+    {
+      "id": "lost-item",
+      "title_en": "Lost something in Korea",
+      "title_ko": "물건 분실 (지갑·폰·가방)",
+      "summary_en": "Lost it in a taxi and paid by card? Call the number on your receipt right away — it's the fastest way to find the car. Anything else: report it at a police station or search Police Civil Service 24.",
+      "steps": [
+        {
+          "title_en": "Lost it in a taxi",
+          "body_en": "If you paid by card, the driver's or company's phone number is on the receipt — call it now. If you paid with a T-money card, T-money's lost-item service can find the taxi (online 24 hours, or call 1644-1188, weekdays 09:00–18:00, lunch 13:00–14:00). Paid cash with no receipt? Report it at a police station.",
+          "show_staff_ko": "택시에 물건을 두고 내렸어요.",
+          "show_staff_en": "I left something in the taxi.",
+          "links": [
+            {
+              "label_en": "T-money taxi lost items",
+              "href": "https://taxi.tmoneymobility.co.kr/taxicuscent/lost/list"
+            }
+          ]
+        },
+        {
+          "title_en": "Lost it on the Seoul subway (Lines 1–8)",
+          "body_en": "Seoul Metro has 4 Lost & Found Centers: City Hall (Lines 1–2, 02-6110-1122), Chungmuro (Lines 3–4, 02-6110-3344), Wangsimni (Lines 5 and 8, 02-6311-6765) and Taereung (Lines 6–7, 02-6311-6766). Weekdays 09:00–18:00 only. Items stay there 7 days, then go to the police.",
+          "links": [
+            {
+              "label_en": "Seoul Metro Lost & Found",
+              "href": "https://smrte.co.kr/en/lost"
+            }
+          ]
+        },
+        {
+          "title_en": "Anywhere else: police",
+          "body_en": "Walk into any police station or police box (파출소) and report it. You can also search found items on Police Civil Service 24 — the English version is machine-translated, and reporting online needs a Korean login.",
+          "show_staff_ko": "분실물 신고를 하고 싶습니다.",
+          "show_staff_en": "I would like to report a lost item.",
+          "links": [
+            {
+              "label_en": "Police Civil Service 24",
+              "href": "/places/police-civil-service-24"
+            }
+          ]
+        },
+        {
+          "title_en": "After you report",
+          "body_en": "Say yes to alerts when you report — you get a text or email if a matching item is found. Report as early as you can.",
+          "links": []
+        }
+      ],
+      "help": [
+        {
+          "label_en": "1330 Travel Helpline",
+          "href": "/places/korea-travel-helpline-1330"
+        },
+        {
+          "label_en": "Seoul Dasan Call Center 120",
+          "href": "tel:120"
+        }
+      ],
+      "sources": [
+        {
+          "field": "taxi: T-money lost-item service, 1644-1188, hours",
+          "url": "https://taxi.tmoneymobility.co.kr/taxicuscent/lost/list"
+        },
+        {
+          "field": "Seoul Metro centers, phones, hours, 7 days",
+          "url": "https://smrte.co.kr/en/lost"
+        },
+        {
+          "field": "police lost & found portal, alerts",
+          "url": "https://minwon24.police.go.kr/cvlcpt/cvlcptGdInfo.do?cvlcptId=MW-001"
+        }
+      ],
+      "last_verified": "2026-09-26",
+      "confidence": "verified"
+    },
+    {
+      "id": "sick",
+      "title_en": "Feeling sick in Korea",
+      "title_ko": "한국에서 아플 때",
+      "summary_en": "For minor problems go to a pharmacy or a clinic; for anything serious or urgent, call 119 (it's free and gives foreign-language help too).",
+      "steps": [
+        {
+          "title_en": "Pick the right place for how bad it is",
+          "body_en": "For small things (cold, headache, upset stomach) go to a pharmacy (약국) — pharmacists can sell many over-the-counter medicines without a doctor's visit. For something that needs a doctor but isn't life-threatening, go to a clinic (의원) or a hospital's outpatient department. For serious or life-threatening problems, go to an emergency room (응급실) or call 119.",
+          "show_staff_ko": "몸이 안 좋아요. 도와주세요.",
+          "show_staff_en": "I don't feel well. Please help me.",
+          "links": [
+            {
+              "label_en": "Seoul Global Center — Medical Facilities for foreigners",
+              "href": "https://world.seoul.go.kr/service/living/medical-facilities/"
+            }
+          ]
+        },
+        {
+          "title_en": "Find a hospital that speaks your language",
+          "body_en": "Medical Korea (run by the government's KHIDI) runs Information Centers at Seoul Station (09:00–18:00, Korean/English/Chinese/Japanese) and at Incheon Airport Terminal 1 (09:00–21:00, adds Russian), and a hotline at +82-2-1577-7129 (09:00–18:00). In Seoul, the Seoul Global Center's 24-hour Medical Referral Service can recommend an English-speaking hospital by email at medicalreferral@seoul.go.kr.",
+          "links": [
+            {
+              "label_en": "Medical Korea Information Center",
+              "href": "https://www.medicalkorea.or.kr/en/convenient"
+            },
+            {
+              "label_en": "Seoul Global Center",
+              "href": "/places/seoul-global-center"
+            }
+          ]
+        },
+        {
+          "title_en": "Need an interpreter right now at a pharmacy or hospital",
+          "body_en": "Call 1330, the Korea Travel Hotline (24 hours, or +82-2-1330 from outside Korea). Tell them you need help at a pharmacy or hospital and ask them to speak with the staff or doctor for you.",
+          "show_staff_ko": "1330에 전화해서 통역을 부탁드릴게요.",
+          "show_staff_en": "I'm calling 1330 to ask for an interpreter, please.",
+          "links": [
+            {
+              "label_en": "1330 Korea Travel Helpline",
+              "href": "/places/korea-travel-helpline-1330"
+            }
+          ]
+        },
+        {
+          "title_en": "Emergency: call 119",
+          "body_en": "For accidents, severe pain, or anything urgent, call 119. Ambulances are free. 119 itself gives interpretation and hospital information in English, Chinese, Japanese, Mongolian, and Vietnamese — you don't need to dial 1339, since that number was merged into 119 back in 2012.",
+          "links": []
+        },
+        {
+          "title_en": "Night, weekend, or holiday — finding an open pharmacy or clinic",
+          "body_en": "The National Emergency Medical Center's site e-gen.or.kr lets you search by region and date for emergency rooms, clinics, and pharmacies still open at night or on holidays. The main search tool is in Korean, so use your phone's browser translation, and call ahead to confirm hours before you go.",
+          "links": [
+            {
+              "label_en": "e-gen.or.kr (National Emergency Medical Center)",
+              "href": "https://www.e-gen.or.kr/egen/main.do"
+            }
+          ]
+        }
+      ],
+      "help": [
+        {
+          "label_en": "Emergency: fire, ambulance, medical (free, interpreters available)",
+          "href": "tel:119"
+        },
+        {
+          "label_en": "Korea Travel Hotline (24/7 interpretation)",
+          "href": "tel:1330"
+        }
+      ],
+      "sources": [
+        {
+          "field": "pharmacy/clinic/ER tiers, Medical Referral Service, 119 interpretation languages",
+          "url": "https://world.seoul.go.kr/service/living/medical-facilities/"
+        },
+        {
+          "field": "Medical Korea Information Center locations, hours, languages, hotline number",
+          "url": "https://www.medicalkorea.or.kr/en/convenient"
+        },
+        {
+          "field": "1330 phone numbers and interpretation service",
+          "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140632"
+        },
+        {
+          "field": "e-gen.or.kr facility/pharmacy search tool exists",
+          "url": "https://www.e-gen.or.kr/egen/main.do"
+        },
+        {
+          "field": "1339 emergency medical hotline merged into 119 (June 2012)",
+          "url": "https://www.korea.kr/briefing/policyBriefingView.do?newsId=148735242"
+        }
+      ],
+      "last_verified": "2026-09-26",
+      "confidence": "partial",
+      "notes": "Unconfirmed: whether e-gen.or.kr search has an English interface; no official page on paying yourself then claiming travel insurance (left out)."
+    },
+    {
+      "id": "scam-overcharge",
+      "title_en": "Overcharged by a taxi or shop",
+      "title_ko": "택시 바가지·상점 사기",
+      "summary_en": "Keep the receipt and a photo of the taxi's plate number and fare, then report it the same day — 1330 anywhere in Korea, or 120 in Seoul. Both take reports in foreign languages.",
+      "steps": [
+        {
+          "title_en": "Before you pay or leave",
+          "body_en": "Note the taxi's plate number. Ask for a printed receipt — it shows the fare, time and the taxi company's number. In a shop, keep the receipt or card record.",
+          "show_staff_ko": "영수증 주세요.",
+          "show_staff_en": "Please give me a receipt.",
+          "links": []
+        },
+        {
+          "title_en": "Seoul taxi: report it on the spot",
+          "body_en": "Seoul taxis have a QR code: scan it to report in English, Chinese or Japanese (plate number, time, place, meter used or not, fare). Or call the Seoul Dasan Call Center 120 (foreign languages, 24 hours).",
+          "show_staff_ko": "요금이 너무 비싸요. 미터기를 사용하지 않았어요.",
+          "show_staff_en": "This fare is too high. You didn't use the meter.",
+          "links": [
+            {
+              "label_en": "Call 120",
+              "href": "tel:120"
+            }
+          ]
+        },
+        {
+          "title_en": "Anywhere in Korea: tourist complaint",
+          "body_en": "Call 1330 or use the Korea Tourist Complaint Center website. They pass your case to the right office and answer in your language: Korean, English, Japanese, Chinese, Russian, Vietnamese, Thai or Indonesian.",
+          "links": [
+            {
+              "label_en": "Tourist Complaint Center",
+              "href": "https://www.touristcomplaint.or.kr/en/intro"
+            },
+            {
+              "label_en": "1330 Travel Helpline",
+              "href": "/places/korea-travel-helpline-1330"
+            }
+          ]
+        },
+        {
+          "title_en": "Keep these as evidence",
+          "body_en": "Receipt, photo of the plate number and the meter, time and place, and the driver's or shop's name if you can.",
+          "links": []
+        }
+      ],
+      "help": [
+        {
+          "label_en": "1330 Travel Helpline",
+          "href": "tel:1330"
+        },
+        {
+          "label_en": "Seoul Dasan Call Center 120",
+          "href": "tel:120"
+        }
+      ],
+      "sources": [
+        {
+          "field": "Seoul taxi QR complaint",
+          "url": "https://news.seoul.go.kr/traffic/archives/514618"
+        },
+        {
+          "field": "120 foreign-language, 24 hours",
+          "url": "https://120dasan.or.kr/"
+        },
+        {
+          "field": "Tourist Complaint Center languages and process",
+          "url": "https://www.touristcomplaint.or.kr/en/intro"
+        },
+        {
+          "field": "1330 numbers",
+          "url": "https://english.visitkorea.or.kr/svc/contents/infoHtmlView.do?vcontsId=140632&menuSn=454"
+        }
+      ],
+      "last_verified": "2026-09-26",
+      "confidence": "verified"
+    },
+    {
+      "id": "tax-refund",
+      "title_en": "Tax refund on shopping",
+      "title_ko": "택스리펀드 (부가세 환급)",
+      "summary_en": "Shop at stores with a Tax Free sign and spend at least ₩15,000 per receipt; get your refund immediately at the store, at a downtown booth, or at the airport — but you must get the customs check done at the airport BEFORE you check in your luggage, within 3 months of buying the goods.",
+      "steps": [
+        {
+          "title_en": "Shop at a Tax Free store",
+          "body_en": "Look for a Tax Free / Tax Refund sign at the store. Your purchase on one receipt must be at least ₩15,000. Show your passport at checkout so the store can issue your tax-refund paperwork.",
+          "show_staff_ko": "세금 환급(택스 리펀) 받을 수 있나요? 여권 보여드릴게요.",
+          "show_staff_en": "Can I get a tax refund on this? Here is my passport.",
+          "links": [
+            {
+              "label_en": "Korea Customs Service — Tax Refund (English)",
+              "href": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504"
+            }
+          ]
+        },
+        {
+          "title_en": "Immediate refund at the store, if offered",
+          "body_en": "Some Tax Free stores can subtract the VAT right at checkout. For this, one receipt must be ₩15,000 or more but less than ₩1,000,000, and your total tax-free shopping for the whole trip must not go over ₩5,000,000.",
+          "links": [
+            {
+              "label_en": "VisitKorea — Duty Free & Tax Refunds",
+              "href": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140736"
+            }
+          ]
+        },
+        {
+          "title_en": "Refund at a downtown refund booth",
+          "body_en": "If you didn't get an immediate refund at the store, you can visit a downtown tax-refund booth before you leave the country. One receipt at these booths must not be over ₩6,000,000.",
+          "links": [
+            {
+              "label_en": "VisitKorea — Duty Free & Tax Refunds",
+              "href": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140736"
+            }
+          ]
+        },
+        {
+          "title_en": "At the airport — do this BEFORE check-in",
+          "body_en": "At Incheon Airport, find the tax-refund kiosk in the check-in hall before you check your bags (Terminal 1: near Gate 28; Terminal 2: near Gate 253, opposite Gate 250). Scan your passport and receipts. If the kiosk says customs inspection is needed, bring the unopened, unused goods to the customs desk before you drop off your luggage.",
+          "links": [
+            {
+              "label_en": "Incheon Airport — Tax Refund",
+              "href": "https://www.airport.kr/ap_en/1425/subview.do"
+            }
+          ]
+        },
+        {
+          "title_en": "Know the time limit",
+          "body_en": "You must leave Korea with the goods within 3 months of the day you bought them.",
+          "links": [
+            {
+              "label_en": "Korea Customs Service — Tax Refund (English)",
+              "href": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504"
+            }
+          ]
+        }
+      ],
+      "help": [
+        {
+          "label_en": "Korea Customs Service — Tax Refund",
+          "href": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504"
+        },
+        {
+          "label_en": "Incheon Airport — Tax Refund",
+          "href": "https://www.airport.kr/ap_en/1425/subview.do"
+        }
+      ],
+      "sources": [
+        {
+          "field": "minimum ₩15,000; airport kiosk before check-in; kiosk locations",
+          "url": "https://www.airport.kr/ap_en/1425/subview.do"
+        },
+        {
+          "field": "3-month limit; customs confirms export",
+          "url": "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504"
+        },
+        {
+          "field": "immediate refund ₩15,000–₩1,000,000 per receipt, ₩5,000,000 per trip; downtown ₩6,000,000 per receipt",
+          "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140736"
+        }
+      ],
+      "last_verified": "2026-09-26",
+      "confidence": "verified"
+    }
+  ]
+}

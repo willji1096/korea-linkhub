@@ -1,0 +1,23 @@
+# Daily official-link check. A broken link fails the run, and GitHub emails the
+# repo owner. The full report is attached to every run.
+name: Check links
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # 09:00 KST
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/check_links.py --max-age 60
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: links-report
+          path: reports/

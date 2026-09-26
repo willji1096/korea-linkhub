@@ -1,6 +1,9 @@
 {
-  "site.name": "korea-linkhub",
-  "site.tagline": "Every Korean website a foreigner might need — in one place.",
+  "banner.title": "Korea,",
+  "banner.titleAccent": "right now.",
+  "banner.body": "Official info for foreigners, checked at the source.",
+  "site.name": "Jigeum Korea",
+  "site.tagline": "Official Korea for foreigners, checked today.",
   "site.description": "A curated link directory for foreigners visiting or living in Korea. Official portals only: tourism, immigration, transport, health, money, eSIM, and more.",
   "category.all": "All",
   "category.tourism": "Tourism",

@@ -1,23 +1,14 @@
+import holidayData from '@/data/holidays.json';
+import { seoulNow } from '@/lib/today';
+
 type Holiday = { date: string; name: string };
 
-const HOLIDAYS_2026: Holiday[] = [
-  { date: '01-01', name: "New Year's Day" },
-  { date: '02-16', name: 'Lunar New Year (Seollal)' },
-  { date: '02-17', name: 'Lunar New Year' },
-  { date: '02-18', name: 'Lunar New Year' },
-  { date: '03-01', name: 'Independence Movement Day' },
-  { date: '05-05', name: "Children's Day" },
-  { date: '05-24', name: 'Buddha’s Birthday' },
-  { date: '06-06', name: 'Memorial Day' },
-  { date: '08-15', name: 'Liberation Day' },
-  { date: '09-24', name: 'Chuseok (Mid-Autumn)' },
-  { date: '09-25', name: 'Chuseok' },
-  { date: '09-26', name: 'Chuseok' },
-  { date: '10-03', name: 'National Foundation Day' },
-  { date: '10-09', name: 'Hangul Day' },
-  { date: '12-25', name: 'Christmas Day' },
-];
-
+// One list for the whole site (also used by "open today"), dated in Seoul time.
+const NAMES = holidayData.names as Record<string, string>;
+const HOLIDAYS: Holiday[] = Object.values(holidayData.years as Record<string, string[]>)
+  .flat()
+  .sort()
+  .map((date) => ({ date, name: NAMES[date] ?? 'Public holiday' }));
 type WeatherSnap = { tempC: number; desc: string } | null;
 
 async function getRate(): Promise<number | null> {
@@ -35,7 +26,7 @@ async function getWeather(): Promise<WeatherSnap> {
   try {
     const r = await fetch('https://wttr.in/Seoul?format=j1', {
       next: { revalidate: 1800 },
-      headers: { 'User-Agent': 'curl/8 korea-linkhub' },
+      headers: { 'User-Agent': 'curl/8 jigeum-korea' },
     });
     if (!r.ok) return null;
     const d = (await r.json()) as {
@@ -52,33 +43,26 @@ async function getWeather(): Promise<WeatherSnap> {
   }
 }
 
-function holidayToday(): Holiday | null {
-  const now = new Date();
-  const md = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-  return HOLIDAYS_2026.find((h) => h.date === md) ?? null;
-}
 
-function nextHoliday(): Holiday | null {
-  const now = new Date();
-  const md = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-  return HOLIDAYS_2026.find((h) => h.date > md) ?? HOLIDAYS_2026[0];
-}
+const shortDate = (iso: string) =>
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 
 export async function TodayBar() {
   const [rate, weather] = await Promise.all([getRate(), getWeather()]);
-  const todayHoliday = holidayToday();
-  const upcoming = nextHoliday();
+  const today = seoulNow().day;
+  const todayHoliday = HOLIDAYS.find((h) => h.date === today.iso) ?? null;
+  const upcoming = HOLIDAYS.find((h) => h.date > today.iso) ?? null;
 
-  const now = new Date();
-  const dateStr = now.toLocaleDateString('en-US', {
+  const dateStr = new Date(`${today.iso}T00:00:00Z`).toLocaleDateString('en-US', {
     weekday: 'short',
     month: 'short',
     day: 'numeric',
+    timeZone: 'UTC',
   });
 
   return (
     <div className="hairline-b bg-[var(--bg)]">
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 py-2 text-xs text-[var(--ink-muted)] sm:gap-x-4">
           <span className="caps text-[var(--ink-subtle)]">Today</span>
           <span className="num text-[var(--ink)]">{dateStr}</span>
@@ -108,7 +92,7 @@ export async function TodayBar() {
           ) : upcoming ? (
             <span className="hidden items-center gap-1.5 sm:flex">
               <Dot />
-              Next holiday <span className="num text-[var(--ink)]">{upcoming.date}</span> · {upcoming.name}
+              Next holiday <span className="num text-[var(--ink)]">{shortDate(upcoming.date)}</span> · {upcoming.name}
             </span>
           ) : null}
         </div>

@@ -1,6 +1,6 @@
 {
   "$schema": "./links.schema.json",
-  "updatedAt": "2026-05-23",
+  "updatedAt": "2026-09-26",
   "items": [
     {
       "id": "visitkorea",
@@ -8,7 +8,7 @@
       "priority": 100,
       "url": "https://english.visitkorea.or.kr/",
       "name": { "en": "Visit Korea (KTO)" },
-      "description": { "en": "Korea Tourism Organization official portal. Festivals, attractions, itineraries. Includes 1330 tourist hotline info (20 languages, 24/7)." },
+      "description": { "en": "Korea Tourism Organization official portal. Festivals, attractions, itineraries. Includes 1330 tourist hotline info (English, Japanese, Chinese 24/7; more languages in daytime)." },
       "languages": ["en", "ja", "zh-CN", "zh-TW", "ru", "vi", "th", "ar", "fr", "de", "es"],
       "verifiedAt": "2026-05-22"
     },
@@ -16,11 +16,11 @@
       "id": "kto-eng",
       "category": "tourism",
       "priority": 88,
-      "url": "https://kto.visitkorea.or.kr/eng.kto",
+      "url": "https://knto.or.kr/eng/index",
       "name": { "en": "KTO Corporate (English)" },
       "description": { "en": "Korea Tourism Organization institutional site in English. Background on national tourism programs, press releases, official statistics." },
       "languages": ["en"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "korea-travel-portal",
@@ -50,16 +50,6 @@
       "name": { "en": "KNTO Headquarters" },
       "description": { "en": "Korea National Tourism Organization headquarters site. Useful for confirming official events, partner businesses, certified tour operators." },
       "languages": ["ko", "en"],
-      "verifiedAt": "2026-05-23"
-    },
-    {
-      "id": "touristshield",
-      "category": "tourism",
-      "priority": 62,
-      "url": "https://www.touristshield.com/",
-      "name": { "en": "Tourist Shield" },
-      "description": { "en": "KTO-affiliated traveller protection portal. Complaint filing, refund mediation, multilingual help for tourists scammed or overcharged." },
-      "languages": ["en", "ko", "ja", "zh"],
       "verifiedAt": "2026-05-23"
     },
     {
@@ -137,11 +127,11 @@
       "id": "snu-oia",
       "category": "visa",
       "priority": 64,
-      "url": "https://oia.snu.ac.kr/",
-      "name": { "en": "Seoul National University OIA" },
-      "description": { "en": "Office of International Affairs. Useful template for D-2 student visa documents, immigration walk-through checklists referenced by many other universities." },
+      "url": "https://oga.snu.ac.kr/",
+      "name": { "en": "SNU Office of Global Affairs" },
+      "description": { "en": "Seoul National University Office of Global Affairs (formerly OIA). Useful template for D-2 student visa documents and immigration checklists referenced by many other universities." },
       "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "korea-univ-oia",
@@ -349,11 +339,11 @@
       "id": "moef-eng",
       "category": "official",
       "priority": 70,
-      "url": "https://english.moef.go.kr/",
-      "name": { "en": "Ministry of Economy and Finance" },
-      "description": { "en": "Official MOEF English site. Tax policy, budget, foreign investment — relevant for long-term residents and business visitors." },
+      "url": "https://english.mofe.go.kr/",
+      "name": { "en": "Ministry of Finance and Economy" },
+      "description": { "en": "Official English site of the Ministry of Finance and Economy. Tax policy, budget, foreign investment — relevant for long-term residents and business visitors." },
       "languages": ["en"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "epeople",
@@ -430,11 +420,11 @@
       "id": "arex",
       "category": "transport",
       "priority": 80,
-      "url": "https://www.arex.or.kr/",
+      "url": "https://www.airportrailroad.com/",
       "name": { "en": "AREX (Airport Express)" },
       "description": { "en": "Incheon Airport to Seoul Station direct train. Cheapest fast option, runs through the night." },
       "languages": ["en", "ko", "ja", "zh"],
-      "verifiedAt": "2026-05-22"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "naver-map",
@@ -571,11 +561,11 @@
       "id": "korea-muslim",
       "category": "living",
       "priority": 75,
-      "url": "https://www.koreanmuslim.com/",
-      "name": { "en": "Korea Muslim Federation" },
+      "url": "https://www.koreaislam.org/en/mainpage/",
+      "name": { "en": "Seoul Central Mosque (Korea Muslim Federation)" },
       "description": { "en": "Official body running the Seoul Central Mosque. Prayer times, mosque locations across Korea, halal certification lookup." },
       "languages": ["en", "ko", "ar"],
-      "verifiedAt": "2026-05-22"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "goal-adoption",
@@ -585,7 +575,7 @@
       "name": { "en": "G.O.A.'L (Global Overseas Adoptees' Link)" },
       "description": { "en": "Non-profit supporting Korean overseas adoptees visiting or returning to Korea. F-4 visa help, birth-family search, peer community." },
       "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-22"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "naver-land",
@@ -911,16 +901,6 @@
       "verifiedAt": "2026-05-23"
     },
     {
-      "id": "simoptions-korea",
-      "category": "esim",
-      "priority": 44,
-      "url": "https://www.simoptions.com/buy-sim-card-online/south-korea/",
-      "name": { "en": "SimOptions Korea" },
-      "description": { "en": "Aggregator selling Korean prepaid SIM and eSIM bundles for tourists. International shipping or in-airport pickup options." },
-      "languages": ["en", "es", "fr", "de", "it"],
-      "verifiedAt": "2026-05-23"
-    },
-    {
       "id": "gigago-korea",
       "category": "esim",
       "priority": 42,
@@ -945,21 +925,21 @@
       "id": "yanolja-global",
       "category": "stay",
       "priority": 75,
-      "url": "https://global.yanolja.com/",
-      "name": { "en": "Yanolja Global (Hotels)" },
-      "description": { "en": "Korea's largest hotel booking platform with English UI. Hotels, pensions, hanok stays, motels — local inventory beyond what global sites carry." },
+      "url": "https://world.nol.com/",
+      "name": { "en": "NOL World (Yanolja)" },
+      "description": { "en": "Yanolja's global booking site (NOL World). Hotels, hanok stays and activities in Korea for international travellers." },
       "languages": ["en", "ja", "zh", "ko"],
-      "verifiedAt": "2026-05-22"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "goodchoice",
       "category": "stay",
       "priority": 75,
-      "url": "https://goodchoice.kr/",
-      "name": { "en": "Goodchoice (Yeogi-eottae)" },
-      "description": { "en": "Major Korean hotel and motel booking platform. English UI, last-minute deals, motels priced cheaper than chain hotels." },
+      "url": "https://www.yeogi.com/",
+      "name": { "en": "Yeogi (formerly Goodchoice)" },
+      "description": { "en": "Major Korean hotel and motel booking platform, now called Yeogi-eottae. Korean-first site; motels often cheaper than chain hotels." },
       "languages": ["en", "ko", "ja", "zh"],
-      "verifiedAt": "2026-05-22"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "stayfolio",
@@ -995,11 +975,11 @@
       "id": "shilla-stay",
       "category": "stay",
       "priority": 56,
-      "url": "https://www.shilla.net/",
+      "url": "https://www.shillahotels.com/",
       "name": { "en": "Shilla Stay" },
-      "description": { "en": "Shilla's mid-tier business-hotel brand. 20+ locations nationwide with English booking, more affordable than the flagship Shilla." },
+      "description": { "en": "Shilla's mid-tier business-hotel brand with locations nationwide. Booked through the Shilla Hotels & Resorts site." },
       "languages": ["en", "ko", "ja", "zh"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "benikea",
@@ -1035,11 +1015,11 @@
       "id": "visit-seoul-stays",
       "category": "stay",
       "priority": 50,
-      "url": "https://english.visitseoul.net/accommodations",
+      "url": "https://stay.visitseoul.net/seoul-stay?lang=en",
       "name": { "en": "Visit Seoul — Accommodations" },
       "description": { "en": "Seoul Tourism Organization curated stay list. Government-vetted hotels, guesthouses, hanok stays with English contact info." },
       "languages": ["en", "ja", "zh-CN", "zh-TW"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
 
     {
@@ -1056,11 +1036,11 @@
       "id": "lost112",
       "category": "safety",
       "priority": 70,
-      "url": "https://www.lost112.go.kr/",
-      "name": { "en": "Lost 112 (Lost & Found)" },
-      "description": { "en": "Korean National Police lost-and-found database. Report or search for items lost on transit, in taxis, public spaces." },
+      "url": "https://minwon24.police.go.kr/",
+      "name": { "en": "Police Civil Service 24 (Lost & Found)" },
+      "description": { "en": "Korean National Police portal. Lost112 moved here on 26 Jan 2026. Search items lost on transit, in taxis and public places. The site is in Korean with machine translation; picking up an item is done in Korean." },
       "languages": ["ko", "en"],
-      "verifiedAt": "2026-05-22"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "kma-main",
@@ -1272,7 +1252,7 @@
       "name": { "en": "Everland Resort" },
       "description": { "en": "Korea's largest theme park, in Yongin. Seasonal festivals, zoo safari, Caribbean Bay water park, English ticketing." },
       "languages": ["en", "ja", "zh-CN", "zh-TW"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "n-seoul-tower",
@@ -1308,21 +1288,21 @@
       "id": "coex-aquarium",
       "category": "attractions",
       "priority": 64,
-      "url": "https://www.coexaqua.com/en/",
-      "name": { "en": "COEX Aquarium" },
+      "url": "https://www.visitsealife.com/coex-seoul/en/",
+      "name": { "en": "SEA LIFE COEX Aquarium" },
       "description": { "en": "Large indoor aquarium under COEX mall in Gangnam. Tropical, polar, river exhibits. English ticket booking, family-friendly." },
       "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "busan-aquarium",
       "category": "attractions",
       "priority": 56,
-      "url": "https://www.busanaquarium.com/eng/",
+      "url": "https://www.visitsealife.com/busan/",
       "name": { "en": "SEA LIFE Busan Aquarium" },
       "description": { "en": "Major aquarium on Haeundae Beach. Shark tunnel, penguin habitat, English ticketing — anchor activity for a Busan day trip." },
       "languages": ["en", "ja", "zh", "ko"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "namisum",
@@ -1358,22 +1338,22 @@
       "id": "leeum-museum",
       "category": "attractions",
       "priority": 52,
-      "url": "https://www.leeum.org/en/",
+      "url": "https://www.leeumhoam.org/",
       "name": { "en": "Leeum Museum of Art" },
       "description": { "en": "Samsung-founded contemporary and traditional art museum in Itaewon. Free admission to permanent collection, English signage throughout." },
       "languages": ["en", "ko"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
 
     {
       "id": "interpark",
       "category": "events",
       "priority": 70,
-      "url": "https://nol.interpark.com/",
-      "name": { "en": "Interpark Tickets" },
-      "description": { "en": "Concerts, K-pop, musicals, festivals. Largest Korean ticket platform with English booking." },
+      "url": "https://world.nol.com/",
+      "name": { "en": "NOL Ticket (formerly Interpark)" },
+      "description": { "en": "Concerts, K-pop, musicals, festivals. Interpark Ticket is now part of NOL; international visitors can book through NOL World." },
       "languages": ["en", "ko", "ja", "zh"],
-      "verifiedAt": "2026-05-22"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "melon-ticket",
@@ -1399,11 +1379,11 @@
       "id": "visit-seoul-events",
       "category": "events",
       "priority": 68,
-      "url": "https://www.visitseoul.net/en/whats-on/events",
+      "url": "https://english.visitseoul.net/exhibition-events",
       "name": { "en": "Visit Seoul — Events" },
       "description": { "en": "Curated event calendar for Seoul. Lantern festivals, K-pop concerts, art weeks. English filters for date and category." },
       "languages": ["en", "ja", "zh-CN", "zh-TW"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "yes24-tickets",
@@ -1500,11 +1480,11 @@
       "id": "korea-joongang-daily",
       "category": "news",
       "priority": 76,
-      "url": "https://koreajoongangdaily.joins.com/",
+      "url": "https://www.koreajoongangdaily.com/",
       "name": { "en": "Korea JoongAng Daily" },
       "description": { "en": "JoongAng Group English daily, partnered with NYT. Business-leaning coverage, in-depth culture and tech reporting." },
       "languages": ["en"],
-      "verifiedAt": "2026-05-23"
+      "verifiedAt": "2026-09-26"
     },
     {
       "id": "hankyoreh-en",

@@ -62,7 +62,13 @@ export function Directory({
     if (v === 'grid' || v === 'list') setViewMode(v);
     const tb = localStorage.getItem('linkhub:tab');
     if (tb === 'top' || tb === 'explore') setTab(tb);
-  }, []);
+    // /links?cat=transport — arriving from a topic tile on Home.
+    const cat = new URLSearchParams(window.location.search).get('cat');
+    if (cat && links.some((l) => l.category === cat)) {
+      setCategory(cat);
+      setTab('explore');
+    }
+  }, [links]);
 
   useEffect(() => {
     localStorage.setItem('linkhub:view', viewMode);
@@ -136,7 +142,7 @@ export function Directory({
   const activeLabel = category === 'all' ? t('category.all') : catLabel(category);
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-5 pt-6 pb-16 sm:px-8 sm:pt-10 sm:pb-24">
+    <div className="mx-auto w-full max-w-7xl px-5 pt-6 pb-16 sm:px-8 sm:pt-10 sm:pb-24">
       {/* Tabs */}
       <div className="hairline-b -mx-5 mb-4 sm:-mx-8 sm:mb-6">
         <div className="flex gap-6 px-5 sm:px-8">
@@ -150,7 +156,7 @@ export function Directory({
       </div>
 
       {/* Sticky controls */}
-      <div className="sticky top-12 z-30 -mx-5 mb-5 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:top-[57px] sm:-mx-8 sm:mb-8 sm:px-8">
+      <div className="sticky top-[57px] z-30 -mx-5 mb-5 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:-mx-8 sm:mb-8 sm:px-8">
         <div className="flex flex-col gap-3">
           <div className="relative">
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--ink-subtle)]">
@@ -419,7 +425,7 @@ function SectionedView({
               <button
                 type="button"
                 onClick={() => onSeeAll(cat)}
-                className="shrink-0 text-sm font-medium text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
+                className="-my-3 min-h-11 shrink-0 text-sm font-medium text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
               >
                 See all {items.length}
                 <span aria-hidden> →</span>

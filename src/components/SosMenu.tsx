@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 type Line = { number: string; label: string; languages: string };
 
 const LINES: Line[] = [
-  { number: '112', label: 'Police', languages: 'EN · 24/7' },
-  { number: '119', label: 'Fire · Ambulance', languages: 'EN · JA · ZH · 24/7' },
-  { number: '1330', label: 'Tourist Help (KTO)', languages: '20 languages · Free · 24/7' },
-  { number: '1339', label: 'Medical Info', languages: 'EN · 24/7' },
+  { number: '112', label: 'Police', languages: 'EN · ZH interpreter · 24/7' },
+  { number: '119', label: 'Fire · Ambulance · Medical', languages: 'EN · ZH · JA · MN · VI · Free · 24/7' },
+  { number: '1330', label: 'Tourist Help (KTO)', languages: 'EN · JA · ZH 24/7 · RU · VI · TH · MS 08–19' },
+  { number: '1345', label: 'Immigration Help', languages: '20 languages · Weekdays 09–18' },
 ];
 
 export function SosMenu() {

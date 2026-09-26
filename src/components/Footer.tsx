@@ -13,7 +13,7 @@ export function Footer({
 }) {
   return (
     <footer className="hairline-t bg-[var(--bg-sunken-deep)]">
-      <div className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+      <div className="mx-auto w-full max-w-7xl px-5 py-12 sm:px-8 sm:py-16">
         <div className="grid gap-10 sm:grid-cols-[1.6fr_1fr] sm:gap-16">
           <div>
             <div className="flex items-center gap-2.5">
@@ -26,7 +26,7 @@ export function Footer({
             <p className="mt-3 max-w-md text-sm leading-relaxed text-[var(--ink-muted)]">{disclaimer}</p>
             <a
               href={`/${locale}/request`}
-              className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)]"
+              className="mt-5 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)]"
             >
               Suggest a Korean site
               <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden>
@@ -44,8 +44,10 @@ export function Footer({
           </div>
         </div>
         <div className="hairline-t mt-10 flex items-center justify-between pt-6">
-          <span className="caps text-[var(--ink-subtle)]">korea-linkhub</span>
-          <span className="caps text-[var(--ink-subtle)]">v1.0 · 2026</span>
+          <span className="caps text-[var(--ink-subtle)]">Jigeum Korea · 지금 코리아</span>
+          <a href={`/${locale}/credits`} className="caps -my-3 inline-flex min-h-11 items-center text-[var(--ink-subtle)] hover:text-[var(--ink)]">
+            Photo credits
+          </a>
         </div>
       </div>
     </footer>

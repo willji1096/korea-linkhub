@@ -6,20 +6,21 @@
     "hero": [],
     "events": [],
     "native": [],
+    "leaderboard": [],
     "sponsorship": []
   },
   "inhouse": {
     "top": {
-      "message": "korea-linkhub is reaching foreigners visiting and living in Korea.",
+      "message": "Jigeum Korea is reaching foreigners visiting and living in Korea.",
       "cta": "Become a sponsor",
-      "url": "mailto:hello@korea-linkhub.example"
+      "url": "mailto:hello@jigeumkorea.example"
     },
     "hero": {
       "eyebrow": "FEATURED · OPEN SLOT",
       "title": "Put your Korea service in front of foreigners.",
-      "body": "korea-linkhub indexes the official Korean sites foreigners actually use. Reach them here.",
+      "body": "Jigeum Korea indexes the official Korean sites foreigners actually use. Reach them here.",
       "cta": "Become a sponsor",
-      "url": "mailto:hello@korea-linkhub.example"
+      "url": "mailto:hello@jigeumkorea.example"
     },
     "events": {
       "label": "Right now in Korea",
