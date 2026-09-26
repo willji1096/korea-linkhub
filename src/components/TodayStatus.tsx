@@ -18,7 +18,8 @@ function useToday(place: Pick<Place, 'hours' | 'schedule'>, initial: View | null
   return view;
 }
 
-const DOT = { open: 'bg-[var(--safe)]', soon: 'bg-[var(--warn)]', closed: 'bg-[var(--danger)]' };
+const DOT = { open: 'bg-[var(--safe)]', soon: 'bg-[var(--warn)]', after: 'bg-[var(--ink-subtle)]', closed: 'bg-[var(--danger)]' };
+const BG = { open: 'bg-[var(--safe-soft)]', soon: 'bg-[var(--warn-soft)]', after: 'bg-[var(--bg-sunken)]', closed: 'bg-[var(--danger-soft)]' };
 
 // Small line for cards.
 export function TodayChip({ place, initial }: { place: Pick<Place, 'hours' | 'schedule'>; initial: View | null }) {
@@ -44,9 +45,8 @@ export function TodayPanel({ place, initial }: { place: Pick<Place, 'hours' | 's
       </div>
     );
   }
-  const bg = v.tone === 'open' ? 'bg-[var(--safe-soft)]' : v.tone === 'soon' ? 'bg-[var(--warn-soft)]' : 'bg-[var(--danger-soft)]';
   return (
-    <div className={`rounded-[var(--radius-lg)] p-5 ${bg}`}>
+    <div className={`rounded-[var(--radius-lg)] p-5 ${BG[v.tone]}`}>
       <p className="caps text-[var(--ink-muted)]">Today in Korea</p>
       <p className="mt-1.5 flex items-center gap-2.5 text-xl font-semibold leading-snug text-[var(--ink)]">
         <span className={`inline-block size-2.5 shrink-0 rounded-full ${DOT[v.tone]}`} aria-hidden />

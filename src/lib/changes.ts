@@ -62,3 +62,17 @@ export function dateRange(c: Change): string {
   if (c.to) return `Until ${fmt(c.to)}`;
   return '';
 }
+
+const daysBetween = (a: string, b: string) => Math.round((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86_400_000);
+
+// The change measured against today: "Ends tomorrow", "Starts in 4 days".
+export function relativeTo(c: Timed, today: string): string | null {
+  if (c.when === 'now') {
+    if (!c.to) return null;
+    const n = daysBetween(today, c.to);
+    return n === 0 ? 'Ends today' : n === 1 ? 'Ends tomorrow' : n <= 14 ? `Ends in ${n} days` : null;
+  }
+  if (c.when === 'ended' || !c.from) return null;
+  const n = daysBetween(today, c.from);
+  return n === 1 ? 'Starts tomorrow' : `Starts in ${n} days`;
+}

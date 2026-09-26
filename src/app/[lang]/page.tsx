@@ -30,7 +30,7 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
       <TodayBar />
       <Header locale={lang} brand={m['site.name']} status={`${links.length} sites`} />
       <main className="flex-1 pb-16 sm:pb-24">
-        <TodayHero locale={lang} copy={{ title: m['banner.title'], accent: m['banner.titleAccent'] }} />
+        <TodayHero locale={lang} title={`${m['banner.title']} ${m['banner.titleAccent']}`} />
         {adsData.slots.hero.length > 0 && (
           <Billboard
             ads={adsData as never}
