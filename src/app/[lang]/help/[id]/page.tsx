@@ -5,6 +5,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { PLACES, formatDate } from '@/lib/places';
 import { SITUATIONS, getSituation, localHref } from '@/lib/situations';
+import { ExternalIcon } from '@/components/ExternalIcon';
 
 export function generateStaticParams() {
   return LOCALES.flatMap((lang) => SITUATIONS.map((s) => ({ lang, id: s.id })));
@@ -119,8 +120,9 @@ export default async function HelpPage({ params }: PageProps<'/[lang]/help/[id]'
                   {s.sources.map((src, i) => (
                     <li key={i} className="break-words">
                       <span className="text-[var(--ink)]">{src.field}</span> —{' '}
-                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="inline-block py-2 text-[var(--accent)] hover:underline">
+                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 py-2 text-[var(--accent)] hover:underline">
                         {new URL(src.url).hostname}
+                        <ExternalIcon size={10} />
                       </a>
                     </li>
                   ))}
@@ -147,9 +149,10 @@ function LinkButton({ href, children }: { href: string; children: React.ReactNod
     <a
       href={href}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="inline-flex min-h-11 items-center rounded-[var(--radius-sm)] border border-[var(--line)] bg-[var(--bg-elevated)] px-4 text-sm font-medium text-[var(--ink)] hover:border-[var(--line-strong)]"
+      className="inline-flex min-h-11 items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--line)] bg-[var(--bg-elevated)] px-4 text-sm font-medium text-[var(--ink)] hover:border-[var(--line-strong)]"
     >
       {children}
+      {external && <ExternalIcon className="text-[var(--ink-subtle)]" />}
     </a>
   );
 }

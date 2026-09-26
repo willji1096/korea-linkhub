@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { PLACES } from '@/lib/places';
 import linksData from '@/data/links.json';
 import type { Link } from '@/components/Directory';
+import { ExternalIcon } from '@/components/ExternalIcon';
 
 // Transport links grouped by the moment a visitor needs them.
 const GROUPS = [
@@ -76,8 +77,9 @@ export default async function GettingAroundPage({ params }: PageProps<'/[lang]/g
                         {l.description?.en && (
                           <span className="mt-1.5 text-sm leading-snug text-[var(--ink-muted)]">{l.description.en}</span>
                         )}
-                        <span className="mt-auto pt-3 text-xs font-medium text-[var(--accent)]">
-                          {new URL(l.url).host.replace(/^www\./, '')} ↗
+                        <span className="mt-auto inline-flex items-center gap-1 pt-3 text-xs font-medium text-[var(--accent)]">
+                          {new URL(l.url).host.replace(/^www\./, '')}
+                          <ExternalIcon size={10} />
                         </span>
                       </a>
                     </li>

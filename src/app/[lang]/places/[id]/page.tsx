@@ -11,6 +11,7 @@ import { LEARN } from '@/lib/learn';
 import { changesFor } from '@/lib/changes';
 import { ChangeCard } from '@/components/ChangeCard';
 import { PLACES, getPlace, categoryLabel, formatDate, telHref, mapLinks, siteUrl, type Place } from '@/lib/places';
+import { ExternalIcon } from '@/components/ExternalIcon';
 
 // Rebuilt every 30 minutes so the "today" answer in the HTML stays current.
 export const revalidate = 1800;
@@ -224,8 +225,9 @@ export default async function PlacePage({ params }: PageProps<'/[lang]/places/[i
                   {p.sources.map((s, i) => (
                     <li key={i} className="break-words">
                       <span className="text-[var(--ink)]">{s.field}</span> —{' '}
-                      <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-block py-2 text-[var(--accent)] hover:underline">
+                      <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 py-2 text-[var(--accent)] hover:underline">
                         {new URL(s.url).hostname}
+                        <ExternalIcon size={10} />
                       </a>
                     </li>
                   ))}
@@ -300,13 +302,14 @@ function ButtonLink({ href, primary, children }: { href: string; primary?: boole
     <a
       href={href}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className={`inline-flex min-h-11 items-center rounded-[var(--radius-sm)] px-4 text-sm font-medium ${
+      className={`inline-flex min-h-11 items-center gap-1.5 rounded-[var(--radius-sm)] px-4 text-sm font-medium ${
         primary
           ? 'bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)]'
           : 'border border-[var(--line)] bg-[var(--bg-elevated)] text-[var(--ink)] hover:border-[var(--line-strong)]'
       }`}
     >
       {children}
+      {external && <ExternalIcon className="opacity-70" />}
     </a>
   );
 }

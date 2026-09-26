@@ -8,6 +8,7 @@ import { getPhoto, thumbSrc } from '@/lib/photos';
 import { PLACES, getPlace, formatDate } from '@/lib/places';
 import { getSituation } from '@/lib/situations';
 import { LEARN, getLearn, KIND_LABEL } from '@/lib/learn';
+import { ExternalIcon } from '@/components/ExternalIcon';
 
 export function generateStaticParams() {
   return LOCALES.flatMap((lang) => LEARN.map((c) => ({ lang, id: c.id })));
@@ -158,8 +159,9 @@ export default async function LearnPage({ params }: PageProps<'/[lang]/learn/[id
                   {c.sources.map((src, i) => (
                     <li key={i} className="break-words">
                       <span className="text-[var(--ink)]">{src.field}</span> —{' '}
-                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="inline-block py-2 text-[var(--accent)] hover:underline">
+                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 py-2 text-[var(--accent)] hover:underline">
                         {new URL(src.url).hostname}
+                        <ExternalIcon size={10} />
                       </a>
                     </li>
                   ))}

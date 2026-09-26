@@ -1,5 +1,6 @@
 import { KIND_LABEL, dateRange, type Timed } from '@/lib/changes';
 import { getPlace, formatDate } from '@/lib/places';
+import { ExternalIcon } from '@/components/ExternalIcon';
 
 const TONE: Record<Timed['kind'], string> = {
   closed: 'bg-[var(--danger-soft)] text-[var(--danger)]',
@@ -33,8 +34,8 @@ export function ChangeCard({ c, locale, compact = false }: { c: Timed; locale: s
       </p>
       <div className="mt-auto flex flex-wrap items-center gap-x-3 pt-3 text-xs text-[var(--ink-subtle)]">
         <span>Checked {formatDate(c.checked)}</span>
-        <a href={c.source} target="_blank" rel="noopener noreferrer" className="-my-2 inline-flex min-h-8 items-center text-[var(--accent)] hover:underline">
-          Official notice ↗
+        <a href={c.source} target="_blank" rel="noopener noreferrer" className="-my-2 inline-flex min-h-8 items-center gap-1 text-[var(--accent)] hover:underline">
+          Official notice <ExternalIcon size={10} />
         </a>
       </div>
       {!compact && c.missed_by && c.missed_by.length > 0 && (
