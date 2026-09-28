@@ -81,11 +81,17 @@ DEAD_CODES = {404, 410}
 
 
 def domain_exists(url):
+    """A lookup can fail by chance on the runner, so ask Google's public DNS too."""
     try:
         socket.getaddrinfo(host(url), 443)
         return True
     except socket.gaierror:
-        return False
+        pass
+    try:
+        with urllib.request.urlopen(f"https://dns.google/resolve?name={host(url)}&type=A", timeout=15) as r:
+            return bool(json.load(r).get("Answer"))
+    except Exception:
+        return True  # can't tell; don't call it dead
 
 
 def main():
