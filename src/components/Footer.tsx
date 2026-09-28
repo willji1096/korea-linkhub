@@ -44,7 +44,7 @@ export function Footer({
             <p className="mt-4 flex items-center gap-2 text-sm text-[var(--ink-muted)]">
               {check?.today && <span className="live-dot" aria-hidden />}
               {check
-                ? `Every link opened and checked ${check.today ? 'today' : check.date} · ${check.time} KST`
+                ? `Checked ${check.today ? 'today' : check.date} · ${check.time} KST — no dead links found`
                 : 'Every link is checked each morning at 09:00 KST'}
             </p>
           </div>

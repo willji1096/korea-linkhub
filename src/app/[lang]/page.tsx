@@ -17,7 +17,7 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
 
   const links = (linksData.items as Link[]).slice().sort((a, b) => b.priority - a.priority);
   const check = await lastLinkCheck();
-  const status = check?.today ? `${links.length} sites · all checked today` : `${links.length} sites`;
+  const status = check?.today ? `${links.length} sites · checked today` : `${links.length} sites`;
 
   return (
     <>

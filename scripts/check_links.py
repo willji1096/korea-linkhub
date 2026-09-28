@@ -3,12 +3,16 @@
 
 Usage: python3 scripts/check_links.py [--max-age DAYS]
 Writes a Markdown report to reports/links-YYYY-MM-DD.md and prints a summary.
-Exit code 1 if any link is broken, so it can run on a daily schedule.
+Exit code 1 only if a link is truly dead (404/410, or its domain no longer exists).
+Many Korean sites refuse connections from overseas datacenters such as GitHub's
+runners; those are listed as "blocked the checker", not broken, and must be
+confirmed from a Korean connection.
 """
 import argparse
 import datetime as dt
 import json
 import pathlib
+import socket
 import ssl
 import subprocess
 import sys
@@ -73,6 +77,17 @@ def curl_check(url):
     return code, final, host(final) != host(url), None if code < 400 else f"curl {code}"
 
 
+DEAD_CODES = {404, 410}
+
+
+def domain_exists(url):
+    try:
+        socket.getaddrinfo(host(url), 443)
+        return True
+    except socket.gaierror:
+        return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-age", type=int, default=30, help="days before last_verified counts as stale")
@@ -90,11 +105,13 @@ def main():
     with ThreadPoolExecutor(max_workers=8) as ex:
         results = dict(zip(unique, ex.map(check, unique)))
 
-    broken, moved = [], []
+    broken, blocked, moved = [], [], []
     for item_id, field, url in links:
         status, final, host_changed, err = results[url]
-        if status is None or status >= 400:
-            broken.append((item_id, field, url, status or err))
+        if status in DEAD_CODES or (status is None and not domain_exists(url)):
+            broken.append((item_id, field, url, status or "domain gone"))
+        elif status is None or status >= 400:
+            blocked.append((item_id, field, url, status or err))
         elif host_changed:
             moved.append((item_id, field, url, final))
 
@@ -110,7 +127,7 @@ def main():
     REPORTS.mkdir(exist_ok=True)
     out = REPORTS / f"links-{today.isoformat()}.md"
     lines = [f"# Link & freshness check — {today}", "",
-             f"Items {len(items)} · unique links {len(unique)} · broken {len(broken)} · "
+             f"Items {len(items)} · unique links {len(unique)} · broken {len(broken)} · blocked the checker {len(blocked)} · "
              f"moved to another site {len(moved)} · stale {len(stale)} · not fully verified {len(weak)}", ""]
 
     def table(title, head, rows):
@@ -124,6 +141,7 @@ def main():
         lines.append("")
 
     table("Broken links (fix first)", ["item", "field", "url", "status"], broken)
+    table("Blocked the checker (confirm from a Korean connection)", ["item", "field", "url", "status"], blocked)
     table("Moved to another site (check the new page is the same)", ["item", "field", "url", "now"], moved)
     table(f"Stale (last verified > {args.max_age} days)", ["item", "last verified"], stale)
     table("Not fully verified", ["item", "confidence", "notes"], weak)
