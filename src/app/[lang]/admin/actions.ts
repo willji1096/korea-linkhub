@@ -256,7 +256,7 @@ export async function verifyLink(url: string): Promise<{ ok: boolean; code: numb
       method: 'HEAD',
       redirect: 'follow',
       signal: AbortSignal.timeout(10000),
-      headers: { 'User-Agent': 'jigeum-korea/0.1 (admin verify)' },
+      headers: { 'User-Agent': 'korea-linkhub/0.1 (admin verify)' },
     });
     return { ok: res.ok, code: res.status, finalUrl: res.url };
   } catch {

@@ -1,4 +1,4 @@
-import { seoulNow } from './today';
+import { seoulNow } from './site';
 
 // The daily 09:00 KST official-link check runs on GitHub Actions in this public repo.
 // We read its latest run so "Checked today" is shown only when the check really ran and passed.
@@ -14,9 +14,7 @@ export async function lastLinkCheck(): Promise<LastCheck> {
     const run = d.workflow_runs.find((w) => w.conclusion === 'success');
     if (!run) return null;
     const at = seoulNow(new Date(run.updated_at));
-    const hh = String(Math.floor(at.minutes / 60)).padStart(2, '0');
-    const mm = String(at.minutes % 60).padStart(2, '0');
-    return { today: at.day.iso === seoulNow().day.iso, time: `${hh}:${mm}`, date: at.day.iso };
+    return { today: at.date === seoulNow().date, time: at.time, date: at.date };
   } catch {
     return null;
   }

@@ -2,20 +2,13 @@ import { notFound } from 'next/navigation';
 import { isLocale, getMessages } from '@/i18n/locales';
 import linksData from '@/data/links.json';
 import adsData from '@/data/ads.json';
-import type { Link } from '@/components/Directory';
-import { LinksTeaser } from '@/components/LinksTeaser';
+import { Directory, type Link } from '@/components/Directory';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { TopBanner, Billboard, Leaderboard, SponsorshipStrip } from '@/components/AdSlots';
+import { TopBanner, Billboard, SponsorshipStrip } from '@/components/AdSlots';
 import { EventsRow } from '@/components/EventsRow';
-import { PlacesRow } from '@/components/PlacesRow';
-import { HelpRow } from '@/components/HelpRow';
-import { LearnRow } from '@/components/LearnRow';
 import { TodayBar } from '@/components/TodayBar';
-import { TodayHero } from '@/components/TodayHero';
-
-// Rebuilt every 30 minutes so today's status in the HTML stays current.
-export const revalidate = 1800;
+import { lastLinkCheck } from '@/lib/checks';
 
 export default async function HomePage({ params }: PageProps<'/[lang]'>) {
   const { lang } = await params;
@@ -23,26 +16,19 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
   const m = await getMessages(lang);
 
   const links = (linksData.items as Link[]).slice().sort((a, b) => b.priority - a.priority);
+  const check = await lastLinkCheck();
+  const status = check?.today ? `${links.length} sites · all checked today` : `${links.length} sites`;
 
   return (
     <>
       <TopBanner ads={adsData as never} />
       <TodayBar />
-      <Header locale={lang} brand={m['site.name']} status={`${links.length} sites`} />
-      <main className="flex-1 pb-16 sm:pb-24">
-        <TodayHero locale={lang} title={`${m['banner.title']} ${m['banner.titleAccent']}`} />
-        {adsData.slots.hero.length > 0 && (
-          <Billboard
-            ads={adsData as never}
-            copy={{ title: m['banner.title'], accent: m['banner.titleAccent'], body: m['banner.body'] }}
-          />
-        )}
-        <PlacesRow locale={lang} />
-        <HelpRow locale={lang} />
-        <LearnRow locale={lang} />
+      <Header locale={lang} brand={m['site.name']} status={status} />
+      
+      <main className="flex-1">
+        <Billboard copy={{ title: m['banner.title'], accent: m['banner.titleAccent'], body: m['banner.body'] }} />
         <EventsRow events={adsData.slots.events as never} inhouse={adsData.inhouse.events as never} />
-        <LinksTeaser links={links} locale={lang} labels={m} />
-        <Leaderboard ads={adsData as never} />
+        <Directory links={links} messages={m} locale={lang} />
         <SponsorshipStrip ads={adsData as never} />
       </main>
       <Footer
@@ -51,6 +37,7 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
         updatedLabel={m['footer.updated']}
         updatedAt={linksData.updatedAt}
         locale={lang}
+        check={check}
       />
     </>
   );

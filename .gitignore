@@ -44,6 +44,4 @@ next-env.d.ts
 /_workspace
 /.aing
 
-# daily hours-page snapshots (kept in the Actions cache)
-.watch/
 __pycache__/

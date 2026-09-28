@@ -1,4 +1,7 @@
+import type { LastCheck } from '@/lib/checks';
+
 export function Footer({
+  check,
   updatedAt,
   disclaimer,
   updatedLabel,
@@ -10,6 +13,7 @@ export function Footer({
   updatedLabel: string;
   brand: string;
   locale?: string;
+  check?: LastCheck;
 }) {
   return (
     <footer className="hairline-t bg-[var(--bg-sunken-deep)]">
@@ -37,17 +41,17 @@ export function Footer({
           <div>
             <p className="caps text-[var(--ink-subtle)]">{updatedLabel}</p>
             <p className="num mt-2 text-sm text-[var(--ink)]">{updatedAt}</p>
-            <a href={`/${locale}/how-we-check`} className="mt-3 -mb-3 inline-flex min-h-11 items-center gap-2 text-sm text-[var(--ink-muted)] hover:text-[var(--ink)]">
-              <span className="live-dot" aria-hidden />
-              Checked every morning · How we check →
-            </a>
+            <p className="mt-4 flex items-center gap-2 text-sm text-[var(--ink-muted)]">
+              {check?.today && <span className="live-dot" aria-hidden />}
+              {check
+                ? `Every link opened and checked ${check.today ? 'today' : check.date} · ${check.time} KST`
+                : 'Every link is checked each morning at 09:00 KST'}
+            </p>
           </div>
         </div>
         <div className="hairline-t mt-10 flex items-center justify-between pt-6">
           <span className="caps text-[var(--ink-subtle)]">Jigeum Korea · 지금 코리아</span>
-          <a href={`/${locale}/credits`} className="caps -my-3 inline-flex min-h-11 items-center text-[var(--ink-subtle)] hover:text-[var(--ink)]">
-            Photo credits
-          </a>
+          <span className="caps text-[var(--ink-subtle)]">v1.0 · 2026</span>
         </div>
       </div>
     </footer>

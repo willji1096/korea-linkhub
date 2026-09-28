@@ -6,10 +6,8 @@ import { BookmarkToggle } from './BookmarkToggle';
 const PAGE_SIZE = 24;
 const SECTION_TOP = 5;
 const SECTION_ORDER = [
-  'visa', 'transport', 'health', 'money', 'esim', 'tools',
-  'safety', 'official', 'living',
-  'tourism', 'region', 'attractions', 'events', 'stay',
-  'news',
+  'visa', 'transport', 'health', 'esim', 'money', 'living',
+  'travel', 'stay', 'tools', 'news',
 ];
 
 type Tab = 'top' | 'explore';
@@ -62,13 +60,7 @@ export function Directory({
     if (v === 'grid' || v === 'list') setViewMode(v);
     const tb = localStorage.getItem('linkhub:tab');
     if (tb === 'top' || tb === 'explore') setTab(tb);
-    // /links?cat=transport — arriving from a topic tile on Home.
-    const cat = new URLSearchParams(window.location.search).get('cat');
-    if (cat && links.some((l) => l.category === cat)) {
-      setCategory(cat);
-      setTab('explore');
-    }
-  }, [links]);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('linkhub:view', viewMode);
@@ -92,7 +84,8 @@ export function Directory({
   const allCategories = useMemo(() => {
     const set = new Set<string>();
     links.forEach((l) => set.add(l.category));
-    return Array.from(set);
+    const order = (c: string) => (SECTION_ORDER.indexOf(c) + 1 || 99);
+    return Array.from(set).sort((a, b) => order(a) - order(b));
   }, [links]);
 
   const filtered = useMemo(() => {
@@ -156,7 +149,7 @@ export function Directory({
       </div>
 
       {/* Sticky controls */}
-      <div className="sticky top-[57px] z-30 -mx-5 mb-5 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:-mx-8 sm:mb-8 sm:px-8">
+      <div className="sticky top-12 z-30 -mx-5 mb-5 hairline-b bg-[var(--bg)]/85 px-5 py-3 backdrop-blur sm:top-[57px] sm:-mx-8 sm:mb-8 sm:px-8">
         <div className="flex flex-col gap-3">
           <div className="relative">
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--ink-subtle)]">
@@ -425,7 +418,7 @@ function SectionedView({
               <button
                 type="button"
                 onClick={() => onSeeAll(cat)}
-                className="-my-3 min-h-11 shrink-0 text-sm font-medium text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
+                className="shrink-0 text-sm font-medium text-[var(--ink-muted)] transition-colors hover:text-[var(--accent)]"
               >
                 See all {items.length}
                 <span aria-hidden> →</span>
